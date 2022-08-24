@@ -1,0 +1,292 @@
+# Configuration Files
+
+Prerequisite knowledge: An understanding of JSON files and syntax.
+
+## Overview
+
+Blackhawks Scouting has the capability to load multiple scouting configurations. This can have different use cases, such as match/pit scouting and different setups for various seasons.
+
+Each configuration contains the pages, widgets, and layout of the scouting form. They are stored as JSON files in [`assets`](/public/assets) under the `public` directory; one form corresponds to one configuration (and thus one file).
+
+Each configuration has a file name in the format `config-`, followed by the name of the configuration and then the file extension (`.json`). (Examples: `config-matches.json` or `config-pits-2022.json`)
+
+## Configuration List
+
+To make a configuration appear in Blackhawks Scouting's home page, it must be included in the configuration list at `/public/assets/configurations.txt`.
+
+This file is a list of configuration names you want linked on the home page, separated by newlines. Leading/trailing whitespace and blank lines in the file are ignored.
+
+Configurations that are not included in this file will still be accessible by their URLs, but they will not appear on the home page.
+
+Given the configurations `config-matches.json` and `config-pits.json`, the configuration list would be:
+
+```text
+matches
+pits
+```
+
+Notice how the `config-` and `.json` components of each file name are not included in the list.
+
+## Referencing Assets
+
+Some configuration options allow referencing an asset file, such as an image. The file must be in the `assets` directory; subdirectories under `assets` are also allowed.
+
+These configuration options take data of type `string`, which is the path of the file relative to the `assets` directory. Their descriptions in this document will list their data type as "filepath" to differentiate them from other string options.
+
+## Syntax
+
+Configuration files are in JSON format with data contained within a top-level object.
+
+```json
+{
+  "heading": "Rapid React - 2022 (Pit Scouting)",
+  "logo": "logo.png",
+  "skipTeamSelection": true,
+  "pages": [
+    {
+      "name": "Team",
+      "widgets": [
+        {
+          "name": "Team Number",
+          "type": "number"
+        },
+        {
+          "name": "Drive Coach",
+          "type": "text"
+        },
+        {
+          "name": "Driver Names",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "Robot",
+      "widgets": [
+        {
+          "name": "Height",
+          "type": "number"
+        },
+        {
+          "name": "Weight",
+          "type": "number"
+        },
+        {
+          "name": "Drivetrain",
+          "type": "dropdown",
+          "options": [
+            "West Coast",
+            "Swerve",
+            "Butterfly",
+            "Mecanum",
+            "Other"
+          ]
+        },
+        {
+          "name": "Has Driver Camera",
+          "type": "checkbox"
+        }
+      ]
+    },
+    {
+      "name": "Match Play",
+      "widgets": [
+        {
+          "name": "Climb Time",
+          "type": "number"
+        },
+        {
+          "name": "Climb",
+          "type": "radio",
+          "options": [
+            "None",
+            "Low",
+            "Mid",
+            "High",
+            "Traversal"
+          ]
+        },
+        {
+          "name": "Aiming Method",
+          "type": "radio",
+          "options": [
+            "Manual Targeting",
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Comments",
+          "type": "textarea",
+          "colspan": 3
+        }
+      ]
+    }
+  ]
+}
+```
+
+The top-level object accepts the following fields:
+
+`heading`: string, optional
+
+The heading shown at the top of each page. If not specified, a default heading is used.
+
+`logo`: filepath, optional
+
+The file name of a team logo image to show under the top heading. If not specified, no image is displayed.
+
+**Note:** The image will not be scaled; it will be displayed at actual size. If your image appears too large on your scouting form, use an image resizing tool to scale it down.
+
+`skipTeamSelection`: boolean, optional
+
+If `true`, the scouting form won't include an initial "Team Selection" page. Typically, this option is used in configurations that don't use a match schedule, such as pit scouting.
+
+By default `false`.
+
+`forceQualifiers`: boolean, optional
+
+If `true`, the "Match Level" selector on the team selection page will be locked to "Qualifications". This option may be used when the team is only interested in scouting qualifier matches. By default `false`.
+
+This option is only valid when `skipTeamSelection` is not `true`.
+
+`pages`: array[object], required
+
+An array of [Page](#page-objects) objects specifying the custom pages in the scouting form.
+
+## Page Objects
+
+Each object in the `pages` array requires the following fields:
+
+`name`: string
+
+The name of the page, which displays as both a subheading on the page and a link in the navigation menu.
+
+`widgets`: array[object]
+
+An array of [Widget](#widget-objects) objects specifying the widgets on the page.
+
+## Widget Objects
+
+Each object in a Page's `widgets` array requires the following field:
+
+`type`: string
+
+The type of the widget. This lets the app know what the widget should display as, and how its data should be exported (if applicable). See [Widgets](widgets.md) for more information.
+
+### Global Optional Fields
+
+The following fields may be applied to widgets of any type:
+
+`prefix`: string
+
+A string prepended to the widget's name in the exported data, separated from the name with a dash.
+
+This option may be used when multiple widgets have the same name and must be uniquely identified in the exported data.
+
+`align`: string
+
+How the widget is aligned in its grid cell. Can be any of `left`, `center`, or `right`; by default `left`.
+
+This option only has an effect when the column the widget is in is wider than the widget itself.
+
+`noLabel`: boolean
+
+If the widget's label is hidden. By default `false`.
+
+`row`, `col`: number
+
+The position of the widget. See [Grid Layout](grid.md) for more information.
+
+`rowspan`, `colspan`, `labelColspan`: number
+
+The number of rows and columns the widget takes up. See [Grid Layout](grid.md) for more information.
+
+### Type-Specific Required Fields
+
+Certain widget types may also require additional fields:
+
+`name`: string
+
+The name of the widget, which displays as a label next to it and identifies it in the exported data.
+
+Required by all widgets except Picture and Spacer.
+
+`file`: filepath
+
+The path of an asset file. Currently, this option is only used by Picture and Positions which expect an image file to display.
+
+Required by Picture and Positions.
+
+`options`: array[string]
+
+Different options to present to the user in widgets with predefined selections. Depending on the widget type, the user may be able to select one or multiple options.
+
+Required by Dropdown, Radio, and MultiCheckbox.
+
+### Type-Specific Optional Fields
+
+Some widget types allow additional configuration options:
+
+#### Picture, Positions
+
+`width`, `height`: number
+
+The dimensions to display the widget's image at, in pixels.
+
+- **If none are specified:** The image is displayed at actual size.
+- **If one is specified:** The image is resized to respect the dimension given, while preserving its aspect ratio.
+- **If both are specified:** The image is resized to respect both dimensions. Its aspect ratio is ignored.
+
+#### Positions
+
+`allowMultiple`: boolean
+
+If multiple selections are allowed. If `true`, each click on the image creates a new point to export; otherwise, only the last selected point is kept.
+
+By default `false`.
+
+`selectRadius`: number
+
+The radius of the circle displayed on each selected point, in pixels.
+
+`selectColor`: string
+
+The color of the circle displayed on each selected point. Any CSS color value (hex, RGB, color name) may be used.
+
+#### Radio
+
+`default`: number
+
+The index of the option in the `options` array to be selected by default. By default `0`.
+
+**Note:** Array indices start at 0. The first string in the array is index 0, the second is index 1, etc.
+
+#### Spacer
+
+`width`, `height`: number
+
+The dimensions of the spacer in pixels. The default value for each option is `0`, i.e. not occupying space in that dimension.
+
+#### Spinbox
+
+`min`: number
+
+The minimum value that can be entered. By default `0`.
+
+`max`: number
+
+The maximum value that can be entered. By default `Number.MAX_SAFE_INTEGER`, or `9007199254740991`.
+
+`allowKeyboardInput`: boolean
+
+If the value of the widget can be modified using the keyboard. By default `false`.
+
+#### Stopwatch
+
+`startLabel`, `lapLabel`, `stopLabel`: string
+
+The text to display in the Start, Lap, and Stop buttons, respectively. These will override the default labels and can be used to give a stopwatch a more intuitive interface.
+
+`maxLaps`: number
+
+The maximum number of laps that can be recorded; use 0 to disable lapping. By default `Number.MAX_SAFE_INTEGER`.

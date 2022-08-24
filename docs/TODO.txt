@@ -1,0 +1,2 @@
+[ ] Validate configuration files with JSON schema
+[ ] Replace uses of `confirm()` with dialog elements/components

@@ -1,0 +1,44 @@
+<template>
+  <div v-show="show">
+    <h1 class="page-heading">{{ config.data.heading ?? "Scouting" }}</h1>
+    <img v-if="config.data.logo" :src="absoluteLogoPath" alt="Cannot load logo file" class="center" />
+    <h2 class="page-heading">{{ title }}</h2>
+    <div class="grid">
+      <slot></slot>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { useConfigStore, useWidgetsStore } from "@/common/stores";
+
+const props = defineProps<{
+  title: string
+}>();
+
+const config = useConfigStore();
+const absoluteLogoPath = `${import.meta.env.BASE_URL}assets/${config.data.logo}`;
+let show = $ref(false);
+
+const widgets = useWidgetsStore();
+widgets.lastWidgetRowEnd = 1;
+
+defineExpose({ title: props.title, setShown: (value: boolean) => show = value });
+</script>
+
+<style>
+.grid {
+  display: grid;
+  align-items: center;
+  gap: 12px;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-heading {
+  text-align: center;
+}
+</style>

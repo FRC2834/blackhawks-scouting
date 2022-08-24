@@ -1,0 +1,22 @@
+<template>
+  <template v-for="[i, name] of data?.options?.entries()" :key="i">
+    <input type="radio" v-model="value" :name="currentId" :id="idFromIndex(i)" :value="i" />
+    <label :for="idFromIndex(i)">{{ name }}</label>
+    <br />
+  </template>
+</template>
+
+<script setup lang="ts">
+import { useWidgetsStore } from "@/common/stores";
+import { WidgetData } from "@/common/types";
+
+const props = defineProps<{
+  data: WidgetData,
+  currentId: string
+}>();
+
+const idFromIndex = (i: number) => `${props.currentId}-${i}`;
+
+const value = $ref(props.data.default ?? 0);
+useWidgetsStore().addWidgetValue(props.data, $$(value));
+</script>

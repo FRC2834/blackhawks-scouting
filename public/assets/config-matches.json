@@ -1,0 +1,143 @@
+{
+  "heading": "Rapid React - 2022",
+  "logo": "logo.png",
+  "pages": [
+    {
+      "name": "Setup+Autonomous",
+      "widgets": [
+        {
+          "name": "Scouter Name",
+          "type": "text"
+        },
+        {
+          "name": "Starting Position",
+          "type": "positions",
+          "file": "field.png",
+          "height": 160,
+          "colspan": 3
+        },
+        {
+          "name": "Taxi",
+          "type": "checkbox"
+        },
+        {
+          "name": "Upper Cargo Scored",
+          "type": "spinbox",
+          "prefix": "Auto"
+        },
+        {
+          "name": "Upper Cargo Missed",
+          "type": "spinbox",
+          "prefix": "Auto",
+          "col": 3,
+          "row": 4
+        },
+        {
+          "name": "Lower Cargo Scored",
+          "type": "spinbox",
+          "prefix": "Auto",
+          "col": 1
+        },
+        {
+          "name": "Lower Cargo Missed",
+          "type": "spinbox",
+          "prefix": "Auto",
+          "col": 3,
+          "row": 5
+        }
+      ]
+    },
+    {
+      "name": "Teleop",
+      "widgets": [
+        {
+          "type": "picture",
+          "file": "hub-upper.png",
+          "width": 220,
+          "col": 3,
+          "rowspan": 2
+        },
+        {
+          "type": "picture",
+          "file": "hub-lower.png",
+          "width": 220,
+          "col": 3,
+          "rowspan": 2
+        },
+        {
+          "name": "Upper Scored",
+          "row": 1,
+          "type": "spinbox",
+          "prefix": "NDEF"
+        },
+        {
+          "name": "Upper Missed",
+          "type": "spinbox",
+          "prefix": "NDEF"
+        },
+        {
+          "name": "Lower Scored",
+          "row": 3,
+          "col": 4,
+          "type": "spinbox",
+          "prefix": "NDEF"
+        },
+        {
+          "name": "Lower Missed",
+          "col": 4,
+          "type": "spinbox",
+          "prefix": "NDEF"
+        },
+        {
+          "type": "spacer",
+          "height": 40
+        },
+        {
+          "name": "Defense Rating",
+          "type": "dropdown",
+          "options": [
+            "Not Played",
+            "Not Effective",
+            "Average",
+            "Very Effective"
+          ],
+          "labelColspan": 2
+        }
+      ]
+    },
+    {
+      "name": "Endgame",
+      "widgets": [
+        {
+          "name": "Climbed Rung",
+          "type": "radio",
+          "options": [
+            "Low",
+            "Mid",
+            "High",
+            "Traversal",
+            "None"
+          ],
+          "default": 4
+        },
+        {
+          "name": "Failed Climb",
+          "type": "checkbox"
+        },
+        {
+          "name": "Robots Climbed",
+          "type": "spinbox",
+          "max": 3
+        },
+        {
+          "name": "Mechanical Failures",
+          "type": "text"
+        },
+        {
+          "name": "Comments",
+          "type": "textarea"
+        }
+      ]
+    }
+  ]
+}

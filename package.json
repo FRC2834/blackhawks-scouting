@@ -1,0 +1,67 @@
+{
+  "name": "blackhawks-scouting",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore --fix src",
+    "installModules": "npm install",
+    "checkUpdates": "ncu -u"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.184",
+    "@vueuse/core": "^9.1.1",
+    "pinia": "^2.0.20",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "autoprefixer": "^10.4.8",
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.4.0",
+    "npm-check-updates": "^16.0.5",
+    "postcss": "^8.4.16",
+    "postcss-nested": "^5.0.6",
+    "typescript": "~4.7.4",
+    "vite": "^3.0.9",
+    "vite-plugin-pwa": "^0.12.3"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@vue/typescript/recommended",
+      "eslint:recommended",
+      "plugin:vue/vue3-essential"
+    ],
+    "globals": {
+      "$$": "readonly",
+      "$": "readonly",
+      "$computed": "readonly",
+      "$customRef": "readonly",
+      "$ref": "readonly",
+      "$shallowRef": "readonly",
+      "$toRef": "readonly"
+    },
+    "parserOptions": {
+      "ecmaVersion": "latest"
+    },
+    "rules": {
+      "no-console": "warn",
+      "no-debugger": "warn",
+      "quotes": [
+        "warn",
+        "double",
+        {
+          "avoidEscape": true
+        }
+      ]
+    }
+  }
+}
