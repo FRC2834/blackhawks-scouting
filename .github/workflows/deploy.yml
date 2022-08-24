@@ -9,6 +9,8 @@ on:
     paths-ignore:
       - "docs/**"
     branches: [ "main" ]
+  workflow_dispatch:
+    branches: [ "main" ]
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
