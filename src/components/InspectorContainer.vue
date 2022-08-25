@@ -24,15 +24,17 @@ import InspectorTable from "./InspectorTable.vue";
 import { useWidgetsStore } from "@/common/stores.js";
 
 const widgets = useWidgetsStore();
-let selectedIdx = $ref(0);
+let selectedIdx = $ref(0); // The index of the entry selected in the combobox
 
 const downloadLink = $ref<HTMLAnchorElement>();
 const selectedRecords = $ref(new Set<number>());
 const hasSelectedRecords = $computed(() => selectedRecords.size > 0);
 
-const entries = $computed(() => [...widgets.savedData.keys()]);
-const selectedEntry = $computed(() => widgets.savedData.get(entries[selectedIdx]));
+const entries = $computed(() => [...widgets.savedData.keys()]); // The entries in local storage
+const selectedEntry = $computed(() => widgets.savedData.get(entries[selectedIdx])); // The selected entry
 
+// Filters records in the selected entry based on the user selection.
+// If there are no records selected, the filter directly uses the given state, returning either all or no records.
 const filterRecords = (state: boolean) => (selectedEntry === undefined)
   ? []
   : selectedEntry.values.filter((_v, i) => hasSelectedRecords ? (selectedRecords.has(i) === state) : state);
@@ -42,6 +44,8 @@ function deleteData() {
 
   if (!confirm(`Delete ${hasSelectedRecords ? "the selected" : "all"} records in this entry permanently?`)) return;
 
+  // Discard out the selected records
+  // If there are none selected, they are all deleted
   selectedEntry.values = filterRecords(false);
 
   selectedRecords.clear();
@@ -50,6 +54,8 @@ function deleteData() {
 function downloadData() {
   if (selectedEntry == undefined) return;
 
+  // Generate the download link for the selected records, then trigger the download
+  // If there are no records selected, they will all be included in the generated file
   downloadLink.href = widgets.makeDownloadLink({ header: selectedEntry.header, values: filterRecords(true) });
   downloadLink.click();
 }
@@ -58,7 +64,7 @@ function clearData() {
   if (!confirm("Clear all saved entries in local storage permanently?")) return;
 
   widgets.savedData.clear();
-  selectedIdx = 0;
+  selectedIdx = 0; // Reset selected index
 }
 </script>
 

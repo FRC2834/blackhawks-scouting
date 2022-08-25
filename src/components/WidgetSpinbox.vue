@@ -21,6 +21,7 @@ const max = props.data.max ?? Number.MAX_SAFE_INTEGER;
 let value = $ref(min);
 useWidgetsStore().addWidgetValue(props.data, $$(value));
 
+// Updates the value of the widget.
 const setValue = (newValue: number) => value = inRange(newValue, min, max) ? newValue : clamp(newValue, min, max);
 </script>
 

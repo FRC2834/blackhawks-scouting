@@ -37,6 +37,6 @@ defineExpose(page);
 
 function clearForm() {
   widgets.save();
-  router.go(0);
+  router.go(0); // Reload the page
 }
 </script>

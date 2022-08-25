@@ -1,3 +1,5 @@
+// INTERFACES IN THIS FILE WILL BE REPLACED ONCE JSON SCHEMA VALIDATION IS IMPLEMENTED
+
 export interface ConfigData {
   heading?: string;
   logo?: string;

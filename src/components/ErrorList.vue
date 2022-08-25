@@ -7,7 +7,7 @@
         <img src="@/assets/close.svg" alt="Close" />
       </button>
     </div>
-    <div id="dialog-container">
+    <div id="dialog-error-container">
       <div v-for="[i, error] of errors.entries()" :key="i" class="error-entry">{{ error }}</div>
     </div>
   </dialog>
@@ -64,7 +64,7 @@ const label = $computed(() => (props.errors.length === 1) ? "Error" : "Errors");
     }
   }
 
-  &-container {
+  &-error-container {
     overflow: auto;
     padding: 4px;
     max-height: 60vh;

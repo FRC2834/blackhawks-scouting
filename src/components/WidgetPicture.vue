@@ -10,5 +10,6 @@ const props = defineProps<{
   currentId: string
 }>();
 
-const absolutePath = `${import.meta.env.BASE_URL}assets/${props.data.file}`;
+// Get the full path to the file
+const absolutePath = $computed(() => `${import.meta.env.BASE_URL}assets/${props.data.file}`);
 </script>

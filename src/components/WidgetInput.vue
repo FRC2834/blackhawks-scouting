@@ -11,6 +11,7 @@ const props = defineProps<{
   currentId: string
 }>();
 
+// Table of default values for different input types
 const defaultValues = new Map<string, unknown>();
 defaultValues.set("checkbox", false);
 defaultValues.set("number", 0);

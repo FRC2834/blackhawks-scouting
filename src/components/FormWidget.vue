@@ -26,9 +26,10 @@ const props = defineProps<{
   data: WidgetData
 }>();
 
-const widgetName = `<${props.data.name ?? "Unnamed widget"}>`;
-const widgetType = `"${props.data.type ?? "[None]"}"`;
+const widgetName = $computed(() => `<${props.data.name ?? "Unnamed widget"}>`);
+const widgetType = $computed(() => `"${props.data.type ?? "[None]"}"`);
 
+// Table containing metadata for each widget type
 const info = {
   dropdown:      { class: WidgetDropdown,      label: LabelType.LabelTag,  required: ["name", "options"] },
   heading:       { class: WidgetHeading,       label: LabelType.None,      required: ["name"] },
@@ -53,5 +54,6 @@ for (const i of info.required)
   if (!has(props.data, i))
     throw new Error(`Required attribute "${i}" was not specified in widget ${widgetName} (type ${widgetType})`);
 
+// Props to pass from the widget data to the sub-components
 const mappedProps = pick(props.data, ["name", "align", "row", "col", "rowspan", "colspan", "labelColspan"]);
 </script>

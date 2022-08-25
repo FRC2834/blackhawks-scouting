@@ -9,6 +9,7 @@ import { onErrorCaptured } from "vue";
 
 const errors = $ref(new Array<string>());
 
+// Set handler to capture errors and push them to an array
 onErrorCaptured(e => {
   errors.push(`${e.name}: ${e.message}`);
   return false;

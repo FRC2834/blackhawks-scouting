@@ -1,9 +1,9 @@
 <template>
-  <div v-if="hasLabel" :style="{ gridArea: calcGridArea(0) }" class="label">
+  <div v-if="hasLabel" :style="{ gridArea: getGridArea(0) }" class="label">
     <span v-if="labelType === LabelType.PlainText">{{ name }}</span>
     <label v-else :for="id">{{ name }}</label>
   </div>
-  <div :style="{ gridArea: calcGridArea(hasLabel ? 1 : 0), justifySelf: align }" class="widget">
+  <div :style="{ gridArea: getGridArea(hasLabel ? 1 : 0), justifySelf: align }" class="widget">
     <slot></slot>
   </div>
 </template>
@@ -30,13 +30,13 @@ const props = withDefaults(defineProps<{
   labelColspan: 1
 });
 
-const hasLabel = props.labelType != LabelType.None;
+const hasLabel = $computed(() => props.labelType != LabelType.None);
 
 const widgets = useWidgetsStore();
 const rowData = calcGridPos("row");
 const colData = calcGridPos("col");
 
-const calcGridArea = (n: number) => `${rowData[n][0]} / ${colData[n][0]} / ${rowData[n][1]} / ${colData[n][1]}`;
+const getGridArea = (n: number) => `${rowData[n][0]} / ${colData[n][0]} / ${rowData[n][1]} / ${colData[n][1]}`;
 
 widgets.lastWidgetRowEnd = rowData.at(-1)?.at(-1) ?? 1;
 

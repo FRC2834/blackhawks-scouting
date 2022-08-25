@@ -23,11 +23,14 @@ const props = defineProps<{
 const selections = $ref(new Array<Point>());
 const canvas = $ref<HTMLCanvasElement>();
 
-const divide = (val: number, dimension: DimensionName) => canvas ? (val / canvas[dimension]).toFixed(3) : 0;
+// Scales a coordinate on the canvas between 0 and 1 using the image dimensions.
+const divide = (val: number, dimension: DimensionName) => (val / canvas[dimension]).toFixed(3);
 
+// The exported value
 const value = $computed(() => selections.map(c => `${divide(c.x, "width")},${divide(c.y, "height")}`));
 useWidgetsStore().addWidgetValue(props.data, $$(value));
 
+// Load the image file
 const image = new Image();
 image.src = `${import.meta.env.BASE_URL}assets/${props.data.file}`;
 image.addEventListener("load", () => {
@@ -36,17 +39,19 @@ image.addEventListener("load", () => {
   draw();
 });
 
+// Redraw the canvas when the selections change
 watch(selections, draw);
 
+// Redraws the canvas.
 function draw() {
-  if (!canvas) return;
-
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
 
+  // Clear the canvas, then draw the image
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
+  // Draw a circle around each selected point
   ctx.lineWidth = 1;
   ctx.strokeStyle = props.data.selectColor ?? "#ddd";
   for (const { x, y } of selections) {
@@ -56,9 +61,8 @@ function draw() {
   }
 }
 
+// Sets the dimensions of the canvas based on the image dimensions and configuration data.
 function setDimensions(a: DimensionName, b: DimensionName) {
-  if (!canvas) return;
-
   const dims = { width: props.data.width ?? 0, height: props.data.height ?? 0 };
 
   if (dims[a] > 0) canvas[a] = dims[a];
@@ -66,10 +70,11 @@ function setDimensions(a: DimensionName, b: DimensionName) {
   else canvas[a] = image[a];
 }
 
+// Adds a new selection to the array.
 function click(event: MouseEvent) {
   const point = { x: event.offsetX, y: event.offsetY };
 
-  if (!props.data.allowMultiple) selections.pop();
+  if (!props.data.allowMultiple) selections.pop(); // Only allow one value in the array if specified
   selections.push(point);
 }
 </script>

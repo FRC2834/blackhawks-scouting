@@ -19,11 +19,14 @@ const config = useConfigStore();
 const widgets = useWidgetsStore();
 const pageList = $ref([]);
 
+// Fetch the configuration file
 const fetchResult = await fetch(`${import.meta.env.BASE_URL}assets/config-${config.name}.json`);
 
 if (!fetchResult.ok)
   throw new Error(`JSON configuration fetch failed: HTTP ${fetchResult.status} (${fetchResult.statusText})`);
 
 config.data = await fetchResult.json();
+
+// Reset widget values array
 widgets.values = [];
 </script>

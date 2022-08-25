@@ -20,9 +20,9 @@ const props = defineProps<{
 
 const shown = $ref(0);
 
+// If the index of the shown page changes, iterate through each page object and update their states
 watchEffect(() => {
-  for (const [i, page] of props.pages.entries())
-    unref(page).setShown(i === shown);
+  for (const [i, page] of props.pages.entries()) unref(page).setShown(i === shown);
 });
 </script>
 

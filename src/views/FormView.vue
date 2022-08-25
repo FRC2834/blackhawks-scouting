@@ -15,6 +15,7 @@ import FormContainer from "@/components/FormContainer.vue";
 import { useConfigStore } from "@/common/stores";
 import { useRoute } from "vue-router";
 
+// Set configuration name based on the URL params
 const config = useConfigStore();
 const name = useRoute().query.name?.toString();
 config.name = name ?? "";

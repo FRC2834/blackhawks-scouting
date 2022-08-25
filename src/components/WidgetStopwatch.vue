@@ -42,27 +42,33 @@ interface Lap {
 }
 
 let time = $ref(0);
-let updateHandle: number | null = null;
+let updateHandle: number | null = null; // The variable used to stop the timer counting
 const laps = $ref(new Array<Lap>());
 
+// The exported value - reverse laps, then add the total elapsed time
 const value = $computed(() => laps.map(i => trunc(i.elapsed)).reverse().concat(trunc(time)));
 useWidgetsStore().addWidgetValue(props.data, $$(value));
 
+// Truncates a floating-point number for display.
 const trunc = (n: number) => n.toFixed(1);
 
 function start() {
+  // Start timer counting (explicit `window` reference used to avoid conflicts with Node.js functions)
   if (updateHandle === null) updateHandle = window.setInterval(() => time += 0.1, 100);
 }
 
 function stop() {
+  // Stop timer counting
   if (updateHandle !== null) window.clearInterval(updateHandle);
   updateHandle = null;
 }
 
 function lap() {
+  // Check if the timer is running and the number of laps has not exceeded the maximum (if any)
   if (updateHandle === null) return;
   if (laps.length === (props.data.maxLaps ?? Number.MAX_SAFE_INTEGER)) return;
 
+  // Get lap information, add to front of array so newest laps appear first in the list
   const timestamp = time;
   const elapsed = timestamp - (laps[0]?.timestamp ?? 0);
   laps.unshift({ timestamp, elapsed });
@@ -71,7 +77,7 @@ function lap() {
 function clear() {
   stop();
   time = 0;
-  while (laps.length) laps.pop();
+  while (laps.length) laps.pop(); // Clear laps array
 }
 </script>
 

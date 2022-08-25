@@ -17,12 +17,16 @@ const props = defineProps<{
 }>();
 
 const config = useConfigStore();
-const absoluteLogoPath = `${import.meta.env.BASE_URL}assets/${config.data.logo}`;
+const widgets = useWidgetsStore();
+
+// Get the full path to the logo image
+const absoluteLogoPath = $computed(() => `${import.meta.env.BASE_URL}assets/${config.data.logo}`);
+
 let show = $ref(false);
 
-const widgets = useWidgetsStore();
 widgets.lastWidgetRowEnd = 1;
 
+// Expose page data
 defineExpose({ title: props.title, setShown: (value: boolean) => show = value });
 </script>
 
