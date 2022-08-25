@@ -153,6 +153,6 @@ Allows selection of a match and team. If `skipTeamSelection` is `false`, this pa
 - `MatchNumber`: The match number.
 - `Team`: The team information in the following order, delimited by commas:
   - Alliance color (`Red` or `Blue`)
-  - Number within alliance (`1` to `3`)
+  - Index within alliance (`1` to `3`)
   - Team number
   - Team name
