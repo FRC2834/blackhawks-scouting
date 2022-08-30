@@ -1,0 +1,85 @@
+{
+  "heading": "Rapid React - 2022 (Pit Scouting)",
+  "logo": "logo.png",
+  "skipTeamSelection": true,
+  "pages": [
+    {
+      "name": "Team",
+      "widgets": [
+        {
+          "name": "Team Number",
+          "type": "number"
+        },
+        {
+          "name": "Drive Coach",
+          "type": "text"
+        },
+        {
+          "name": "Driver Names",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "Robot",
+      "widgets": [
+        {
+          "name": "Height",
+          "type": "number"
+        },
+        {
+          "name": "Weight",
+          "type": "number"
+        },
+        {
+          "name": "Drivetrain",
+          "type": "dropdown",
+          "options": [
+            "West Coast",
+            "Swerve",
+            "Butterfly",
+            "Mecanum",
+            "Other"
+          ]
+        },
+        {
+          "name": "Has Driver Camera",
+          "type": "checkbox"
+        }
+      ]
+    },
+    {
+      "name": "Match Play",
+      "widgets": [
+        {
+          "name": "Climb Time",
+          "type": "number"
+        },
+        {
+          "name": "Climb",
+          "type": "radio",
+          "options": [
+            "None",
+            "Low",
+            "Mid",
+            "High",
+            "Traversal"
+          ]
+        },
+        {
+          "name": "Aiming Method",
+          "type": "radio",
+          "options": [
+            "Manual Targeting",
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Comments",
+          "type": "textarea",
+          "colspan": 3
+        }
+      ]
+    }
+  ]
+}
