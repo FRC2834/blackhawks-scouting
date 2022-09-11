@@ -2,7 +2,7 @@
 
 ## Overview
 
-Blackhawks Scouting is an advanced, web-based, and open source scouting app made by FRC Team 2834 (The Bionic Blackhawks).
+Blackhawks Scouting is an advanced, web-based, and open source scouting app made by FRC Team 2834 (The Bionic Black Hawks).
 
 Powered by [Vue.js](https://vuejs.org) and [The Blue Alliance](https://thebluealliance.com).
 
