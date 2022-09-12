@@ -53,7 +53,7 @@ The app also supports the security features of your browser, working even with H
 
 ## System Requirements
 
-Black Hawks Scouting can work on Windows, macOS, and Linux. The following browser versions are recommended:
+Black Hawks Scouting can work on Windows, macOS, and Linux. In addition, mobile devices with Android and iOS are also supported. The following browser versions are recommended:
 
 - Google Chrome 100+
 - Microsoft Edge 100+
