@@ -1,5 +1,5 @@
 <template>
-  <h1>Blackhawks Scouting</h1>
+  <h1>Black Hawks Scouting</h1>
   <h2>Form Selection</h2>
   <ul v-if="list.length > 0" class="link-list">
     <li v-for="[i, name] of list.entries()" :key="i">

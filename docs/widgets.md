@@ -2,7 +2,7 @@
 
 ## Overview
 
-Blackhawks Scouting provides numerous widgets as well as a [layout system](grid.md), allowing you to create flexible and intuitive user interfaces for your scouting forms.
+Black Hawks Scouting provides numerous widgets as well as a [layout system](grid.md), allowing you to create flexible and intuitive user interfaces for your scouting forms.
 
 A widget's type, size, and position are specified in its [JSON object](config.md#widget-objects).
 
