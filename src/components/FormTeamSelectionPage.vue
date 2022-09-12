@@ -15,10 +15,10 @@
       </select>
     </FormGroup>
     <FormGroup :label-type="LabelType.LabelTag" id="match-input" name="Match Number">
-      <input id="match-input" type="number" v-model.lazy="matchNumber" />
+      <input id="match-input" type="number" v-model.lazy="matchNumber" :min="1" />
     </FormGroup>
     <FormGroup :label-type="LabelType.LabelTag" id="team-input" name="Team">
-      <span v-if="currentMatch === null" value="0" disabled>&lt;No Data&gt;</span>
+      <span v-if="currentMatch === null">&lt;No Data&gt;</span>
       <select v-else id="team-input" v-model="selectedTeam">
         <option v-for="[i, { color, index, number, name }] of teamsList.entries()" :key="i" :value="i">
           {{ color }} {{ index }}: {{ number }} ({{ name }})
@@ -141,3 +141,10 @@ function loadTBAData() {
   tba.load(eventKey, "matches").then(value => updateStatus($$(matchesLoadStatus), $$(matches), value));
 }
 </script>
+
+<style>
+#team-input {
+  width: 250px;
+  text-overflow: ellipsis;
+}
+</style>
