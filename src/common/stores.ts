@@ -60,7 +60,7 @@ export const useWidgetsStore = defineStore("widgets", () => {
       name = key;
     } else if (key.name !== undefined) {
       // Data object key provided, use its name field if it's defined
-      name = key.prefix ? `${key.prefix}-${key.name}`.replaceAll(/\s/g, "") : key.name;
+      name = (key.prefix ? `${key.prefix}-${key.name}` : key.name).replaceAll(/\s/g, "");
     } else {
       // Invalid argument
       return;
