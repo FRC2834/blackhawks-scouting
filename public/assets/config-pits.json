@@ -52,26 +52,24 @@
       "name": "Match Play",
       "widgets": [
         {
-          "name": "Climb Time",
+          "name": "Dock Time",
           "type": "number"
         },
         {
-          "name": "Climb",
-          "type": "radio",
+          "name": "Parking",
+          "type": "multicheckbox",
           "options": [
-            "None",
-            "Low",
-            "Mid",
-            "High",
-            "Traversal"
+            "Parking",
+            "Docking",
+            "Engaging"
           ]
         },
         {
-          "name": "Aiming Method",
-          "type": "radio",
+          "name": "Can Pick Up",
+          "type": "multicheckbox",
           "options": [
-            "Manual Targeting",
-            "Automatic"
+            "Cones",
+            "Cubes"
           ]
         },
         {

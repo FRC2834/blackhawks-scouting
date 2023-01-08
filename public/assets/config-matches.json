@@ -1,5 +1,5 @@
 {
-  "heading": "Rapid React - 2022",
+  "heading": "Charged Up - 2023",
   "logo": "logo.png",
   "pages": [
     {
@@ -7,43 +7,58 @@
       "widgets": [
         {
           "name": "Scouter Name",
-          "type": "text"
+          "type": "text",
+          "colspan": 2
         },
         {
           "name": "Starting Position",
           "type": "positions",
           "file": "field.png",
-          "height": 160,
-          "colspan": 3
+          "height": 200,
+          "colspan": 2
         },
         {
-          "name": "Taxi",
+          "name": "Left Community",
           "type": "checkbox"
         },
         {
-          "name": "Upper Cargo Scored",
+          "type": "picture",
+          "file": "grid.png",
+          "height": 300,
+          "row": 4,
+          "col": 3,
+          "rowspan": 4
+        },
+        {
+          "name": "Top Scored",
+          "type": "spinbox",
+          "prefix": "Auto",
+          "row": 4,
+          "col": 1
+        },
+        {
+          "name": "Middle Scored",
           "type": "spinbox",
           "prefix": "Auto"
         },
         {
-          "name": "Upper Cargo Missed",
+          "name": "Bottom Scored",
           "type": "spinbox",
-          "prefix": "Auto",
-          "col": 3,
-          "row": 4
+          "prefix": "Auto"
         },
         {
-          "name": "Lower Cargo Scored",
-          "type": "spinbox",
-          "prefix": "Auto",
-          "col": 1
+          "type": "spacer",
+          "height": 40
         },
         {
-          "name": "Lower Cargo Missed",
-          "type": "spinbox",
-          "prefix": "Auto",
-          "col": 3,
-          "row": 5
+          "name": "Docked To Charging Station",
+          "type": "checkbox",
+          "labelColspan": 2
+        },
+        {
+          "name": "Charging Station Engaged",
+          "type": "checkbox",
+          "labelColspan": 2
         }
       ]
     },
@@ -52,45 +67,32 @@
       "widgets": [
         {
           "type": "picture",
-          "file": "hub-upper.png",
-          "width": 220,
+          "file": "grid.png",
+          "height": 300,
           "col": 3,
-          "rowspan": 2
+          "rowspan": 4
         },
         {
-          "type": "picture",
-          "file": "hub-lower.png",
-          "width": 220,
-          "col": 3,
-          "rowspan": 2
-        },
-        {
-          "name": "Upper Scored",
+          "name": "Top Scored",
+          "type": "spinbox",
           "row": 1,
-          "type": "spinbox",
-          "prefix": "NDEF"
+          "col": 1
         },
         {
-          "name": "Upper Missed",
-          "type": "spinbox",
-          "prefix": "NDEF"
+          "name": "Middle Scored",
+          "type": "spinbox"
         },
         {
-          "name": "Lower Scored",
-          "row": 3,
-          "col": 4,
-          "type": "spinbox",
-          "prefix": "NDEF"
+          "name": "Bottom Scored",
+          "type": "spinbox"
         },
         {
-          "name": "Lower Missed",
-          "col": 4,
-          "type": "spinbox",
-          "prefix": "NDEF"
+          "name": "Links Scored",
+          "type": "spinbox"
         },
         {
-          "type": "spacer",
-          "height": 40
+          "name": "Co-Op Bonus",
+          "type": "checkbox"
         },
         {
           "name": "Defense Rating",
@@ -109,23 +111,22 @@
       "name": "Endgame",
       "widgets": [
         {
-          "name": "Climbed Rung",
+          "name": "Parking",
           "type": "radio",
           "options": [
-            "Low",
-            "Mid",
-            "High",
-            "Traversal",
+            "Docked+Engaged",
+            "Docked Only",
+            "Parked",
             "None"
           ],
-          "default": 4
+          "default": 3
         },
         {
-          "name": "Failed Climb",
+          "name": "Failed To Engage",
           "type": "checkbox"
         },
         {
-          "name": "Robots Climbed",
+          "name": "Robots Docked",
           "type": "spinbox",
           "max": 3
         },
