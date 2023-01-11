@@ -28,6 +28,14 @@
           "type": "number"
         },
         {
+          "name": "Length",
+          "type": "number"
+        },
+        {
+          "name": "Width",
+          "type": "number"
+        },
+        {
           "name": "Weight",
           "type": "number"
         },
