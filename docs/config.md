@@ -290,3 +290,33 @@ The text to display in the Start, Lap, and Stop buttons, respectively. These wil
 `maxLaps`: number
 
 The maximum number of laps that can be recorded; use 0 to disable lapping. By default `Number.MAX_SAFE_INTEGER`.
+
+### Validation
+
+Certain widgets support value validation. Validation conditions are specified in a widget's optional `validation` field in the form of a [validation object](#validation-object).
+
+See [Validation](validation.md) for more information.
+
+## Validation Object
+
+Each object associated with a widget's `validation` field requires the following fields:
+
+`comparison`: string
+
+How to compare a widget's value with the specified value(s) to determine if it passes validation. Can be any of:
+
+- `less`
+- `lessOrEqual`
+- `greater`
+- `greaterOrEqual`
+- `equal`
+- `inRange`
+- `outOfRange`
+
+`value`: array[number] if `comparison` is any of (`inRange`, `outOfRange`), number otherwise
+
+The value(s) to validate the widget against.
+
+If range validation is specified, this field should be an array of two numbers specifying the range to validate against. The two numbers may be in any order. While more numbers are valid in the array, Black Hawks Scouting will only use the greatest and least values. This range is inclusive for `inRange` and exclusive for `outOfRange`.
+
+Otherwise, this field is a single number specifying the value to validate against.
