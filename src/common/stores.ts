@@ -63,10 +63,10 @@ export const useWidgetsStore = defineStore("widgets", () => {
       name = (key.prefix ? `${key.prefix}-${key.name}` : key.name).replaceAll(/\s/g, "");
     } else {
       // Invalid argument
-      return;
+      return -1;
     }
 
-    values.push({ name, value });
+    return values.push({ name, value }) - 1;
   }
 
   // Saves the temporary array of widget data to a record in local storage.
@@ -92,6 +92,14 @@ export const useWidgetsStore = defineStore("widgets", () => {
   }
 
   return $$({ values, savedData, lastWidgetRowEnd, downloadLink, makeDownloadLink, addWidgetValue, save });
+});
+
+// Store to contain widget validation status flags
+export const useValidationStore = defineStore("validation", () => {
+  const trigger = $ref(false); // Set to true to trigger validation, false indicates validation is complete
+  const success = $ref(false); // If validation was successful
+
+  return $$({ trigger, success });
 });
 
 // Store to contain data fetched from The Blue Alliance

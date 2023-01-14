@@ -18,5 +18,5 @@ defaultValues.set("number", 0);
 defaultValues.set("text", "");
 
 const value = $ref(defaultValues.get(props.data.type) ?? "");
-useWidgetsStore().addWidgetValue(props.data, $$(value));
+defineExpose({ index: useWidgetsStore().addWidgetValue(props.data, $$(value)) });
 </script>

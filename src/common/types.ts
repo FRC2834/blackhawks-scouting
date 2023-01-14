@@ -46,6 +46,12 @@ export interface WidgetData {
   lapLabel?: string;
   stopLabel?: string;
   maxLaps?: number;
+  validation?: ValidationData;
+}
+
+export interface ValidationData {
+  comparison: string;
+  value: number | number[];
 }
 
 export enum LabelType {

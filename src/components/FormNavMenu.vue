@@ -2,7 +2,7 @@
   <nav>
     <div id="button-container">
       <button @click="shown--" :disabled="shown === 0">&#10096; Prev</button>
-      <button @click="shown++" :disabled="shown === pages.length - 1">Next &#10095;</button>
+      <button @click="validation.trigger = true" :disabled="shown === pages.length - 1">Next &#10095;</button>
     </div>
     <div v-for="[i, page] of pages.entries()" :key="i" :class="{ link: true, active: i === shown }" @click="shown = i">
       {{ unref(page).title }}
@@ -13,16 +13,27 @@
 <script setup lang="ts">
 import FormPage from "./FormPage.vue";
 import { unref, watchEffect } from "vue";
+import { useValidationStore } from "@/common/stores";
 
 const props = defineProps<{
   pages: InstanceType<typeof FormPage>[]
 }>();
 
-const shown = $ref(0);
+const validation = useValidationStore();
+
+let shown = $ref(0);
 
 // If the index of the shown page changes, iterate through each page object and update their states
 watchEffect(() => {
   for (const [i, page] of props.pages.entries()) unref(page).setShown(i === shown);
+});
+
+// If validation is successful, go to the next page
+watchEffect(() => {
+  if (!validation.trigger && validation.success) {
+    shown++;
+    validation.success = false;
+  }
 });
 </script>
 

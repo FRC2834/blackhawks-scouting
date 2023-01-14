@@ -28,7 +28,7 @@ const divide = (val: number, dimension: DimensionName) => (val / canvas[dimensio
 
 // The exported value
 const value = $computed(() => selections.map(c => `${divide(c.x, "width")},${divide(c.y, "height")}`));
-useWidgetsStore().addWidgetValue(props.data, $$(value));
+defineExpose({ index: useWidgetsStore().addWidgetValue(props.data, $$(value)) });
 
 // Load the image file
 const image = new Image();

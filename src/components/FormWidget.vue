@@ -1,6 +1,8 @@
 <template>
   <FormGroup v-if="info" :id="id" :label-type="data.noLabel ? LabelType.None : info.label" v-bind="mappedProps">
-    <component :is="info.class" :data="data" :current-id="id" />
+    <div :style="{ width: 'max-content', border: border }">
+      <component :is="info.class" :data="data" :current-id="id" ref="desc" />
+    </div>
   </FormGroup>
 </template>
 
@@ -8,6 +10,7 @@
 import FormGroup from "@/components/FormGroup.vue";
 import { has, pick } from "lodash";
 import { LabelType, WidgetData } from "@/common/types";
+import { useWidgetsStore } from "@/common/stores";
 import WidgetDropdown from "@/components/WidgetDropdown.vue";
 import WidgetHeading from "@/components/WidgetHeading.vue";
 import WidgetInput from "@/components/WidgetInput.vue";
@@ -26,8 +29,20 @@ const props = defineProps<{
   data: WidgetData
 }>();
 
+defineExpose({ id: props.id, type: props.data.type, validate });
+
+interface WidgetDesc {
+  index?: number
+}
+
+const widgets = useWidgetsStore();
+
+const desc = $ref<WidgetDesc>();
+
 const widgetName = $computed(() => `<${props.data.name ?? "Unnamed widget"}>`);
 const widgetType = $computed(() => `"${props.data.type ?? "[None]"}"`);
+
+let border = $ref("none");
 
 // Table containing metadata for each widget type
 const info = {
@@ -56,4 +71,65 @@ for (const i of info.required)
 
 // Props to pass from the widget data to the sub-components
 const mappedProps = pick(props.data, ["name", "align", "row", "col", "rowspan", "colspan", "labelColspan"]);
+
+function validate() {
+  // Some widgets don't export values (and thus don't have entries in the array)
+  if (desc?.index === undefined) return true;
+
+  // Only some widget types can be validated
+  const canValidate = ["text", "number", "multicheckbox", "positions", "stopwatch", "textarea"];
+  if (!canValidate.includes(props.data.type)) return true;
+
+  // Skip validation if not specified
+  const { validation } = props.data;
+  if (validation === undefined) return true;
+
+  // Get associated widget value from array
+  const widgetVal = widgets.values[desc.index].value;
+
+  // Map widget value to a number to validate
+  let valueToValidate = 0;
+  if ((typeof widgetVal === "string") || Array.isArray(widgetVal)) valueToValidate = widgetVal.length;
+  else if (typeof widgetVal === "number") valueToValidate = widgetVal;
+  else return false; // Value can't be validated (internal app error)
+
+  // Functions to validate with a single value
+  const validationFuncs = new Map<string, (n: number, val: number) => boolean>([
+    ["less", (n: number, val: number) => n < val],
+    ["lessOrEqual", (n: number, val: number) => n <= val],
+    ["greater", (n: number, val: number) => n > val],
+    ["greaterOrEqual", (n: number, val: number) => n >= val],
+    ["equal", (n: number, val: number) => n === val]
+  ]);
+
+  // Functions to validate with a range
+  const rangeValidationFuncs = new Map<string, (n: number, vals: number[]) => boolean>([
+    ["inRange", (n: number, val: number[]) => n >= Math.min(...val) && n <= Math.max(...val)],
+    ["outOfRange", (n: number, val: number[]) => n < Math.min(...val) || n > Math.max(...val)]
+  ]);
+
+  const { comparison, value } = validation;
+
+  // Validate the widget value
+  // Some code is duplicated in the conditional branches to avoid false linter errors.
+  let validationResult = true;
+  if (validationFuncs.has(comparison) && typeof value === "number") {
+    const f = validationFuncs.get(comparison);
+    if (f === undefined) return true;
+
+    validationResult = f(valueToValidate, value);
+  } else if (rangeValidationFuncs.has(comparison) && Array.isArray(value)) {
+    const f = rangeValidationFuncs.get(comparison);
+    if (f === undefined) return true;
+
+    validationResult = f(valueToValidate, value);
+  } else {
+    // Invalid validation criteria
+    return true;
+  }
+
+  // Set border and return result
+  border = validationResult ? "none" : "2px solid red";
+  return validationResult;
+}
 </script>
