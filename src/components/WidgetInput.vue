@@ -12,10 +12,11 @@ const props = defineProps<{
 }>();
 
 // Table of default values for different input types
-const defaultValues = new Map<string, unknown>();
-defaultValues.set("checkbox", false);
-defaultValues.set("number", 0);
-defaultValues.set("text", "");
+const defaultValues = new Map<string, unknown>([
+  ["checkbox", false],
+  ["number", 0],
+  ["text", ""]
+]);
 
 const value = $ref(defaultValues.get(props.data.type) ?? "");
 defineExpose({ index: useWidgetsStore().addWidgetValue(props.data, $$(value)) });
