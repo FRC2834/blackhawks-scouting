@@ -45,6 +45,8 @@ Four widgets are given in the JSON below:
 3. Multi Checkbox requiring exactly two selections
 4. Number input requiring a value between 10 and 20
 
+View a [video](https://youtu.be/vYKmJzZvk8Y) of this example on YouTube.
+
 ```json
 {
   "skipTeamSelection": true,
