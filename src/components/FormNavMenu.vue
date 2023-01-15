@@ -1,10 +1,10 @@
 <template>
   <nav>
     <div id="button-container">
-      <button @click="shown--" :disabled="shown === 0">&#10096; Prev</button>
-      <button @click="validation.trigger = true" :disabled="shown === pages.length - 1">Next &#10095;</button>
+      <button @click="switchPage(shown - 1)" :disabled="shown === 0">&#10096; Prev</button>
+      <button @click="switchPage(shown + 1)" :disabled="shown === pages.length - 1">Next &#10095;</button>
     </div>
-    <div v-for="[i, page] of pages.entries()" :key="i" :class="{ link: true, active: i === shown }" @click="shown = i">
+    <div v-for="[i, page] of pages.entries()" :key="i" :class="{ link: true, active: i === shown }" @click="switchPage(i)">
       {{ unref(page).title }}
     </div>
   </nav>
@@ -12,6 +12,7 @@
 
 <script setup lang="ts">
 import FormPage from "./FormPage.vue";
+import { range } from "lodash";
 import { unref, watchEffect } from "vue";
 import { useValidationStore } from "@/common/stores";
 
@@ -22,6 +23,7 @@ const props = defineProps<{
 const validation = useValidationStore();
 
 let shown = $ref(0);
+let target = $ref(0);
 
 // If the index of the shown page changes, iterate through each page object and update their states
 watchEffect(() => {
@@ -30,11 +32,19 @@ watchEffect(() => {
 
 // If validation is successful, go to the next page
 watchEffect(() => {
-  if (!validation.trigger && validation.success) {
-    shown++;
-    validation.success = false;
-  }
+  if (validation.triggerPage.length == 0)
+    shown = (validation.failedPage == -1) ? target : validation.failedPage;
 });
+
+function switchPage(n: number) {
+  if (n < shown) {
+    shown = n;
+    return;
+  }
+
+  validation.triggerPage = range(shown, n);
+  target = n;
+}
 </script>
 
 <style>

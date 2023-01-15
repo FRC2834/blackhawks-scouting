@@ -35,14 +35,20 @@ config.data = await fetchResult.json();
 widgets.values = [];
 
 watchEffect(() => {
-  if (!validation.trigger) return;
+  if (validation.triggerPage.length == 0) return;
 
-  // Get all the widgets on the currently-shown page, then validate each one
-  const pageIdx = pageList.findIndex(i => i.shown) - (config.data.skipTeamSelection ? 0 : 1);
-  if (pageIdx >= 0) validation.success = widgetList.filter(i => i.id.startsWith(pageIdx.toString())).every(i => i.validate());
-  else validation.success = true;
+  validation.failedPage = -1;
+
+  for (const i of validation.triggerPage) {
+    const index = i - (config.data.skipTeamSelection ? 0 : 1);
+    const failed = widgetList.filter(e => e.id.startsWith(index.toString())).map(e => e.validate()).includes(false);
+    if (failed) {
+      validation.failedPage = i;
+      break;
+    }
+  }
 
   // Unset the trigger flag (also indicates validation is complete)
-  validation.trigger = false;
+  validation.triggerPage = [];
 });
 </script>

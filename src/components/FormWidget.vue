@@ -72,6 +72,7 @@ for (const i of info.required)
 // Props to pass from the widget data to the sub-components
 const mappedProps = pick(props.data, ["name", "align", "row", "col", "rowspan", "colspan", "labelColspan"]);
 
+// Validates the value of the widget.
 function validate() {
   // Some widgets don't export values (and thus don't have entries in the array)
   if (desc?.index === undefined) return true;
