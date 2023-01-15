@@ -227,6 +227,14 @@ Required by Dropdown, Radio, and MultiCheckbox.
 
 Some widget types allow additional configuration options:
 
+#### Dropdown
+
+`defaultOption`: boolean
+
+If the dropdown has a default "Select..." option. This will be displayed by default and can't be re-selected after choosing another option.
+
+The default option exports a value of `-1` and can be used in combination with `validation` to make the dropdown required.
+
 #### Picture, Positions
 
 `width`, `height`: number

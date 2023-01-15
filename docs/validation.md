@@ -16,6 +16,7 @@ The following widget types support value validation:
 
 | Widget | What is Validated |
 | --- | --- |
+| Dropdown | Index of selected option |
 | Multi Checkbox | Number of options selected |
 | Number | Number entered |
 | Positions | Number of positions selected |
@@ -23,11 +24,15 @@ The following widget types support value validation:
 | Text | Length of input |
 | Textarea | Length of input |
 
-**Note**: The Checkbox, Dropdown, Radio, and Spinbox widgets do not support validation because they can constrain their input data. In the case of the Spinbox widget, this is done with the `min` and `max` fields.
+**Note**: The Checkbox, Radio, and Spinbox widgets do not support validation because they can constrain their input data. In the case of the Spinbox widget, this is done with the `min` and `max` fields.
+
+**Note**: With a dropdown, validation can work in combination with the [`defaultOption` field](config.md#dropdown) to create a required dropdown with no initial selected value.
 
 ## Making a Widget Required
 
 If you would simply like a widget to be required without extra validation, use the following validation object that disallows empty input:
+
+(If using validation with a dropdown and `defaultOption`, `value` should be `-1` instead.)
 
 ```json
 {
@@ -42,8 +47,9 @@ Four widgets are given in the JSON below:
 
 1. Optional text input (with no validation)
 2. Required text input
-3. Multi Checkbox requiring exactly two selections
-4. Number input requiring a value between 10 and 20
+3. Required dropdown
+4. Multi Checkbox requiring exactly two selections
+5. Number input requiring a value between 10 and 20
 
 View a [video](https://youtu.be/vYKmJzZvk8Y) of this example on YouTube.
 
@@ -64,6 +70,16 @@ View a [video](https://youtu.be/vYKmJzZvk8Y) of this example on YouTube.
           "validation": {
             "comparison": "greater",
             "value": 0
+          }
+        },
+        {
+          "name": "Required Dropdown",
+          "type": "dropdown",
+          "options": ["Option 1", "Option 2", "Option 3"],
+          "defaultOption": true,
+          "validation": {
+            "comparison": "greater",
+            "value": -1
           }
         },
         {
