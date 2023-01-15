@@ -96,12 +96,10 @@ export const useWidgetsStore = defineStore("widgets", () => {
 
 // Store to contain widget validation status flags
 export const useValidationStore = defineStore("validation", () => {
-  const triggerPage = $ref(new Array<number>());
-  const failedPage = $ref(-1);
-  const trigger = $ref(false); // Set to true to trigger validation, false indicates validation is complete
-  const success = $ref(false); // If validation was successful
+  const triggerPages = $ref(new Array<number>()); // Array of pages to validate
+  const failedPage = $ref(-1); // Index of page that failed validation (-1 indicates success)
 
-  return $$({ triggerPage, failedPage, trigger, success });
+  return $$({ triggerPages, failedPage });
 });
 
 // Store to contain data fetched from The Blue Alliance

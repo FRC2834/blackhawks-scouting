@@ -30,19 +30,22 @@ watchEffect(() => {
   for (const [i, page] of props.pages.entries()) unref(page).setShown(i === shown);
 });
 
-// If validation is successful, go to the next page
+// If validation is successful, go to the target page
+// Otherwise, go to the page with the widget(s) that failed validation
 watchEffect(() => {
-  if (validation.triggerPage.length == 0)
+  if (validation.triggerPages.length == 0)
     shown = (validation.failedPage == -1) ? target : validation.failedPage;
 });
 
 function switchPage(n: number) {
+  // Skip validation if going backward
   if (n < shown) {
     shown = n;
     return;
   }
 
-  validation.triggerPage = range(shown, n);
+  // Submit the range of pages from the current (inclusive) to the target (exclusive) for validation
+  validation.triggerPages = range(shown, n);
   target = n;
 }
 </script>
