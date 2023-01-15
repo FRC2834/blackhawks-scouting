@@ -33,6 +33,7 @@ export interface WidgetData {
   options?: string[];
 
   // Type-specific optional fields
+  defaultOption?: boolean;
   width?: number;
   height?: number;
   allowMultiple?: boolean;

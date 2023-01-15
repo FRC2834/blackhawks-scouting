@@ -78,7 +78,7 @@ function validate() {
   if (desc?.index === undefined) return true;
 
   // Only some widget types can be validated
-  const canValidate = ["text", "number", "multicheckbox", "positions", "stopwatch", "textarea"];
+  const canValidate = ["dropdown", "text", "number", "multicheckbox", "positions", "stopwatch", "textarea"];
   if (!canValidate.includes(props.data.type)) return true;
 
   // Skip validation if not specified
