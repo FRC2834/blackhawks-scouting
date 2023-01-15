@@ -51,7 +51,7 @@ Four widgets are given in the JSON below:
 4. Multi Checkbox requiring exactly two selections
 5. Number input requiring a value between 10 and 20
 
-View a [video](https://youtu.be/vYKmJzZvk8Y) of this example on YouTube.
+View videos of this example on YouTube: [Initial version](https://youtu.be/vYKmJzZvk8Y) | [Updates from January 15, 2023](https://youtu.be/_mlcaQgQJNQ)
 
 ```json
 {
