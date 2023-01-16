@@ -43,7 +43,7 @@ If you would simply like a widget to be required without extra validation, use t
 
 ## Example
 
-Four widgets are given in the JSON below:
+Five widgets are given in the JSON below:
 
 1. Optional text input (with no validation)
 2. Required text input
