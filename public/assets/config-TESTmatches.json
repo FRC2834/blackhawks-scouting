@@ -1,21 +1,3 @@
-/* Items to add:
-
-Find a way to make this av available on a network
-
-Team Selection:
--RED 1,2,3 and BLUE 1,2,3 to check if we missed anything during matches
-
-Teleop:
-- include high cones, middle cones, bottom cones, high cubes, middle cubes, bottom cubes
-- move lines scored to "Endgame"
-- add in penalties
-
-Endgame:
-- Comments (yellow cards, diabled, ect.)
-
-test
-*/
-
 {
   "heading": "Charged Up - 2023",
   "logo": "2620_Logo.png",
