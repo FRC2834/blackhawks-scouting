@@ -78,7 +78,17 @@
           ]
         },
         {
-          "name": "Has Driver Camera",
+          "name": "Has Driver Camera?",
+          "type": "checkbox"
+        },
+
+        {
+          "name": "Has Limelight?",
+          "type": "checkbox"
+        },
+
+        {
+          "name": "Utilizes April Tags?",
           "type": "checkbox"
         }
       ]
