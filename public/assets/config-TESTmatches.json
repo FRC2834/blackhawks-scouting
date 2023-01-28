@@ -10,6 +10,20 @@
           "type": "text",
           "colspan": 2
         },
+
+        {
+          "name": "Alliance",
+          "type": "radio",
+          "options": [
+            "Blue 1",
+            "Blue 2",
+            "Blue 3",
+            "Red 1",
+            "Red 2",
+            "Red 3"
+          ]
+        },
+
         {
           "name": "Starting Position",
           "type": "positions",
@@ -17,10 +31,7 @@
           "height": 200,
           "colspan": 2
         },
-        {
-          "name": "Left Community",
-          "type": "checkbox"
-        },
+
         {
           "type": "picture",
           "file": "grid.png",
@@ -30,25 +41,55 @@
           "rowspan": 4
         },
         {
-          "name": "Top Scored",
+          "name": "Top Cone Scored",
           "type": "spinbox",
+          "max": 21,
           "prefix": "Auto",
           "row": 4,
           "col": 1
         },
         {
-          "name": "Middle Scored",
+          "name": "Middle Cone Scored",
           "type": "spinbox",
+          "max": 21,
           "prefix": "Auto"
         },
         {
-          "name": "Bottom Scored",
+          "name": "Bottom Cone Scored",
           "type": "spinbox",
+          "max": 21,
           "prefix": "Auto"
         },
+
+        {
+          "name": "Top Cube Scored",
+          "type": "spinbox",
+          "max": 16,
+          "prefix": "Auto"
+        },
+        {
+          "name": "Middle Cube Scored",
+          "type": "spinbox",
+          "max": 16,
+          "prefix": "Auto"
+        },
+        {
+          "name": "Bottom Cube Scored",
+          "type": "spinbox",
+          "max": 16,
+          "prefix": "Auto"
+        },
+
+
+
         {
           "type": "spacer",
           "height": 40
+        },
+        {
+          "name": "Left Community",
+          "type": "checkbox",
+          "labelColspan": 2
         },
         {
           "name": "Docked To Charging Station",
@@ -73,26 +114,50 @@
           "rowspan": 4
         },
         {
-          "name": "Top Scored",
+          "name": "Top Cone Scored",
           "type": "spinbox",
+          "max": 21,
           "row": 1,
           "col": 1
         },
         {
-          "name": "Middle Scored",
-          "type": "spinbox"
+          "name": "Middle Cone Scored",
+          "type": "spinbox",
+          "max": 21
         },
         {
-          "name": "Bottom Scored",
-          "type": "spinbox"
+          "name": "Bottom Cone Scored",
+          "type": "spinbox",
+          "max": 21
+        },
+        {
+          "name": "Top Cube Scored",
+          "type": "spinbox",
+          "max": 21
+        },
+        {
+          "name": "Middle Cube Scored",
+          "type": "spinbox",
+          "max": 16
+        },
+        {
+          "name": "Bottom Cube Scored",
+          "type": "spinbox",
+          "max": 16
         },
         {
           "name": "Links Scored",
-          "type": "spinbox"
+          "type": "spinbox",
+          "max": 9
         },
         {
           "name": "Co-Op Bonus",
           "type": "checkbox"
+        },
+        {
+          "name": "Penalties",
+          "type": "spinbox",
+          "labelColspan": 2
         },
         {
           "name": "Defense Rating",
@@ -135,7 +200,7 @@
           "type": "text"
         },
         {
-          "name": "Comments",
+          "name": "Comments (Yellow cards, disabled, low battery, etc.)",
           "type": "textarea"
         }
       ]
