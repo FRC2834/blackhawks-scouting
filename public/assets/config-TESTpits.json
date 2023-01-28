@@ -18,7 +18,12 @@
         {
           "name": "Driver Names",
           "type": "text"
+        },
+        {
+          "name": "Hours/Day of Driving Practice ",
+          "type": "text"
         }
+
       ]
     },
     {
@@ -113,6 +118,13 @@
             "Engaging"
           ]
         },
+
+        {
+          "name": "Parking Strategy (please be specific)",
+          "type": "textarea",
+          "colspan": 3
+        },
+
         {
           "name": "Can Pick Up",
           "type": "multicheckbox",
@@ -180,6 +192,17 @@
             "Sub 2 High"
           ]
         },
+
+        {
+          "name": "Grid Scoring Capability",
+          "type": "multicheckbox",
+          "options": [
+            "Low",
+            "Middle",
+            "High"
+          ]
+        },
+
         {
           "name": "Comments",
           "type": "textarea",
