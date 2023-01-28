@@ -25,15 +25,15 @@
       "name": "Robot",
       "widgets": [
         {
-          "name": "Height",
+          "name": "Height (in inches)",
           "type": "number"
         },
         {
-          "name": "Length",
+          "name": "Length (in inches)",
           "type": "number"
         },
         {
-          "name": "Width",
+          "name": "Width (in inches)",
           "type": "number"
         },
         {
@@ -41,7 +41,7 @@
           "type": "number"
         },
         {
-          "name": "Weight",
+          "name": "Weight (in pounds)",
           "type": "number"
         },
         {
@@ -52,9 +52,18 @@
             "Swerve",
             "Butterfly",
             "Mecanum",
+            "Base Kit",
             "Other"
           ]
         },
+
+
+        {
+          "name": "If other drivetrain. please specify",
+          "type": "text",
+          "colspan": 2
+        },
+
         {
           "name": "Swerve Type",
           "type": "dropdown",
