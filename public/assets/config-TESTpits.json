@@ -117,11 +117,59 @@
           "name": "Can Pick Up",
           "type": "multicheckbox",
           "options": [
-            "Cones",
-            "Tipped Cones",
+            "Normal Cone",
+            "Horizontal Cone",
+            "Vertical Cone 1",
+            "Vertical Cone 2",
+            "Upside Down Cone",
             "Cubes"
           ]
         },
+        {
+          "type": "picture",
+          "file": "Normal Cone.jpg",
+          "height": 50,
+          "row": 4,
+          "col": 3,
+          "rowspan": 4
+        },
+
+        {
+          "type": "picture",
+          "file": "Horizontal Cone.jpg",
+          "height": 50,
+          "row": 4,
+          "col": 4,
+          "rowspan": 4
+        },
+
+        {
+          "type": "picture",
+          "file": "Vertical Cone 1.jpg",
+          "height": 50,
+          "row": 4,
+          "col": 5,
+          "rowspan": 4
+        },
+
+        {
+          "type": "picture",
+          "file": "Vertical Cone 2.jpg",
+          "height": 50,
+          "row": 4,
+          "col": 6,
+          "rowspan": 4
+        },
+
+        {
+          "type": "picture",
+          "file": "Upside Down Cone.jpg",
+          "height": 50,
+          "row": 4,
+          "col": 7,
+          "rowspan": 4
+        },
+
         {
           "name": "Pickup Locations",
           "type": "multicheckbox",
