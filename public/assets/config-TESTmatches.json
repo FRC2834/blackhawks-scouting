@@ -12,6 +12,12 @@
         },
 
         {
+          "name": "Team Number",
+          "type": "text",
+          "colspan": 2
+        },
+
+        {
           "name": "Alliance",
           "type": "radio",
           "options": [
