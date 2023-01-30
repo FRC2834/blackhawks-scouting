@@ -39,20 +39,10 @@
         },
 
         {
-          "type": "picture",
-          "file": "grid.png",
-          "height": 300,
-          "row": 4,
-          "col": 3,
-          "rowspan": 4
-        },
-        {
           "name": "Top Cone Scored",
           "type": "spinbox",
           "max": 21,
-          "prefix": "Auto",
-          "row": 4,
-          "col": 1
+          "prefix": "Auto"
         },
         {
           "name": "Middle Cone Scored",
