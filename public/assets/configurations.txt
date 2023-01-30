@@ -1,4 +1,2 @@
 matches
-pits
 TESTmatches
-TESTpits
