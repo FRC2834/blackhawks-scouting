@@ -175,10 +175,10 @@
           "name": "Parking",
           "type": "radio",
           "options": [
-            "Docked+Engaged",
-            "Docked Only",
+            "None",
             "Parked",
-            "None"
+            "Docked Only",
+            "Docked+Engaged"
           ],
           "default": 3
         },
