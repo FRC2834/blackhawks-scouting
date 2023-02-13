@@ -13,25 +13,25 @@
   },
   "dependencies": {
     "@types/lodash": "^4.14.191",
-    "@vueuse/core": "^9.10.0",
-    "pinia": "^2.0.29",
-    "vue": "^3.2.45",
+    "@vueuse/core": "^9.12.0",
+    "pinia": "^2.0.30",
+    "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.48.1",
-    "@typescript-eslint/parser": "^5.48.1",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/eslint-config-typescript": "^11.0.2",
     "autoprefixer": "^10.4.13",
-    "eslint": "^8.32.0",
+    "eslint": "^8.34.0",
     "eslint-plugin-vue": "^9.9.0",
-    "npm-check-updates": "^16.6.2",
+    "npm-check-updates": "^16.7.4",
     "postcss": "^8.4.21",
     "postcss-nested": "^6.0.0",
-    "typescript": "~4.9.4",
-    "vite": "^4.0.4",
-    "vite-plugin-pwa": "^0.14.1"
+    "typescript": "~4.9.5",
+    "vite": "^4.1.1",
+    "vite-plugin-pwa": "^0.14.4"
   },
   "eslintConfig": {
     "root": true,
