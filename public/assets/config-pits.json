@@ -55,6 +55,15 @@
           ]
         },
         {
+          "name": "Swerve Motor Type",
+          "type": "dropdown",
+          "options": [
+            "Neo",
+            "Falcon",
+            "Cim"
+          ]
+        },
+        {
           "name": "Swerve Type",
           "type": "dropdown",
           "options": [
@@ -64,7 +73,8 @@
             "L3",
             "L4",
             "Neo",
-            "Falcon"
+            "Falcon",
+            "Custom"
           ]
         },
         {
@@ -103,6 +113,23 @@
           ]
         },
         {
+          "name": "Can Score In",
+          "type": "multicheckbox",
+          "options": [
+            "High",
+            "Medium",
+            "Low"
+          ]
+        },
+        {
+          "name": "Ways Robot Scores",
+          "type": "multicheckbox",
+          "options": [
+            "Manual Scoring",
+            "Auto Scoring"
+          ]
+        },
+        {
           "name": "Pickup Locations",
           "type": "multicheckbox",
           "options": [
@@ -112,6 +139,7 @@
             "Sub 2 High"
           ]
         },
+
         {
           "name": "Comments",
           "type": "textarea",
