@@ -15,36 +15,20 @@
           "type": "positions",
           "file": "field.png",
           "height": 200,
-          "colspan": 2
+          "colspan": 2,
+          "allowMultiple": true
         },
         {
           "name": "Left Community",
           "type": "checkbox"
         },
         {
-          "type": "picture",
+          "name": "Grid",
+          "type": "positions",
           "file": "grid.png",
-          "height": 300,
-          "row": 4,
-          "col": 3,
-          "rowspan": 4
-        },
-        {
-          "name": "Top Scored",
-          "type": "spinbox",
-          "prefix": "Auto",
-          "row": 4,
-          "col": 1
-        },
-        {
-          "name": "Middle Scored",
-          "type": "spinbox",
-          "prefix": "Auto"
-        },
-        {
-          "name": "Bottom Scored",
-          "type": "spinbox",
-          "prefix": "Auto"
+          "colspan": 2,
+          "allowMultiple": true,
+          "selectColor": "black"
         },
         {
           "type": "spacer",
@@ -66,44 +50,46 @@
       "name": "Teleop",
       "widgets": [
         {
-          "type": "picture",
-          "file": "grid.png",
-          "height": 300,
-          "col": 3,
-          "rowspan": 4
+          "name": "Picked Up From",
+          "type": "heading",
+          "colspan": 5,
+          "align": "center"
         },
         {
-          "name": "Top Scored",
+          "name": "Ground",
+          "type": "spinbox"
+        },
+        {
+          "name": "Sub 1",
+          "type": "spinbox"
+        },
+        {
+          "type": "spacer",
+          "width": 20,
+          "col": 3
+        },
+        {
+          "name": "Sub 2 Low",
           "type": "spinbox",
-          "row": 1,
-          "col": 1
+          "row": 2,
+          "col": 4
         },
         {
-          "name": "Middle Scored",
-          "type": "spinbox"
+          "name": "Sub 2 High",
+          "type": "spinbox",
+          "col": 4
         },
         {
-          "name": "Bottom Scored",
-          "type": "spinbox"
+          "type": "spacer",
+          "height": 40
         },
         {
-          "name": "Links Scored",
-          "type": "spinbox"
-        },
-        {
-          "name": "Co-Op Bonus",
-          "type": "checkbox"
-        },
-        {
-          "name": "Defense Rating",
-          "type": "dropdown",
-          "options": [
-            "Not Played",
-            "Not Effective",
-            "Average",
-            "Very Effective"
-          ],
-          "labelColspan": 2
+          "name": "Grid",
+          "type": "positions",
+          "file": "grid.png",
+          "colspan": 5,
+          "allowMultiple": true,
+          "selectColor": "black"
         }
       ]
     },
@@ -122,7 +108,7 @@
           "default": 3
         },
         {
-          "name": "Failed To Engage",
+          "name": "Tipped Charging Station",
           "type": "checkbox"
         },
         {
