@@ -28,7 +28,8 @@
           "file": "grid.png",
           "colspan": 2,
           "allowMultiple": true,
-          "selectColor": "black"
+          "selectColor": "black",
+          "prefix": "Auto"
         },
         {
           "type": "spacer",
