@@ -36,7 +36,7 @@
           "type": "number"
         },
         {
-          "name": "Wheel to bumper distance",
+          "name": "Wheel-Bumper Distance",
           "type": "number"
         },
         {
@@ -122,16 +122,16 @@
           ]
         },
         {
-          "name": "Ways Robot Scores",
+          "name": "Scoring Methods",
           "type": "multicheckbox",
           "options": [
-            "Manual Scoring",
-            "Auto Scoring"
+            "Manual",
+            "Auto"
           ]
         },
         {
-          "name": "Pickup Locations",
-          "type": "multicheckbox",
+          "name": "Preferred Pickup Location",
+          "type": "dropdown",
           "options": [
             "Ground",
             "Sub 1",
@@ -139,7 +139,6 @@
             "Sub 2 High"
           ]
         },
-
         {
           "name": "Comments",
           "type": "textarea",

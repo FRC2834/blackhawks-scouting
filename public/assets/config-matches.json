@@ -14,9 +14,7 @@
           "name": "Starting Position",
           "type": "positions",
           "file": "field.png",
-          "height": 200,
-          "colspan": 2,
-          "allowMultiple": true
+          "colspan": 2
         },
         {
           "name": "Left Community",
@@ -33,17 +31,17 @@
         },
         {
           "type": "spacer",
-          "height": 40
+          "height": 20
         },
         {
-          "name": "Docked To Charging Station",
-          "type": "checkbox",
-          "labelColspan": 2
-        },
-        {
-          "name": "Charging Station Engaged",
-          "type": "checkbox",
-          "labelColspan": 2
+          "name": "Charging Station",
+          "type": "dropdown",
+          "options": [
+            "Not Attempted",
+            "Engaged",
+            "Docked",
+            "Failed"
+          ]
         }
       ]
     },
@@ -91,6 +89,18 @@
           "colspan": 5,
           "allowMultiple": true,
           "selectColor": "black"
+        },
+        {
+          "name": "Defense Rating",
+          "type": "dropdown",
+          "options": [
+            "0 (Not Played)",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5 (Very Effective)"
+          ]
         }
       ]
     },
@@ -109,7 +119,7 @@
           "default": 3
         },
         {
-          "name": "Tipped Charging Station",
+          "name": "Failed Charging Station",
           "type": "checkbox"
         },
         {
