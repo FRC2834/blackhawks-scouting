@@ -47,7 +47,7 @@ With internet often being unreliable at competitions, Black Hawks Scouting has t
 
 ### Security
 
-Black Hawks Scouting uses standard obfuscation techniques to make your TBA key more difficult to find by others.
+Black Hawks Scouting uses standard obfuscation techniques to isolate your TBA key from the app's source code. This makes it harder for users to access your key, but because the app runs entirely in the user's browser, it cannot completely hide the key.
 
 The app also supports the security features of your browser, working even with HTTPS, tracking protection, and cookie blocking.
 
