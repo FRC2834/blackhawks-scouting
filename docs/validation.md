@@ -24,9 +24,9 @@ The following widget types support value validation:
 | Text | Length of input |
 | Textarea | Length of input |
 
-**Note**: The Checkbox, Radio, and Spinbox widgets do not support validation because they can constrain their input data. In the case of the Spinbox widget, this is done with the `min` and `max` fields.
+**Note:** The Checkbox, Radio, and Spinbox widgets do not support validation because they can constrain their input data. In the case of the Spinbox widget, this is done with the `min` and `max` fields.
 
-**Note**: With a dropdown, validation can work in combination with the [`defaultOption` field](config.md#dropdown) to create a required dropdown with no initial selected value.
+**Note:** With a dropdown, validation can work in combination with the [`defaultOption` field](config.md#dropdown) to create a required dropdown with no initial selected value.
 
 ## Making a Widget Required
 
