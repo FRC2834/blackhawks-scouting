@@ -34,7 +34,7 @@ import FormPage from "./FormPage.vue";
 import { get, isEmpty } from "lodash";
 import { getError, getTeamName, isFailed, TBAData } from "@/common/tba";
 import { LabelType } from "@/common/types";
-import { ref, Ref } from "vue";
+import { computed, Ref } from "vue";
 import { useConfigStore, useTBAStore, useWidgetsStore } from "@/common/stores";
 
 interface Team {
@@ -44,8 +44,8 @@ interface Team {
   name: string;
 }
 
-const page = ref<InstanceType<typeof FormPage>>();
-defineExpose(page);
+const page = $ref<InstanceType<typeof FormPage>>();
+defineExpose({ title: computed(() => page?.title), setShown: computed(() => page?.setShown) });
 
 const config = useConfigStore();
 const tba = useTBAStore();

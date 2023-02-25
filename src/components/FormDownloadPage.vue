@@ -23,7 +23,7 @@
 import FormPage from "./FormPage.vue";
 import FormGroup from "./FormGroup.vue";
 import { LabelType } from "@/common/types";
-import { ref } from "vue";
+import { computed } from "vue";
 import { useConfigStore, useWidgetsStore } from "@/common/stores";
 import { useRouter } from "vue-router";
 
@@ -32,8 +32,8 @@ const widgets = useWidgetsStore();
 
 const router = useRouter();
 
-const page = ref<InstanceType<typeof FormPage>>();
-defineExpose(page);
+const page = $ref<InstanceType<typeof FormPage>>();
+defineExpose({ title: computed(() => page?.title), setShown: computed(() => page?.setShown) });
 
 function clearForm() {
   widgets.save();
