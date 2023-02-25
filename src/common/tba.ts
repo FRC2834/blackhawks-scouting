@@ -2,7 +2,7 @@ import { get, has } from "lodash";
 
 export interface TBAData {
   readonly code: string; // The event code
-  readonly data: unknown; // The data received fron the TBA API
+  readonly data: unknown; // The data received fromthe TBA API
 }
 
 // Checks if a TBA data object contains an error message.
