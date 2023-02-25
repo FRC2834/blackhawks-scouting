@@ -54,6 +54,8 @@ function deleteData() {
 function downloadData() {
   if (selectedEntry == undefined) return;
 
+  if (downloadLink === undefined) return; // Make sure the link exists
+
   // Generate the download link for the selected records, then trigger the download
   // If there are no records selected, they will all be included in the generated file
   downloadLink.href = widgets.makeDownloadLink({ header: selectedEntry.header, values: filterRecords(true) });

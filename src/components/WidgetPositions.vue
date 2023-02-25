@@ -4,6 +4,7 @@
 </template>
 
 <script setup lang="ts">
+import { get } from "lodash";
 import { useWidgetsStore } from "@/common/stores";
 import { watch } from "vue";
 import { WidgetData } from "@/common/types";
@@ -24,7 +25,7 @@ const selections = $ref(new Array<Point>());
 const canvas = $ref<HTMLCanvasElement>();
 
 // Scales a coordinate on the canvas between 0 and 1 using the image dimensions.
-const divide = (val: number, dimension: DimensionName) => (val / canvas[dimension]).toFixed(3);
+const divide = (val: number, dimension: DimensionName) => (val / (get(canvas, dimension) ?? 1)).toFixed(3);
 
 // The exported value
 const value = $computed(() => selections.map(c => `${divide(c.x, "width")},${divide(c.y, "height")}`));
@@ -44,6 +45,8 @@ watch(selections, draw);
 
 // Redraws the canvas.
 function draw() {
+  if (!canvas) return;
+
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
 
@@ -63,6 +66,8 @@ function draw() {
 
 // Sets the dimensions of the canvas based on the image dimensions and configuration data.
 function setDimensions(a: DimensionName, b: DimensionName) {
+  if (!canvas) return;
+
   const dims = { width: props.data.width ?? 0, height: props.data.height ?? 0 };
 
   if (dims[a] > 0) canvas[a] = dims[a];

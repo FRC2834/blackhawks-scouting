@@ -85,9 +85,10 @@ const currentMatch = $computed(() => {
   //
   // Qualifiers and finals only have a match number, so the set number will always be 1 for those entries.
   // Sorting match entries by their computed indices will put them in the correct order.
-  const getNumber = (matchObj: unknown) => (get(matchObj, "match_number") * 10) + get(matchObj, "set_number");
+  const getNumber = (matchObj: unknown, key: string) => get(matchObj, key) ?? 0;
+  const getIdx = (matchObj: unknown) => (getNumber(matchObj, "match_number") * 10) + getNumber(matchObj, "set_number");
 
-  matchList.sort((first: unknown, second: unknown) => Math.sign(getNumber(first) - getNumber(second)));
+  matchList.sort((first: unknown, second: unknown) => Math.sign(getIdx(first) - getIdx(second)));
   return matchList[matchNumber - 1] ?? null;
 });
 
@@ -98,7 +99,7 @@ const teamsList = $computed(() => {
 
   for (const color of ["Red", "Blue"]) {
     // The list of teams playing on one alliance
-    const teamKeys: string[] = get(currentMatch, `alliances.${color.toLowerCase()}.team_keys`);
+    const teamKeys = get(currentMatch, `alliances.${color.toLowerCase()}.team_keys`) as unknown as string[];
 
     for (const [i, element] of teamKeys.entries()) {
       // Get info for each team
