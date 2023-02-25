@@ -3,22 +3,35 @@
   "logo": "logo.png",
   "pages": [
     {
-      "name": "Setup+Autonomous",
+      "name": "Setup",
       "widgets": [
         {
           "name": "Scouter Name",
           "type": "text",
-          "colspan": 2
+          "validation": {
+            "comparison": "greater",
+            "value": 0
+          }
         },
         {
           "name": "Starting Position",
           "type": "positions",
-          "file": "field.png",
-          "colspan": 2
-        },
+          "file": "field.png"
+        }
+      ]
+    },
+    {
+      "name": "Autonomous",
+      "widgets": [
         {
           "name": "Left Community",
           "type": "checkbox"
+        },
+        {
+          "name": "Co-Op Nodes",
+          "type": "label",
+          "align": "center",
+          "col": 2
         },
         {
           "name": "Scored Game Pieces",
@@ -65,7 +78,8 @@
         {
           "name": "Picked Up From",
           "type": "heading",
-          "colspan": 5,
+          "col": 2,
+          "colspan": 2,
           "align": "center"
         },
         {
@@ -77,29 +91,31 @@
           "type": "spinbox"
         },
         {
-          "type": "spacer",
-          "width": 20,
-          "col": 3
-        },
-        {
           "name": "Sub 2 Low",
           "type": "spinbox",
           "row": 2,
-          "col": 4
+          "col": 3
         },
         {
           "name": "Sub 2 High",
           "type": "spinbox",
-          "col": 4
+          "col": 3
         },
         {
           "type": "spacer",
           "height": 40
         },
         {
+          "name": "Co-Op Nodes",
+          "type": "label",
+          "align": "center",
+          "col": 2,
+          "colspan": 3
+        },
+        {
           "name": "Scored Game Pieces",
           "type": "togglegrid",
-          "colspan": 5,
+          "colspan": 3,
           "width": 9,
           "height": 2,
           "colors": [
@@ -110,7 +126,7 @@
         {
           "name": "Hybrid Nodes",
           "type": "togglegrid",
-          "colspan": 5,
+          "colspan": 3,
           "width": 9,
           "height": 1,
           "colors": [
@@ -122,6 +138,7 @@
         {
           "name": "Defense Rating",
           "type": "dropdown",
+          "colspan": 2,
           "options": [
             "0 (Not Played)",
             "1",
