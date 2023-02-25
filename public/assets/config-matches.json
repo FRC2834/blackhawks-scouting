@@ -21,13 +21,27 @@
           "type": "checkbox"
         },
         {
-          "name": "Grid",
-          "type": "positions",
-          "file": "grid.png",
-          "colspan": 2,
-          "allowMultiple": true,
-          "selectColor": "black",
-          "prefix": "Auto"
+          "name": "Scored Game Pieces",
+          "type": "togglegrid",
+          "prefix": "Auto",
+          "width": 9,
+          "height": 2,
+          "colors": [
+            "red",
+            "green"
+          ]
+        },
+        {
+          "name": "Hybrid Nodes",
+          "type": "togglegrid",
+          "prefix": "Auto",
+          "width": 9,
+          "height": 1,
+          "colors": [
+            "black",
+            "yellow",
+            "purple"
+          ]
         },
         {
           "type": "spacer",
@@ -83,12 +97,27 @@
           "height": 40
         },
         {
-          "name": "Grid",
-          "type": "positions",
-          "file": "grid.png",
+          "name": "Scored Game Pieces",
+          "type": "togglegrid",
           "colspan": 5,
-          "allowMultiple": true,
-          "selectColor": "black"
+          "width": 9,
+          "height": 2,
+          "colors": [
+            "red",
+            "green"
+          ]
+        },
+        {
+          "name": "Hybrid Nodes",
+          "type": "togglegrid",
+          "colspan": 5,
+          "width": 9,
+          "height": 1,
+          "colors": [
+            "black",
+            "yellow",
+            "purple"
+          ]
         },
         {
           "name": "Defense Rating",
