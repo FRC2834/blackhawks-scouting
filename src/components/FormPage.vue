@@ -1,6 +1,7 @@
 <template>
   <div v-show="show">
     <h1 class="page-heading">{{ config.data.heading ?? "Scouting" }}</h1>
+    <h3 v-if="teamDesc?.length > 0" class="page-heading">Team: {{ teamDesc }}</h3>
     <img v-if="config.data.logo" :src="absoluteLogoPath" alt="Cannot load logo file" class="center" />
     <h2 class="page-heading">{{ title }}</h2>
     <div class="grid">
@@ -18,6 +19,8 @@ const props = defineProps<{
 
 const config = useConfigStore();
 const widgets = useWidgetsStore();
+
+const teamDesc = $computed(() => widgets.values.find(i => i.name == "Team")?.value.replaceAll(",", ", "));
 
 // Get the full path to the logo image
 const absoluteLogoPath = $computed(() => `${import.meta.env.BASE_URL}assets/${config.data.logo}`);
