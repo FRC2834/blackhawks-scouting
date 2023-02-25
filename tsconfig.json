@@ -22,7 +22,8 @@
       "dom",
       "dom.iterable",
       "scripthost"
-    ]
+    ],
+    "types": ["@vue-macros/reactivity-transform/macros-global"]
   },
   "include": [
     "src/**/*.ts",

@@ -22,6 +22,7 @@
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
     "@vitejs/plugin-vue": "^4.0.0",
+    "@vue-macros/reactivity-transform": "^0.2.4",
     "@vue/eslint-config-typescript": "^11.0.2",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.34.0",
@@ -31,8 +32,8 @@
     "postcss-nested": "^6.0.1",
     "typescript": "~4.9.5",
     "vite": "^4.1.4",
-    "vite-plugin-pwa": "^0.14.4",
-    "vite-plugin-live-reload": "3.0.1"
+    "vite-plugin-live-reload": "3.0.1",
+    "vite-plugin-pwa": "^0.14.4"
   },
   "eslintConfig": {
     "root": true,
