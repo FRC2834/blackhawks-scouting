@@ -47,6 +47,7 @@ export interface WidgetData {
   lapLabel?: string;
   stopLabel?: string;
   maxLaps?: number;
+  colors?: string[];
   validation?: ValidationData;
 }
 

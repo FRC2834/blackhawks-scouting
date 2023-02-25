@@ -23,6 +23,7 @@ import WidgetSpacer from "@/components/WidgetSpacer.vue";
 import WidgetSpinbox from "@/components/WidgetSpinbox.vue";
 import WidgetStopwatch from "@/components/WidgetStopwatch.vue";
 import WidgetTextarea from "@/components/WidgetTextarea.vue";
+import WidgetToggleGrid from "@/components/WidgetToggleGrid.vue";
 
 const props = defineProps<{
   id: string,
@@ -59,7 +60,8 @@ const info = {
   spacer:        { class: WidgetSpacer,        label: LabelType.None,      required: [] },
   spinbox:       { class: WidgetSpinbox,       label: LabelType.LabelTag,  required: ["name"] },
   stopwatch:     { class: WidgetStopwatch,     label: LabelType.PlainText, required: ["name"] },
-  textarea:      { class: WidgetTextarea,      label: LabelType.LabelTag,  required: ["name"] }
+  textarea:      { class: WidgetTextarea,      label: LabelType.LabelTag,  required: ["name"] },
+  togglegrid:    { class: WidgetToggleGrid,    label: LabelType.PlainText, required: ["width", "height"] }
 }[props.data.type];
 
 if (info === undefined)
