@@ -4,7 +4,8 @@
       <button @click="switchPage(shown - 1)" :disabled="shown === 0">&#10096; Prev</button>
       <button @click="switchPage(shown + 1)" :disabled="shown === pages.length - 1">Next &#10095;</button>
     </div>
-    <div v-for="[i, page] of pages.entries()" :key="i" :class="{ link: true, active: i === shown }" @click="switchPage(i)">
+    <div v-for="[i, page] of pages.entries()" :key="i" :class="{ link: true, active: i === shown }"
+      @click="switchPage(i)">
       {{ unref(page).title }}
     </div>
   </nav>
