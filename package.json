@@ -1,10 +1,10 @@
 {
   "name": "blackhawks-scouting",
-  "version": "0.1.0",
+  "version": "2023.1 Prerelease",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "serve": "vite preview",
     "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore --fix src",
@@ -49,7 +49,8 @@
       "$customRef": "readonly",
       "$ref": "readonly",
       "$shallowRef": "readonly",
-      "$toRef": "readonly"
+      "$toRef": "readonly",
+      "APP_VERSION": "readonly"
     },
     "parserOptions": {
       "ecmaVersion": "latest"

@@ -13,9 +13,12 @@
       <RouterLink :to="{ name: 'inspector' }">Data Inspector</RouterLink>
     </li>
   </ul>
+  <p style="margin-top: 50px">Version: {{ version }}</p>
 </template>
 
 <script setup lang="ts">
+const version = APP_VERSION;
+
 // Fetch configurations list
 const fetchResult = await fetch(`${import.meta.env.BASE_URL}assets/configurations.txt`);
 

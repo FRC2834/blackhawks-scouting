@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 import autoprefixer from "autoprefixer";
 import { defineConfig } from "vite";
 import { fileURLToPath, URL } from "url";
@@ -13,6 +15,9 @@ export default defineConfig({
     postcss: {
       plugins: [autoprefixer, postcssNested]
     }
+  },
+  define: {
+    APP_VERSION: JSON.stringify(process.env.npm_package_version)
   },
   plugins: [
     ReactivityTransform(),
