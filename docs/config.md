@@ -27,6 +27,13 @@ pits
 
 Notice how the `config-` and `.json` components of each file name are not included in the list.
 
+## Handling Updates
+
+When you update your copy of Black Hawks Scouting, GitHub will pull changes in the stock forms (`config-matches.json` and `config-pits.json`) into your fork. If you have your own changes in these files and don't want this to happen, you may do one of the following:
+
+- Save a copy of these files before updating, then restore them after updating
+- Define your configurations in new files (without modifying the stock configurations), and remove the stock forms from `configurations.txt` if desired
+
 ## Referencing Assets
 
 Some configuration options allow referencing an asset file, such as an image. The file must be in the `assets` directory; subdirectories under `assets` are also allowed.
