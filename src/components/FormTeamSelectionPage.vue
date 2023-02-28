@@ -9,9 +9,8 @@
     <FormGroup :label-type="LabelType.LabelTag" id="match-level-input" name="Match Level">
       <select id="match-level-input" v-model.number="matchLevel" :disabled="config.data.forceQualifiers">
         <option value="0">Qualifications</option>
-        <option value="1">Quarterfinals</option>
-        <option value="2">Semifinals</option>
-        <option value="3">Finals</option>
+        <option value="1">Playoffs</option>
+        <option value="2">Finals</option>
       </select>
     </FormGroup>
     <FormGroup :label-type="LabelType.LabelTag" id="match-input" name="Match Number">
@@ -68,7 +67,7 @@ const currentMatch = $computed(() => {
   if (!Array.isArray(matches)) return null;
 
   // Get the matches with the selected level
-  const matchLevelCodes = ["qm", "qf", "sf", "f"];
+  const matchLevelCodes = ["qm", "sf", "f"];
   const matchList = matches.filter((match: unknown) => get(match, "comp_level") === matchLevelCodes[matchLevel]);
 
   // When ordering matches, the match number takes priority over the set number.

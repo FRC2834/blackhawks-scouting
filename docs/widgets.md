@@ -147,9 +147,8 @@ Allows selection of a match and team. If `skipTeamSelection` is `false`, this pa
 - `EventKey`: The Blue Alliance event key entered.
 - `MatchLevel`: The match level:
   - Qualifications: `0`
-  - Quarterfinals: `1`
-  - Semifinals: `2`
-  - Finals: `3`
+  - Playoffs: `1`
+  - Finals: `2`
 - `MatchNumber`: The match number.
 - `Team`: The team information in the following order, delimited by commas:
   - Alliance color (`Red` or `Blue`)
