@@ -70,24 +70,12 @@ const currentMatch = $computed(() => {
   const matchLevelCodes = ["qm", "sf", "f"];
   const matchList = matches.filter((match: unknown) => get(match, "comp_level") === matchLevelCodes[matchLevel]);
 
-  // When ordering matches, the match number takes priority over the set number.
-  // Quarterfinals and semifinals are described as: (Quarters|Semis) [X] Match [Y]
-  // => [X]: Set number (Is always under 10)
-  // => [Y]: Match number
-  // => Example order:                      Computed index ([Y] * 10 + [X]):
-  //    1. Quarters 1 Match 1               11
-  //    2. Quarters 2 Match 1               12
-  //    3. Quarters 1 Match 2               21
-  //    4. Quarters 2 Match 2               22
-  //    5. Quarters 1 Match 3 (Tiebreaker)  31
-  //    ...
-  //
-  // Qualifiers and finals only have a match number, so the set number will always be 1 for those entries.
-  // Sorting match entries by their computed indices will put them in the correct order.
-  const getNumber = (matchObj: unknown, key: string) => get(matchObj, key) ?? 0;
-  const getIdx = (matchObj: unknown) => (getNumber(matchObj, "match_number") * 10) + getNumber(matchObj, "set_number");
+  // When ordering matches, the match number takes priority over the set number
+  // Sorting according to multiple values: https://stackoverflow.com/a/46256174
+  const getNumber = (matchObj: unknown, key: string) => get(matchObj, key + "_number") ?? 1;
+  const diff = (obj1: unknown, obj2: unknown, key: string) => getNumber(obj1, key) - getNumber(obj2, key);
 
-  matchList.sort((first: unknown, second: unknown) => Math.sign(getIdx(first) - getIdx(second)));
+  matchList.sort((first: unknown, second: unknown) => diff(first, second, "match") || diff(first, second, "set"));
   return matchList[matchNumber - 1] ?? null;
 });
 
