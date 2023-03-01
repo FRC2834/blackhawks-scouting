@@ -87,29 +87,18 @@
       "name": "Match Play",
       "widgets": [
         {
-          "name": "Dock Time",
+          "name": "Cycle Time",
           "type": "number"
-        },
-        {
-          "name": "Cycle time",
-          "type": "number"
-        },
-        {
-          "name": "Parking",
-          "type": "multicheckbox",
-          "options": [
-            "Parking",
-            "Docking",
-            "Engaging"
-          ]
         },
         {
           "name": "Can Pick Up",
           "type": "multicheckbox",
           "options": [
-            "Cones",
-            "Tipped Cones",
-            "Cubes"
+            "Ground Upright Cones",
+            "Ground Tipped Cones",
+            "Ground Cubes",
+            "Sub 1 (Direct)",
+            "Sub 2 High"
           ]
         },
         {
@@ -137,7 +126,8 @@
             "Sub 1",
             "Sub 2 Low",
             "Sub 2 High"
-          ]
+          ],
+          "defaultOption": true
         },
         {
           "name": "Comments",
