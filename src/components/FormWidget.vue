@@ -61,7 +61,7 @@ const info = {
   spinbox:       { class: WidgetSpinbox,       label: LabelType.LabelTag,  required: ["name"] },
   stopwatch:     { class: WidgetStopwatch,     label: LabelType.PlainText, required: ["name"] },
   textarea:      { class: WidgetTextarea,      label: LabelType.LabelTag,  required: ["name"] },
-  togglegrid:    { class: WidgetToggleGrid,    label: LabelType.PlainText, required: ["width", "height"] }
+  togglegrid:    { class: WidgetToggleGrid,    label: LabelType.PlainText, required: ["width", "height", "colors"] }
 }[props.data.type];
 
 if (info === undefined)
