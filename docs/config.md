@@ -212,23 +212,37 @@ The number of rows and columns the widget takes up. See [Grid Layout](grid.md) f
 
 Certain widget types may also require additional fields:
 
+#### All widgets except Picture, Spacer
+
 `name`: string
 
 The name of the widget, which displays as a label next to it and identifies it in the exported data.
 
-Required by all widgets except Picture and Spacer.
+#### Picture, Positions
 
 `file`: filepath
 
-The path of an asset file. Currently, this option is only used by Picture and Positions which expect an image file to display.
+The path of an image file to display.
 
-Required by Picture and Positions.
+#### Dropdown, Radio, Multi Checkbox
 
 `options`: array[string]
 
-Different options to present to the user in widgets with predefined selections. Depending on the widget type, the user may be able to select one or multiple options.
+The list of options to present to the user. Dropdown and Radio require exactly one selection, while Multi Checkbox allows the user to select any number of options.
 
-Required by Dropdown, Radio, and MultiCheckbox.
+#### Toggle Grid
+
+`width`: number
+
+The number of columns in the grid.
+
+`height`: number
+
+The number of rows in the grid.
+
+`colors`: array[string]
+
+The list of colors to cycle through in a grid cell when it is clicked. Any CSS color value (hex, RGB, color name) may be used for each array element.
 
 ### Type-Specific Optional Fields
 
@@ -266,7 +280,7 @@ The radius of the circle displayed on each selected point, in pixels.
 
 `selectColor`: string
 
-The color of the circle displayed on each selected point. Any CSS color value (hex, RGB, color name) may be used.
+The color of the circle displayed on each selected point. Any CSS color value may be used.
 
 #### Radio
 
