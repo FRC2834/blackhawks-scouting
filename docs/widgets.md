@@ -138,6 +138,14 @@ A stopwatch widget. Can be used to record elapsed time and laps.
 
 **Exports:** Each lap duration delimited by spaces, followed by the total elapsed time at the end. (If no laps were recorded, only the elapsed time is present.)
 
+### Toggle Grid
+
+A grid with clickable squares. When a square is clicked, it cycles through a list of given colors.
+
+**Type String:** `togglegrid`
+
+**Exports:** The color index of each square, separated with spaces. The grid is flattened, so rows are concatenated in the output string.
+
 ### Team Selection Page
 
 Allows selection of a match and team. If `skipTeamSelection` is `false`, this page appears as the first page on the scouting form.
