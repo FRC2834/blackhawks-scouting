@@ -2,13 +2,13 @@
   <table>
     <thead>
       <tr>
-        <th></th>
-        <th v-for="i of props.data.width" :key="i">{{ i }}</th>
+        <th scope="col"></th>
+        <th scope="col" v-for="i of props.data.width" :key="i">{{ i }}</th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="[i, row] of cells.entries()" :key="i">
-        <td>{{ i + 1 }}</td>
+        <th scope="row">{{ i + 1 }}</th>
         <td v-for="[j, col] of row.entries()" :key="j" @click="onCellClicked(i, j)" class="toggle-cell"
           :style="{ backgroundColor: data.colors![col] }">{{ col }}</td>
       </tr>
