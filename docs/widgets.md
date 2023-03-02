@@ -2,7 +2,7 @@
 
 ## Overview
 
-Black Hawks Scouting provides numerous widgets as well as a [layout system](grid.md), allowing you to create flexible and intuitive user interfaces for your scouting forms.
+Black Hawks Scouting provides numerous widgets as well as a [layout system](grid.md), allowing you to create flexible and intuitive user interfaces for your scouting forms. View the [example configuration](https://frc2834.github.io/blackhawks-scouting/#/form?name=example) to see each widget as they appear in the app.
 
 A widget's type, size, and position are specified in its [JSON object](config.md#widget-objects).
 
@@ -11,8 +11,6 @@ The type of a widget determines how its data is exported in the CSV file. In add
 ## Basic Widgets
 
 These are widgets that take a single value.
-
-![Basic Widgets](img/widgets-basic.png)
 
 ### Checkbox
 
@@ -58,8 +56,6 @@ A large textbox input. Multiple lines are allowed, can be resized.
 
 These are widgets that present a set of selections to the user.
 
-![Basic Widgets](img/widgets-multiselect.png)
-
 ### Dropdown, Radio Button
 
 A dropdown or radio button widget. The user may only select one option in the list.
@@ -82,8 +78,6 @@ A group of checkboxes. Similar to Radio Button, except the user may select multi
 
 These are widgets that are only used for display purposes. They do not export data.
 
-![Basic Widgets](img/widgets-display.png)
-
 ### Heading, Label
 
 Text widgets. Label displays the same as a standard widget label, while Heading displays larger. The text in the widget's `name` field will be what is displayed.
@@ -105,8 +99,6 @@ A widget to act as a separator. Takes up a grid cell, but is invisible.
 ## Misc. Widgets
 
 These are widgets that do not fall into any of the other categories.
-
-![Basic Widgets](img/widgets-misc.png)
 
 ### Positions
 
