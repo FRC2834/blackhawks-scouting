@@ -1,0 +1,111 @@
+{
+  "heading": "Example Configuration",
+  "skipTeamSelection": true,
+  "pages": [
+    {
+      "name": "Basic Widgets",
+      "widgets": [
+        {
+          "name": "Checkbox",
+          "type": "checkbox"
+        },
+        {
+          "name": "Number",
+          "type": "number"
+        },
+        {
+          "name": "Spinbox",
+          "type": "spinbox"
+        },
+        {
+          "name": "Text",
+          "type": "text"
+        },
+        {
+          "name": "Textarea",
+          "type": "textarea"
+        }
+      ]
+    },
+    {
+      "name": "Multi-Select Widgets",
+      "widgets": [
+        {
+          "name": "Dropdown",
+          "type": "dropdown",
+          "options": [
+            "Option 1",
+            "Option 2",
+            "Option 3"
+          ]
+        },
+        {
+          "name": "Multi Checkbox",
+          "type": "multicheckbox",
+          "options": [
+            "Option 1",
+            "Option 2",
+            "Option 3"
+          ]
+        },
+        {
+          "name": "Radio",
+          "type": "radio",
+          "options": [
+            "Option 1",
+            "Option 2",
+            "Option 3"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Display Widgets",
+      "widgets": [
+        {
+          "name": "Heading",
+          "type": "heading"
+        },
+        {
+          "name": "Label",
+          "type": "label"
+        },
+        {
+          "type": "spacer",
+          "height": 40
+        },
+        {
+          "type": "picture",
+          "file": "demo.png"
+        }
+      ]
+    },
+    {
+      "name": "Misc. Widgets",
+      "widgets": [
+        {
+          "name": "Positions",
+          "type": "positions",
+          "file": "demo.png",
+          "allowMultiple": true
+        },
+        {
+          "name": "Stopwatch",
+          "type": "stopwatch"
+        },
+        {
+          "name": "Toggle Grid",
+          "type": "togglegrid",
+          "width": 5,
+          "height": 4,
+          "colors": [
+            "green",
+            "#1338BE",
+            "rgb(141, 2, 31)",
+            "#888"
+          ]
+        }
+      ]
+    }
+  ]
+}
