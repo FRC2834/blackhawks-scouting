@@ -1,9 +1,9 @@
 <template>
-  <div v-if="hasLabel" :style="{ gridArea: getGridArea(0) }" class="label">
+  <div v-if="hasLabel" :style="{ gridArea: getGridArea(0) }" class="label" v-show="show">
     <span v-if="labelType === LabelType.PlainText">{{ name }}</span>
     <label v-else :for="id">{{ name }}</label>
   </div>
-  <div :style="{ gridArea: getGridArea(hasLabel ? 1 : 0), justifySelf: align }" class="widget">
+  <div :style="{ gridArea: getGridArea(hasLabel ? 1 : 0), justifySelf: align }" class="widget" v-show="show">
     <slot></slot>
   </div>
 </template>
@@ -23,11 +23,13 @@ const props = withDefaults(defineProps<{
   col?: number,
   rowspan?: number,
   colspan?: number,
-  labelColspan?: number
+  labelColspan?: number,
+  show?: boolean
 }>(), {
   rowspan: 1,
   colspan: 1,
-  labelColspan: 1
+  labelColspan: 1,
+  show: true
 });
 
 const hasLabel = $computed(() => props.labelType != LabelType.None);

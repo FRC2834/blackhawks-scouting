@@ -2,6 +2,12 @@
 
 This document tracks the changes between Black Hawks Scouting versions. Dates are written in the MM/DD/YYYY format.
 
+## 2023.2 (Unreleased)
+
+### Additions
+
+- Added a manual selection option to the Team Selection page that does not use The Blue Alliance data.
+
 ## 2023.1 (03/01/2023)
 
 ### Additions
