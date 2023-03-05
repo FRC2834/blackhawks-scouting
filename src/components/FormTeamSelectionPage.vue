@@ -74,8 +74,8 @@ const selectedTeam = $ref(0);
 const teamNumberManual = $ref(0);
 const teamColorManual = $ref("Red");
 
-const teamsLoadStatus = $ref("");
-const matchesLoadStatus = $ref("");
+let teamsLoadStatus = $ref("");
+let matchesLoadStatus = $ref("");
 
 const teams = $ref<unknown[]>();
 const matches = $ref<unknown[]>();
@@ -149,7 +149,10 @@ function updateStatus(msg: Ref<string>, saveVar: Ref<unknown>, { code, data }: T
 
 // Loads team and match data from the event key the user entered.
 function loadTBAData() {
+  teamsLoadStatus = "Loading...";
   tba.load(eventKey, "teams").then(value => updateStatus($$(teamsLoadStatus), $$(teams), value));
+
+  matchesLoadStatus = "Loading...";
   tba.load(eventKey, "matches").then(value => updateStatus($$(matchesLoadStatus), $$(matches), value));
 }
 </script>

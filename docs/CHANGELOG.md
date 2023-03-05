@@ -8,6 +8,11 @@ This document tracks the changes between Black Hawks Scouting versions. Dates ar
 
 - Added a manual selection option to the Team Selection page that does not use The Blue Alliance data.
 
+
+### Improvements
+
+- In TBA mode, the Team Selection page now shows a "Loading..." status to better communicate when data is loading or completed.
+
 ## 2023.1 (03/01/2023)
 
 ### Additions
