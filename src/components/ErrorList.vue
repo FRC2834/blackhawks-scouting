@@ -73,7 +73,8 @@ const label = $computed(() => (props.errors.length === 1) ? "Error" : "Errors");
 
 .error-entry {
   margin: 4px 0;
-  white-space: nowrap;
+  font-family: monospace;
+  white-space: pre;
 
   &::before {
     vertical-align: middle;
