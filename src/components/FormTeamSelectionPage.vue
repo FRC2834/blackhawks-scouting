@@ -47,7 +47,7 @@ import FormGroup from "./FormGroup.vue";
 import FormPage from "./FormPage.vue";
 import { get, isEmpty } from "lodash";
 import { getError, getTeamName, isFailed, TBAData } from "@/common/tba";
-import { LabelType } from "@/common/types";
+import { LabelType } from "@/common/shared";
 import { computed, Ref } from "vue";
 import { useConfigStore, useTBAStore, useWidgetsStore } from "@/common/stores";
 

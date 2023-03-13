@@ -3,10 +3,10 @@
 </template>
 
 <script setup lang="ts">
-import { WidgetData } from "@/common/types";
+import { Widget, WidgetPicture } from "@/config";
 
 const props = defineProps<{
-  data: WidgetData,
+  data: Widget & WidgetPicture,
   currentId: string
 }>();
 

@@ -29,10 +29,10 @@
 
 <script setup lang="ts">
 import { useWidgetsStore } from "@/common/stores";
-import { WidgetData } from "@/common/types";
+import { Widget, WidgetStopwatch } from "@/config";
 
 const props = defineProps<{
-  data: WidgetData,
+  data: Widget & WidgetStopwatch,
   currentId: string
 }>();
 

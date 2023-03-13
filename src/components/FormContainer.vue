@@ -31,6 +31,10 @@ if (!fetchResult.ok)
 
 config.data = await fetchResult.json();
 
+// Validate config data against JSON schema
+const t = config.validateSchema();
+if (t.length > 0) throw t;
+
 // Reset widget values array
 widgets.values = [];
 

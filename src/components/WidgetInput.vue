@@ -4,10 +4,10 @@
 
 <script setup lang="ts">
 import { useWidgetsStore } from "@/common/stores";
-import { WidgetData } from "@/common/types";
+import { Widget, WidgetCheckbox, WidgetNumber, WidgetText } from "@/config";
 
 const props = defineProps<{
-  data: WidgetData,
+  data: Widget & (WidgetCheckbox | WidgetNumber | WidgetText),
   currentId: string
 }>();
 
@@ -18,6 +18,6 @@ const defaultValues = new Map<string, unknown>([
   ["text", ""]
 ]);
 
-const value = $ref(defaultValues.get(props.data.type) ?? "");
+const value = $ref(defaultValues.get(props.data.type));
 defineExpose({ index: useWidgetsStore().addWidgetValue(props.data, $$(value)) });
 </script>

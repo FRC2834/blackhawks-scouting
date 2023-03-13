@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { LabelType } from "@/common/types";
+import { LabelType } from "@/common/shared";
 import { useWidgetsStore } from "@/common/stores";
 
 type PosName = "row" | "col";

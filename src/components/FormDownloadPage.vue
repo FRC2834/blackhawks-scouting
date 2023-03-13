@@ -22,7 +22,7 @@
 <script setup lang="ts">
 import FormPage from "./FormPage.vue";
 import FormGroup from "./FormGroup.vue";
-import { LabelType } from "@/common/types";
+import { LabelType } from "@/common/shared";
 import { computed } from "vue";
 import { useConfigStore, useWidgetsStore } from "@/common/stores";
 import { useRouter } from "vue-router";

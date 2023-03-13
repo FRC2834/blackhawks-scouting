@@ -8,9 +8,10 @@
 
 <script setup lang="ts">
 import FormGroup from "@/components/FormGroup.vue";
-import { has, pick } from "lodash";
-import { LabelType, WidgetData } from "@/common/types";
+import { pick } from "lodash";
+import { LabelType, validationFuncs, validationFuncsRange } from "@/common/shared";
 import { useWidgetsStore } from "@/common/stores";
+import { Widget } from "@/config";
 import WidgetDropdown from "@/components/WidgetDropdown.vue";
 import WidgetHeading from "@/components/WidgetHeading.vue";
 import WidgetInput from "@/components/WidgetInput.vue";
@@ -27,7 +28,7 @@ import WidgetToggleGrid from "@/components/WidgetToggleGrid.vue";
 
 const props = defineProps<{
   id: string,
-  data: WidgetData
+  data: Widget
 }>();
 
 defineExpose({ id: props.id, type: props.data.type, validate });
@@ -37,39 +38,28 @@ interface WidgetDesc {
 }
 
 const widgets = useWidgetsStore();
-
 const desc = $ref<WidgetDesc>();
-
-const widgetName = $computed(() => `<${props.data.name ?? "Unnamed widget"}>`);
-const widgetType = $computed(() => `"${props.data.type ?? "[None]"}"`);
 
 let border = $ref("none");
 
 // Table containing metadata for each widget type
 const info = {
-  dropdown:      { class: WidgetDropdown,      label: LabelType.LabelTag,  required: ["name", "options"] },
-  heading:       { class: WidgetHeading,       label: LabelType.None,      required: ["name"] },
-  label:         { class: WidgetLabel,         label: LabelType.None,      required: ["name"] },
-  text:          { class: WidgetInput,         label: LabelType.LabelTag,  required: ["name"] },
-  number:        { class: WidgetInput,         label: LabelType.LabelTag,  required: ["name"] },
-  checkbox:      { class: WidgetInput,         label: LabelType.LabelTag,  required: ["name"] },
-  multicheckbox: { class: WidgetMultiCheckbox, label: LabelType.PlainText, required: ["name", "options"] },
-  picture:       { class: WidgetPicture,       label: LabelType.None,      required: ["file"] },
-  positions:     { class: WidgetPositions,     label: LabelType.PlainText, required: ["name", "file"] },
-  radio:         { class: WidgetRadio,         label: LabelType.PlainText, required: ["name", "options"] },
-  spacer:        { class: WidgetSpacer,        label: LabelType.None,      required: [] },
-  spinbox:       { class: WidgetSpinbox,       label: LabelType.LabelTag,  required: ["name"] },
-  stopwatch:     { class: WidgetStopwatch,     label: LabelType.PlainText, required: ["name"] },
-  textarea:      { class: WidgetTextarea,      label: LabelType.LabelTag,  required: ["name"] },
-  togglegrid:    { class: WidgetToggleGrid,    label: LabelType.PlainText, required: ["width", "height", "colors"] }
+  dropdown:      { class: WidgetDropdown,      label: LabelType.LabelTag  },
+  heading:       { class: WidgetHeading,       label: LabelType.None,     },
+  label:         { class: WidgetLabel,         label: LabelType.None,     },
+  text:          { class: WidgetInput,         label: LabelType.LabelTag  },
+  number:        { class: WidgetInput,         label: LabelType.LabelTag  },
+  checkbox:      { class: WidgetInput,         label: LabelType.LabelTag  },
+  multicheckbox: { class: WidgetMultiCheckbox, label: LabelType.PlainText },
+  picture:       { class: WidgetPicture,       label: LabelType.None      },
+  positions:     { class: WidgetPositions,     label: LabelType.PlainText },
+  radio:         { class: WidgetRadio,         label: LabelType.PlainText },
+  spacer:        { class: WidgetSpacer,        label: LabelType.None      },
+  spinbox:       { class: WidgetSpinbox,       label: LabelType.LabelTag  },
+  stopwatch:     { class: WidgetStopwatch,     label: LabelType.PlainText },
+  textarea:      { class: WidgetTextarea,      label: LabelType.LabelTag  },
+  togglegrid:    { class: WidgetToggleGrid,    label: LabelType.PlainText }
 }[props.data.type];
-
-if (info === undefined)
-  throw new Error(`Unknown type ${widgetType} in widget ${widgetName}`);
-
-for (const i of info.required)
-  if (!has(props.data, i))
-    throw new Error(`Required attribute "${i}" was not specified in widget ${widgetName} (type ${widgetType})`);
 
 // Props to pass from the widget data to the sub-components
 const mappedProps = pick(props.data, ["name", "align", "row", "col", "rowspan", "colspan", "labelColspan"]);
@@ -96,21 +86,6 @@ function validate() {
   else if (typeof widgetVal === "number") valueToValidate = widgetVal;
   else return false; // Value can't be validated (internal app error)
 
-  // Functions to validate with a single value
-  const validationFuncs = new Map<string, (n: number, val: number) => boolean>([
-    ["less", (n: number, val: number) => n < val],
-    ["lessOrEqual", (n: number, val: number) => n <= val],
-    ["greater", (n: number, val: number) => n > val],
-    ["greaterOrEqual", (n: number, val: number) => n >= val],
-    ["equal", (n: number, val: number) => n === val]
-  ]);
-
-  // Functions to validate with a range
-  const rangeValidationFuncs = new Map<string, (n: number, vals: number[]) => boolean>([
-    ["inRange", (n: number, val: number[]) => n >= Math.min(...val) && n <= Math.max(...val)],
-    ["outOfRange", (n: number, val: number[]) => n < Math.min(...val) || n > Math.max(...val)]
-  ]);
-
   const { comparison, value } = validation;
 
   // Validate the widget value
@@ -121,8 +96,8 @@ function validate() {
     if (f === undefined) return true;
 
     validationResult = f(valueToValidate, value);
-  } else if (rangeValidationFuncs.has(comparison) && Array.isArray(value)) {
-    const f = rangeValidationFuncs.get(comparison);
+  } else if (validationFuncsRange.has(comparison) && Array.isArray(value)) {
+    const f = validationFuncsRange.get(comparison);
     if (f === undefined) return true;
 
     validationResult = f(valueToValidate, value);

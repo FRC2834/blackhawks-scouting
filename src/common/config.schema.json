@@ -1,0 +1,249 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "properties": {
+    "heading": { "type": "string" },
+    "logo": { "type": "string" },
+    "skipTeamSelection": { "type": "boolean" },
+    "forceQualifiers": { "type": "boolean" },
+    "pages": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/page" }
+    }
+  },
+  "required": ["pages"],
+  "$defs": {
+    "page": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "widgets": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/widget" }
+        }
+      },
+      "required": ["name", "widgets"]
+    },
+    "validationInequality": {
+      "type": "object",
+      "properties": {
+        "comparison": {
+          "type": "string",
+          "enum": ["less", "lessOrEqual", "greater", "greaterOrEqual", "equal"]
+        },
+        "value": { "type": "integer" }
+      },
+      "required": ["value"]
+    },
+    "validationRange": {
+      "type": "object",
+      "properties": {
+        "comparison": {
+          "type": "string",
+          "enum": ["inRange", "outOfRange"]
+        },
+        "value": {
+          "type": "array",
+          "items": { "type": "integer" }
+        }
+      },
+      "required": ["value"]
+    },
+    "validation": {
+      "type": "object",
+      "properties": {
+        "comparison": {
+          "type": "string",
+          "enum": ["less", "lessOrEqual", "greater", "greaterOrEqual", "equal", "inRange", "outOfRange"]
+        }
+      },
+      "required": ["comparison"],
+      "oneOf": [
+        { "$ref": "#/$defs/validationInequality" },
+        { "$ref": "#/$defs/validationRange" }
+      ]
+    },
+    "widgetDropdown": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "dropdown" },
+        "defaultOption": { "type": "boolean" },
+        "options": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["name", "options"]
+    },
+    "widgetHeading": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "heading" }
+      },
+      "required": ["name"]
+    },
+    "widgetLabel": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "label" }
+      },
+      "required": ["name"]
+    },
+    "widgetText": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "text" }
+      },
+      "required": ["name"]
+    },
+    "widgetNumber": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "number" }
+      },
+      "required": ["name"]
+    },
+    "widgetCheckbox": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "checkbox" }
+      },
+      "required": ["name"]
+    },
+    "widgetMultiCheckbox": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "multicheckbox" },
+        "options": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["name", "options"]
+    },
+    "widgetPicture": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "picture" },
+        "file": { "type": "string" },
+        "width": { "type": "integer" },
+        "height": { "type": "integer" }
+      },
+      "required": ["file"]
+    },
+    "widgetPositions": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "positions" },
+        "file": { "type": "string" },
+        "width": { "type": "integer" },
+        "height": { "type": "integer" },
+        "allowMultiple": { "type": "boolean" },
+        "selectRadius": { "type": "integer" },
+        "selectColor": { "type": "string" }
+      },
+      "required": ["name", "file"]
+    },
+    "widgetRadio": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "radio" },
+        "options": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "default": { "type": "integer" }
+      },
+      "required": ["name", "options"]
+    },
+    "widgetSpacer": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "spacer" },
+        "width": { "type": "integer" },
+        "height": { "type": "integer" }
+      }
+    },
+    "widgetSpinbox": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "spinbox" },
+        "min": { "type": "integer" },
+        "max": { "type": "integer" },
+        "allowKeyboardInput": { "type": "boolean" }
+      },
+      "required": ["name"]
+    },
+    "widgetStopwatch": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "stopwatch" },
+        "startLabel": { "type": "string" },
+        "lapLabel": { "type": "string" },
+        "stopLabel": { "type": "string" },
+        "maxLaps": { "type": "integer" }
+      },
+      "required": ["name"]
+    },
+    "widgetTextarea": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "textarea" }
+      },
+      "required": ["name"]
+    },
+    "widgetToggleGrid": {
+      "type": "object",
+      "properties": {
+        "type": { "const": "togglegrid" },
+        "width": { "type": "integer" },
+        "height": { "type": "integer" },
+        "colors": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["name", "width", "height", "colors"]
+    },
+    "widget": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["dropdown", "heading", "label", "text", "number", "checkbox", "multicheckbox", "picture", "positions", "radio", "spacer", "spinbox", "stopwatch", "textarea", "togglegrid"]
+        },
+        "prefix": { "type": "string" },
+        "name": { "type": "string" },
+        "align": {
+          "type": "string",
+          "enum": ["left", "center", "right"]
+        },
+        "noLabel": { "type": "boolean" },
+        "row": { "type": "integer" },
+        "col": { "type": "integer" },
+        "rowspan": { "type": "integer" },
+        "colspan": { "type": "integer" },
+        "labelColspan": { "type": "integer" },
+        "validation": { "$ref": "#/$defs/validation" }
+      },
+      "required": ["type"],
+      "oneOf": [
+        { "$ref": "#/$defs/widgetDropdown" },
+        { "$ref": "#/$defs/widgetHeading" },
+        { "$ref": "#/$defs/widgetLabel" },
+        { "$ref": "#/$defs/widgetText" },
+        { "$ref": "#/$defs/widgetNumber" },
+        { "$ref": "#/$defs/widgetCheckbox" },
+        { "$ref": "#/$defs/widgetMultiCheckbox" },
+        { "$ref": "#/$defs/widgetPicture" },
+        { "$ref": "#/$defs/widgetPositions" },
+        { "$ref": "#/$defs/widgetRadio" },
+        { "$ref": "#/$defs/widgetSpacer" },
+        { "$ref": "#/$defs/widgetSpinbox" },
+        { "$ref": "#/$defs/widgetStopwatch" },
+        { "$ref": "#/$defs/widgetTextarea" },
+        { "$ref": "#/$defs/widgetToggleGrid" }
+      ]
+    }
+  }
+}

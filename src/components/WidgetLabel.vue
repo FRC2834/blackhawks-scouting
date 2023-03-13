@@ -1,10 +1,10 @@
 <template>{{ data.name }}</template>
 
 <script setup lang="ts">
-import { WidgetData } from "@/common/types";
+import { Widget, WidgetLabel } from "@/config";
 
 defineProps<{
-  data: WidgetData,
+  data: Widget & WidgetLabel,
   currentId: string
 }>();
 </script>

@@ -3,10 +3,10 @@
 </template>
 
 <script setup lang="ts">
-import { WidgetData } from "@/common/types";
+import { Widget, WidgetHeading } from "@/config";
 
 defineProps<{
-  data: WidgetData,
+  data: Widget & WidgetHeading,
   currentId: string
 }>();
 </script>

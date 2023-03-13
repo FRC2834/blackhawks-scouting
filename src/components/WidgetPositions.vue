@@ -7,7 +7,7 @@
 import { get } from "lodash";
 import { useWidgetsStore } from "@/common/stores";
 import { watch } from "vue";
-import { WidgetData } from "@/common/types";
+import { Widget, WidgetPositions } from "@/config";
 
 interface Point {
   readonly x: number;
@@ -17,7 +17,7 @@ interface Point {
 type DimensionName = "width" | "height";
 
 const props = defineProps<{
-  data: WidgetData,
+  data: Widget & WidgetPositions,
   currentId: string
 }>();
 

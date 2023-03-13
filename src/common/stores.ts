@@ -1,8 +1,10 @@
-import { Ref } from "vue";
-import { ConfigData, WidgetData } from "./types";
+import Ajv from "ajv";
+import { ConfigSchema, Widget } from "@/config";
 import { defineStore } from "pinia";
 import { isFailed, TBAData } from "./tba";
+import { Ref } from "vue";
 import { useStorage } from "@vueuse/core";
+import validate from "./validate";
 
 interface WidgetValue {
   readonly name: string;
@@ -17,9 +19,13 @@ export interface SavedData {
 // Store to contain configuration data for the scouting form
 export const useConfigStore = defineStore("config", () => {
   const name = $ref("");
-  const data = $ref({} as ConfigData);
+  const data = $ref({} as ConfigSchema);
 
-  return $$({ name, data });
+  const ajv = new Ajv({ allErrors: true });
+
+  const validateSchema = () => validate(ajv, data);
+
+  return $$({ name, data, validateSchema });
 });
 
 // Store to contain widget information and saved records
@@ -52,7 +58,7 @@ export const useWidgetsStore = defineStore("widgets", () => {
   }
 
   // Adds a widget and its reactive value to a temporary array.
-  function addWidgetValue(key: string | WidgetData, value: Ref) {
+  function addWidgetValue(key: string | Widget, value: Ref) {
     let name = null;
 
     if (typeof key === "string") {
