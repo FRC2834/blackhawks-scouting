@@ -8,10 +8,12 @@ This document tracks the changes between Black Hawks Scouting versions. Dates ar
 
 - Added a manual selection option to the Team Selection page that does not use The Blue Alliance data.
 
-
 ### Improvements
 
 - In TBA mode, the Team Selection page now shows a "Loading..." status to better communicate when data is loading or completed.
+- JSON configuration files are now validated using a JSON schema.
+  - This allows for more robust diagnostics and errors shown in the app.
+  - You can also use the JSON schema for in-editor analysis and autocompletion as you edit your configurations. Support for Visual Studio Code is already set up.
 
 ## 2023.1 (03/01/2023)
 
