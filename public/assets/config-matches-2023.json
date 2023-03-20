@@ -1,0 +1,188 @@
+{
+  "heading": "Charged Up - 2023",
+  "logo": "logo.png",
+  "pages": [
+    {
+      "name": "Setup",
+      "widgets": [
+        {
+          "name": "Scouter Name",
+          "type": "text",
+          "validation": {
+            "comparison": "greater",
+            "value": 0
+          }
+        },
+        {
+          "name": "Starting Position",
+          "type": "positions",
+          "file": "field.png"
+        }
+      ]
+    },
+    {
+      "name": "Autonomous",
+      "widgets": [
+        {
+          "name": "Left Community",
+          "type": "checkbox"
+        },
+        {
+          "name": "Co-Op Nodes",
+          "type": "label",
+          "align": "center",
+          "col": 2
+        },
+        {
+          "name": "Scored Game Pieces",
+          "type": "togglegrid",
+          "prefix": "Auto",
+          "width": 9,
+          "height": 2,
+          "colors": [
+            "#fb4934",
+            "#8ec07c"
+          ]
+        },
+        {
+          "name": "Hybrid Nodes",
+          "type": "togglegrid",
+          "prefix": "Auto",
+          "width": 9,
+          "height": 1,
+          "colors": [
+            "#3c3836",
+            "#fabd2f",
+            "#d3869b"
+          ]
+        },
+        {
+          "type": "spacer",
+          "height": 20
+        },
+        {
+          "name": "Charging Station",
+          "prefix": "Auto",
+          "type": "dropdown",
+          "options": [
+            "Not Attempted",
+            "Engaged",
+            "Docked",
+            "Failed"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Teleop",
+      "widgets": [
+        {
+          "name": "Picked Up From",
+          "type": "heading",
+          "col": 2,
+          "colspan": 2,
+          "align": "center"
+        },
+        {
+          "name": "Ground",
+          "type": "spinbox"
+        },
+        {
+          "name": "Sub 1",
+          "type": "spinbox"
+        },
+        {
+          "name": "Sub 2 Low",
+          "type": "spinbox",
+          "row": 2,
+          "col": 3
+        },
+        {
+          "name": "Sub 2 High",
+          "type": "spinbox",
+          "col": 3
+        },
+        {
+          "type": "spacer",
+          "height": 40
+        },
+        {
+          "name": "Co-Op Nodes",
+          "type": "label",
+          "align": "center",
+          "col": 2,
+          "colspan": 3
+        },
+        {
+          "name": "Scored Game Pieces",
+          "type": "togglegrid",
+          "colspan": 3,
+          "width": 9,
+          "height": 2,
+          "colors": [
+            "#fb4934",
+            "#8ec07c"
+          ]
+        },
+        {
+          "name": "Hybrid Nodes",
+          "type": "togglegrid",
+          "colspan": 3,
+          "width": 9,
+          "height": 1,
+          "colors": [
+            "#3c3836",
+            "#fabd2f",
+            "#d3869b"
+          ]
+        },
+        {
+          "name": "Defense Rating",
+          "type": "dropdown",
+          "colspan": 2,
+          "options": [
+            "0 (Not Played)",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5 (Very Effective)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Endgame",
+      "widgets": [
+        {
+          "name": "End Location",
+          "type": "radio",
+          "options": [
+            "Engaged",
+            "Docked",
+            "Parked",
+            "None"
+          ],
+          "default": 3
+        },
+        {
+          "name": "Failed Charging Station",
+          "type": "checkbox"
+        },
+        {
+          "name": "Robots On Charge Station",
+          "type": "spinbox",
+          "max": 3
+        },
+        {
+          "name": "Mechanical Failures",
+          "type": "text"
+        },
+        {
+          "name": "Comments",
+          "type": "textarea"
+        }
+      ]
+    }
+  ]
+}
