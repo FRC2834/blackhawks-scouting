@@ -22,10 +22,10 @@ onErrorCaptured(obj => {
 
 <style>
 :root {
-  --text-color: #ddd;
-  --bg-color: #292929;
-  --button-color: #3e3e3e;
-  --input-color: #1c1c1c;
+  --text-color: #000;
+  --bg-color: #fff;
+  --button-color: #a71f28;
+  --input-color: #222;
 }
 
 * {
@@ -39,7 +39,7 @@ img {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Cantarell, Arial, Helvetica, sans-serif;
   background-color: var(--bg-color);
   margin: 0;
 }
