@@ -56,6 +56,7 @@ button {
 input, select, textarea {
   background-color: var(--input-color);
   border-radius: 5px;
+  padding: 0.5em;
 }
 
 button, input, select, textarea {
@@ -66,12 +67,12 @@ button, input, select, textarea {
 }
 
 table {
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
 }
 
 td, th {
-  border: 1px solid var(--text-color);
   border-radius: 5px;
-  padding: 2px;
+  padding: 0.5em;
+  background-color: var(--input-color);
 }
 </style>
