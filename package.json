@@ -10,7 +10,7 @@
     "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore --fix src",
     "installModules": "npm install",
     "checkUpdates": "ncu -u",
-    "generateSchema": "json2ts public/config.schema.json src/config.d.ts"
+    "generateSchema": "json2ts src/common/config.schema.json src/config.d.ts"
   },
   "dependencies": {
     "@types/lodash": "^4.14.191",
