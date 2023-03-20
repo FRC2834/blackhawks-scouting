@@ -201,6 +201,14 @@
         "colors": {
           "type": "array",
           "items": { "type": "string" }
+        },
+        "rowColors": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "colColors": {
+          "type": "array",
+          "items": { "type": "string" }
         }
       },
       "required": ["name", "width", "height", "colors"]

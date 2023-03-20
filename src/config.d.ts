@@ -163,5 +163,7 @@ export interface WidgetToggleGrid {
   width: number;
   height: number;
   colors: string[];
+  rowColors?: string[];
+  colColors?: string[];
   [k: string]: unknown;
 }
