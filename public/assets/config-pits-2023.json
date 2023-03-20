@@ -1,0 +1,143 @@
+{
+  "heading": "Charged Up - 2023 (Pit Scouting)",
+  "logo": "logo.png",
+  "skipTeamSelection": true,
+  "pages": [
+    {
+      "name": "Team",
+      "widgets": [
+        {
+          "name": "Team Number",
+          "type": "number"
+        },
+        {
+          "name": "Drive Coach",
+          "type": "text"
+        },
+        {
+          "name": "Driver Names",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "Robot",
+      "widgets": [
+        {
+          "name": "Height",
+          "type": "number"
+        },
+        {
+          "name": "Length",
+          "type": "number"
+        },
+        {
+          "name": "Width",
+          "type": "number"
+        },
+        {
+          "name": "Wheel-Bumper Distance",
+          "type": "number"
+        },
+        {
+          "name": "Weight",
+          "type": "number"
+        },
+        {
+          "name": "Drivetrain",
+          "type": "dropdown",
+          "options": [
+            "West Coast",
+            "Swerve",
+            "Butterfly",
+            "Mecanum",
+            "Other"
+          ]
+        },
+        {
+          "name": "Swerve Motor Type",
+          "type": "dropdown",
+          "options": [
+            "Neo",
+            "Falcon",
+            "Cim"
+          ]
+        },
+        {
+          "name": "Swerve Type",
+          "type": "dropdown",
+          "options": [
+            "No swerve",
+            "L1",
+            "L2",
+            "L3",
+            "L4",
+            "Neo",
+            "Falcon",
+            "Custom"
+          ]
+        },
+        {
+          "name": "Has Driver Camera",
+          "type": "checkbox"
+        }
+      ]
+    },
+    {
+      "name": "Match Play",
+      "widgets": [
+        {
+          "name": "Cycle Time",
+          "type": "number"
+        },
+        {
+          "name": "Can Pick Up",
+          "type": "multicheckbox",
+          "options": [
+            "Ground Upright Cones",
+            "Ground Tipped Cones",
+            "Ground Cubes",
+            "Sub 1 (Direct)",
+            "Sub 2 High"
+          ]
+        },
+        {
+          "name": "Can Score In",
+          "type": "multicheckbox",
+          "options": [
+            "High Cone",
+            "High Cube",
+            "Medium Cone",
+            "Medium Cube",
+            "Low Cone",
+            "Low Cube"
+          ]
+        },
+        {
+          "name": "Scoring Methods",
+          "type": "multicheckbox",
+          "options": [
+            "Manual",
+            "Auto"
+          ]
+        },
+        {
+          "name": "Preferred Pickup Location",
+          "type": "dropdown",
+          "options": [
+            "Ground",
+            "Sub 1",
+            "Sub 2 Low",
+            "Sub 2 High"
+          ],
+          "defaultOption": true
+        },
+        {
+          "name": "Comments",
+          "type": "textarea",
+          "colspan": 3
+        }
+      ]
+    }
+  ]
+}
