@@ -105,9 +105,12 @@
           "name": "Can Score In",
           "type": "multicheckbox",
           "options": [
-            "High",
-            "Medium",
-            "Low"
+            "High Cone",
+            "High Cube",
+            "Medium Cone",
+            "Medium Cube",
+            "Low Cone",
+            "Low Cube"
           ]
         },
         {
