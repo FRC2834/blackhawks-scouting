@@ -50,6 +50,7 @@ button {
   user-select: none;
   cursor: pointer;
   border-radius: 5px;
+  padding: 0.5em;
 }
 
 input, select, textarea {
@@ -61,6 +62,7 @@ button, input, select, textarea {
   font-size: 100%;
   border: none;
   border-radius: 5px;
+  accent-color: var(--button-color);
 }
 
 table {

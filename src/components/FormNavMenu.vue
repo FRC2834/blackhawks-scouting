@@ -56,13 +56,13 @@ function switchPage(n: number) {
 (pointer:coarse) {
 
   .link {
-    line-height: 140%;
+    line-height: 140%
   }
 }
 
 nav {
   width: min(400px, 100%);
-  background-color: #222;
+  background-color: #36454F;
 }
 
 button:disabled {
@@ -78,18 +78,19 @@ button:disabled {
 }
 
 .active {
-  background-color: #424242;
+  background-color: #899499;
 }
 
 .link {
   user-select: none;
   text-align: center;
-  padding: 4px;
+  padding: 0.5em;
   transition: background-color 0.3s;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .link:not(.active):hover {
-  background-color: #3d3d3d;
+  background-color: #C0C0C0;
 }
 </style>
