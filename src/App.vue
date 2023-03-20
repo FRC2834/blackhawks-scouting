@@ -22,10 +22,10 @@ onErrorCaptured(obj => {
 
 <style>
 :root {
-  --text-color: #000;
-  --bg-color: #fff;
-  --button-color: #a71f28;
-  --input-color: #222;
+  --text-color: #F9F6EE;
+  --bg-color: #1B1212;
+  --button-color: #C70039;
+  --input-color: #36454F;
 }
 
 * {
@@ -36,6 +36,7 @@ onErrorCaptured(obj => {
 img {
   display: block;
   user-select: none;
+  border-radius: 5px;
 }
 
 body {
@@ -48,15 +49,18 @@ button {
   background-color: var(--button-color);
   user-select: none;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 input, select, textarea {
   background-color: var(--input-color);
+  border-radius: 5px;
 }
 
 button, input, select, textarea {
   font-size: 100%;
   border: none;
+  border-radius: 5px;
 }
 
 table {
@@ -65,6 +69,7 @@ table {
 
 td, th {
   border: 1px solid var(--text-color);
+  border-radius: 5px;
   padding: 2px;
 }
 </style>
