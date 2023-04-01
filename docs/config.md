@@ -40,6 +40,18 @@ Some configuration options allow referencing an asset file, such as an image. Th
 
 These configuration options take data of type `string`, which is the path of the file relative to the `assets` directory. Their descriptions in this document will list their data type as "filepath" to differentiate them from other string options.
 
+## Specifying Colors
+
+Some widgets allow customizing colors for visual assistance or improved visibility.
+
+These configuration options take data of type `string`. Any valid CSS color value may be used, such as:
+
+- `red` (Color name)
+- `#3CB043` (Hex value)
+- `rgb(136, 8, 8)` (RGB values)
+
+All color configuration options will have their datatype listed as "color".
+
 ## Syntax
 
 Configuration files are in JSON format with data contained within a top-level object.
@@ -240,9 +252,9 @@ The number of columns in the grid.
 
 The number of rows in the grid.
 
-`colors`: array[string]
+`colors`: array[color]
 
-The list of colors to cycle through in a grid cell when it is clicked. Any CSS color value (hex, RGB, color name) may be used for each array element.
+The list of colors to cycle through in a grid cell when it is clicked.
 
 ### Type-Specific Optional Fields
 
@@ -278,9 +290,9 @@ By default `false`.
 
 The radius of the circle displayed on each selected point, in pixels.
 
-`selectColor`: string
+`selectColor`: color
 
-The color of the circle displayed on each selected point. Any CSS color value may be used.
+The color of the circle displayed on each selected point.
 
 #### Radio
 
@@ -319,6 +331,16 @@ The text to display in the Start, Lap, and Stop buttons, respectively. These wil
 `maxLaps`: number
 
 The maximum number of laps that can be recorded; use 0 to disable lapping. By default `Number.MAX_SAFE_INTEGER`.
+
+#### Toggle Grid
+
+`rowColors`, `colColors`: array[color]
+
+The colors of each row/column number cell. The first color in the array corresponds to the fill color of the first row/column cell, and so on.
+
+If there are more cells than entries in the array, the remaining cells will retain their default color.
+
+If there are more array entries than cells, the extra entries are ignored.
 
 ### Validation
 

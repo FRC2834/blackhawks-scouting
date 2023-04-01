@@ -7,6 +7,7 @@ This document tracks the changes between Black Hawks Scouting versions. Dates ar
 ### Additions
 
 - Added a manual selection option to the Team Selection page that does not use The Blue Alliance data.
+- Added the `rowColors` and `colColors` in the Toggle Grid widget.
 
 ### Improvements
 
