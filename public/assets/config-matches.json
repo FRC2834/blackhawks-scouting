@@ -144,6 +144,17 @@
           "colors": [
             "red",
             "green"
+          ],
+          "colColors": [
+            "darkorange",
+            "purple",
+            "darkorange",
+            "darkorange",
+            "purple",
+            "darkorange",
+            "darkorange",
+            "purple",
+            "darkorange"
           ]
         },
         {
@@ -156,6 +167,17 @@
             "black",
             "yellow",
             "purple"
+          ],
+          "colColors": [
+            "darkorange",
+            "purple",
+            "darkorange",
+            "darkorange",
+            "purple",
+            "darkorange",
+            "darkorange",
+            "purple",
+            "darkorange"
           ]
         },
         {
