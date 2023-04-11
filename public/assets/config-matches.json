@@ -28,55 +28,43 @@
           "type": "checkbox"
         },
         {
-          "name": "Co-Op Nodes",
-          "type": "label",
-          "align": "center",
-          "col": 2
+          "type": "spacer",
+          "height": 20
         },
         {
-          "name": "Scored Game Pieces",
-          "type": "togglegrid",
-          "prefix": "Auto",
-          "width": 9,
-          "height": 2,
-          "colors": [
-            "red",
-            "green"
-          ],
-          "colColors": [
-            "darkorange",
-            "purple",
-            "darkorange",
-            "darkorange",
-            "purple",
-            "darkorange",
-            "darkorange",
-            "purple",
-            "darkorange"
-          ]
+          "name": "Top Cubes",
+          "type": "spinbox",
+          "col": 1,
+          "prefix": "Auto"
         },
         {
-          "name": "Hybrid Nodes",
-          "type": "togglegrid",
-          "prefix": "Auto",
-          "width": 9,
-          "height": 1,
-          "colors": [
-            "black",
-            "yellow",
-            "purple"
-          ],
-          "colColors": [
-            "darkorange",
-            "purple",
-            "darkorange",
-            "darkorange",
-            "purple",
-            "darkorange",
-            "darkorange",
-            "purple",
-            "darkorange"
-          ]
+          "name": "Mid Cubes",
+          "type": "spinbox",
+          "prefix": "Auto"
+        },
+        {
+          "name": "Low Cubes",
+          "type": "spinbox",
+          "prefix": "Auto"
+        },
+        {
+          "name": "Top Cones",
+          "type": "spinbox",
+          "row": 3,
+          "col": 4,
+          "prefix": "Auto"
+        },
+        {
+          "name": "Mid Cones",
+          "type": "spinbox",
+          "col": 4,
+          "prefix": "Auto"
+        },
+        {
+          "name": "Low Cones",
+          "type": "spinbox",
+          "col": 4,
+          "prefix": "Auto"
         },
         {
           "type": "spacer",
@@ -101,8 +89,7 @@
         {
           "name": "Picked Up From",
           "type": "heading",
-          "col": 2,
-          "colspan": 2,
+          "colspan": 5,
           "align": "center"
         },
         {
@@ -125,65 +112,48 @@
           "col": 3
         },
         {
+          "name": "Scoring",
+          "type": "heading",
+          "colspan": 5,
+          "align": "center"
+        },
+        {
+          "name": "Top Cubes",
+          "type": "spinbox",
+          "row": 5,
+          "col": 1
+        },
+        {
+          "name": "Mid Cubes",
+          "type": "spinbox"
+        },
+        {
+          "name": "Low Cubes",
+          "type": "spinbox"
+        },
+        {
+          "name": "Top Cones",
+          "type": "spinbox",
+          "row": 5,
+          "col": 3
+        },
+        {
+          "name": "Mid Cones",
+          "type": "spinbox",
+          "col": 3
+        },
+        {
+          "name": "Low Cones",
+          "type": "spinbox",
+          "col": 3
+        },
+        {
           "type": "spacer",
-          "height": 40
-        },
-        {
-          "name": "Co-Op Nodes",
-          "type": "label",
-          "align": "center",
-          "col": 2,
-          "colspan": 3
-        },
-        {
-          "name": "Scored Game Pieces",
-          "type": "togglegrid",
-          "colspan": 3,
-          "width": 9,
-          "height": 2,
-          "colors": [
-            "red",
-            "green"
-          ],
-          "colColors": [
-            "darkorange",
-            "purple",
-            "darkorange",
-            "darkorange",
-            "purple",
-            "darkorange",
-            "darkorange",
-            "purple",
-            "darkorange"
-          ]
-        },
-        {
-          "name": "Hybrid Nodes",
-          "type": "togglegrid",
-          "colspan": 3,
-          "width": 9,
-          "height": 1,
-          "colors": [
-            "black",
-            "yellow",
-            "purple"
-          ],
-          "colColors": [
-            "darkorange",
-            "purple",
-            "darkorange",
-            "darkorange",
-            "purple",
-            "darkorange",
-            "darkorange",
-            "purple",
-            "darkorange"
-          ]
+          "height": 20
         },
         {
           "name": "Defense Rating",
           "type": "dropdown",
-          "colspan": 2,
           "options": [
             "0 (Not Played)",
             "1",
@@ -192,6 +162,10 @@
             "4",
             "5 (Very Effective)"
           ]
+        },
+        {
+          "name": "Tipped",
+          "type": "checkbox"
         }
       ]
     },
