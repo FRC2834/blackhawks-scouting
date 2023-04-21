@@ -1,8 +1,8 @@
 <template>
-  <button @click="setValue(value - 1)">-</button>
+  <button @click="setValue(value - 1)" :style="{ backgroundColor: data.buttonColor }">-</button>
   <input type="number" class="spinbox" v-model="value" :id="currentId" :min="min" :max="max" step="1"
     :readonly="!data.allowKeyboardInput" @change="setValue(value)" />
-  <button @click="setValue(value + 1)">+</button>
+  <button @click="setValue(value + 1)" :style="{ backgroundColor: data.buttonColor }">+</button>
 </template>
 
 <script setup lang="ts">

@@ -144,6 +144,7 @@ export interface WidgetSpinbox {
   min?: number;
   max?: number;
   allowKeyboardInput?: boolean;
+  buttonColor?: string;
   [k: string]: unknown;
 }
 export interface WidgetStopwatch {

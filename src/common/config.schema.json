@@ -170,7 +170,8 @@
         "type": { "const": "spinbox" },
         "min": { "type": "integer" },
         "max": { "type": "integer" },
-        "allowKeyboardInput": { "type": "boolean" }
+        "allowKeyboardInput": { "type": "boolean" },
+        "buttonColor": { "type": "string" }
       },
       "required": ["name"]
     },
