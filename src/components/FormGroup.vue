@@ -81,4 +81,13 @@ function calcGridPos(name: PosName): number[][] {
 .widget {
   white-space: nowrap;
 }
+
+@media (pointer:none),
+(pointer:coarse) {
+
+  /* Label tags are set to increase font size, these are not: */
+  .label>span {
+    font-size: 120%;
+  }
+}
 </style>

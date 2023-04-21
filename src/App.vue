@@ -67,4 +67,15 @@ td, th {
   border: 1px solid var(--text-color);
   padding: 2px;
 }
+
+@media (pointer:none),
+(pointer:coarse) {
+
+  button,
+  input,
+  select,
+  label {
+    font-size: 120%;
+  }
+}
 </style>

@@ -56,7 +56,7 @@ function switchPage(n: number) {
 (pointer:coarse) {
 
   .link {
-    line-height: 140%;
+    font-size: 120%;
   }
 }
 
