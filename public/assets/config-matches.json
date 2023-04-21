@@ -35,36 +35,42 @@
           "name": "Top Cubes",
           "type": "spinbox",
           "col": 1,
-          "prefix": "Auto"
+          "prefix": "Auto",
+          "buttonColor": "purple"
         },
         {
           "name": "Mid Cubes",
           "type": "spinbox",
-          "prefix": "Auto"
+          "prefix": "Auto",
+          "buttonColor": "purple"
         },
         {
           "name": "Low Cubes",
           "type": "spinbox",
-          "prefix": "Auto"
+          "prefix": "Auto",
+          "buttonColor": "purple"
         },
         {
           "name": "Top Cones",
           "type": "spinbox",
           "row": 3,
           "col": 4,
-          "prefix": "Auto"
+          "prefix": "Auto",
+          "buttonColor": "darkOrange"
         },
         {
           "name": "Mid Cones",
           "type": "spinbox",
           "col": 4,
-          "prefix": "Auto"
+          "prefix": "Auto",
+          "buttonColor": "darkOrange"
         },
         {
           "name": "Low Cones",
           "type": "spinbox",
           "col": 4,
-          "prefix": "Auto"
+          "prefix": "Auto",
+          "buttonColor": "darkOrange"
         },
         {
           "type": "spacer",
@@ -121,31 +127,37 @@
           "name": "Top Cubes",
           "type": "spinbox",
           "row": 5,
-          "col": 1
+          "col": 1,
+          "buttonColor": "purple"
         },
         {
           "name": "Mid Cubes",
-          "type": "spinbox"
+          "type": "spinbox",
+          "buttonColor": "purple"
         },
         {
           "name": "Low Cubes",
-          "type": "spinbox"
+          "type": "spinbox",
+          "buttonColor": "purple"
         },
         {
           "name": "Top Cones",
           "type": "spinbox",
           "row": 5,
-          "col": 3
+          "col": 3,
+          "buttonColor": "darkOrange"
         },
         {
           "name": "Mid Cones",
           "type": "spinbox",
-          "col": 3
+          "col": 3,
+          "buttonColor": "darkOrange"
         },
         {
           "name": "Low Cones",
           "type": "spinbox",
-          "col": 3
+          "col": 3,
+          "buttonColor": "darkOrange"
         },
         {
           "type": "spacer",

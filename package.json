@@ -9,7 +9,6 @@
     "serve": "vite preview",
     "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore --fix src",
     "installModules": "npm install",
-    "checkUpdates": "ncu -u",
     "generateSchema": "json2ts src/common/config.schema.json src/config.d.ts"
   },
   "dependencies": {
@@ -30,7 +29,6 @@
     "eslint": "^8.36.0",
     "eslint-plugin-vue": "^9.9.0",
     "json-schema-to-typescript": "^12.0.0",
-    "npm-check-updates": "^16.7.12",
     "postcss": "^8.4.21",
     "postcss-nested": "^6.0.1",
     "typescript": "~5.0.2",
