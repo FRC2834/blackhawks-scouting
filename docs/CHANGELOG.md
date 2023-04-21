@@ -16,6 +16,7 @@ This document tracks the changes between Black Hawks Scouting versions. Dates ar
 - JSON configuration files are now validated using a JSON schema.
   - This allows for more robust diagnostics and errors shown in the app.
   - You can also use the JSON schema for in-editor analysis and autocompletion as you edit your configurations. Support for Visual Studio Code is already set up.
+- Inputs and widgets are now larger on touchscreen devices to improve ease of use.
 
 ## 2023.1 (03/01/2023)
 
