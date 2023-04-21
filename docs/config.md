@@ -322,6 +322,10 @@ The maximum value that can be entered. By default `Number.MAX_SAFE_INTEGER`, or 
 
 If the value of the widget can be modified using the keyboard. By default `false`.
 
+`buttonColor`: color
+
+The color of the increment and decrement buttons.
+
 #### Stopwatch
 
 `startLabel`, `lapLabel`, `stopLabel`: string
