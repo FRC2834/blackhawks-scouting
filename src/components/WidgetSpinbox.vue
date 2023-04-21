@@ -44,5 +44,6 @@ const setValue = (newValue: number) => value = inRange(newValue, min, max) ? new
 .spinbox-btn {
   width: 2ch;
   height: 2ch;
+  padding: 0;
 }
 </style>
