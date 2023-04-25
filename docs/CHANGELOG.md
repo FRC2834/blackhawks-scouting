@@ -2,7 +2,7 @@
 
 This document tracks the changes between Black Hawks Scouting versions. Dates are written in the MM/DD/YYYY format.
 
-## 2023.2 (Unreleased)
+## 2023.2 (04/24/2023)
 
 ### Additions
 
