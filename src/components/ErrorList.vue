@@ -40,35 +40,35 @@ const label = $computed(() => (props.errors.length === 1) ? "Error" : "Errors");
   &::backdrop {
     background-color: #0000006c;
   }
+}
 
-  &-header {
-    padding: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid var(--text-color);
+#dialog-header {
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--text-color);
+}
+
+#dialog-title {
+  margin: 0;
+}
+
+#dialog-close {
+  background-color: inherit;
+  padding: 0;
+  margin-right: 4px;
+
+  img {
+    width: 0.9em;
+    height: 0.9em;
   }
+}
 
-  &-title {
-    margin: 0;
-  }
-
-  &-close {
-    background-color: inherit;
-    padding: 0;
-    margin-right: 4px;
-
-    img {
-      width: 0.9em;
-      height: 0.9em;
-    }
-  }
-
-  &-error-container {
-    overflow: auto;
-    padding: 4px;
-    max-height: 60vh;
-  }
+#dialog-error-container {
+  overflow: auto;
+  padding: 4px;
+  max-height: 60vh;
 }
 
 .error-entry {

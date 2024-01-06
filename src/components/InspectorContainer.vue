@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import InspectorTable from "./InspectorTable.vue";
-import { useWidgetsStore } from "@/common/stores.js";
+import { useWidgetsStore } from "@/common/stores";
 
 const widgets = useWidgetsStore();
 let selectedIdx = $ref(0); // The index of the entry selected in the combobox
@@ -52,8 +52,7 @@ function deleteData() {
 }
 
 function downloadData() {
-  if (selectedEntry == undefined) return;
-
+  if (selectedEntry === undefined) return;
   if (downloadLink === undefined) return; // Make sure the link exists
 
   // Generate the download link for the selected records, then trigger the download
