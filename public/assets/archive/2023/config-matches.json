@@ -1,0 +1,218 @@
+{
+  "heading": "Charged Up - 2023",
+  "logo": "logo.png",
+  "pages": [
+    {
+      "name": "Setup",
+      "widgets": [
+        {
+          "name": "Scouter Name",
+          "type": "text",
+          "validation": {
+            "comparison": "greater",
+            "value": 0
+          }
+        },
+        {
+          "name": "Starting Position",
+          "type": "positions",
+          "file": "field.png"
+        }
+      ]
+    },
+    {
+      "name": "Autonomous",
+      "widgets": [
+        {
+          "name": "Left Community",
+          "type": "checkbox"
+        },
+        {
+          "type": "spacer",
+          "height": 20
+        },
+        {
+          "name": "Top Cubes",
+          "type": "spinbox",
+          "col": 1,
+          "prefix": "Auto",
+          "buttonColor": "purple"
+        },
+        {
+          "name": "Mid Cubes",
+          "type": "spinbox",
+          "prefix": "Auto",
+          "buttonColor": "purple"
+        },
+        {
+          "name": "Low Cubes",
+          "type": "spinbox",
+          "prefix": "Auto",
+          "buttonColor": "purple"
+        },
+        {
+          "name": "Top Cones",
+          "type": "spinbox",
+          "row": 3,
+          "col": 4,
+          "prefix": "Auto",
+          "buttonColor": "darkOrange"
+        },
+        {
+          "name": "Mid Cones",
+          "type": "spinbox",
+          "col": 4,
+          "prefix": "Auto",
+          "buttonColor": "darkOrange"
+        },
+        {
+          "name": "Low Cones",
+          "type": "spinbox",
+          "col": 4,
+          "prefix": "Auto",
+          "buttonColor": "darkOrange"
+        },
+        {
+          "type": "spacer",
+          "height": 20
+        },
+        {
+          "name": "Charging Station",
+          "prefix": "Auto",
+          "type": "dropdown",
+          "options": [
+            "Not Attempted",
+            "Engaged",
+            "Docked",
+            "Failed"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Teleop",
+      "widgets": [
+        {
+          "name": "Picked Up From",
+          "type": "heading",
+          "colspan": 5,
+          "align": "center"
+        },
+        {
+          "name": "Ground",
+          "type": "spinbox"
+        },
+        {
+          "name": "Sub 1",
+          "type": "spinbox"
+        },
+        {
+          "name": "Sub 2 Low",
+          "type": "spinbox",
+          "row": 2,
+          "col": 3
+        },
+        {
+          "name": "Sub 2 High",
+          "type": "spinbox",
+          "col": 3
+        },
+        {
+          "name": "Scoring",
+          "type": "heading",
+          "colspan": 5,
+          "align": "center"
+        },
+        {
+          "name": "Top Cubes",
+          "type": "spinbox",
+          "row": 5,
+          "col": 1,
+          "buttonColor": "purple"
+        },
+        {
+          "name": "Mid Cubes",
+          "type": "spinbox",
+          "buttonColor": "purple"
+        },
+        {
+          "name": "Low Cubes",
+          "type": "spinbox",
+          "buttonColor": "purple"
+        },
+        {
+          "name": "Top Cones",
+          "type": "spinbox",
+          "row": 5,
+          "col": 3,
+          "buttonColor": "darkOrange"
+        },
+        {
+          "name": "Mid Cones",
+          "type": "spinbox",
+          "col": 3,
+          "buttonColor": "darkOrange"
+        },
+        {
+          "name": "Low Cones",
+          "type": "spinbox",
+          "col": 3,
+          "buttonColor": "darkOrange"
+        },
+        {
+          "type": "spacer",
+          "height": 20
+        },
+        {
+          "name": "Defense Rating",
+          "type": "dropdown",
+          "options": [
+            "0 (Not Played)",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5 (Very Effective)"
+          ]
+        },
+        {
+          "name": "Tipped",
+          "type": "checkbox"
+        }
+      ]
+    },
+    {
+      "name": "Endgame",
+      "widgets": [
+        {
+          "name": "End Location",
+          "type": "radio",
+          "options": [
+            "Engaged",
+            "Docked",
+            "Parked",
+            "None"
+          ],
+          "default": 3
+        },
+        {
+          "name": "Failed Charging Station",
+          "type": "checkbox"
+        },
+        {
+          "name": "Robots On Charge Station",
+          "type": "spinbox",
+          "max": 3
+        },
+        {
+          "name": "Mechanical Failures",
+          "type": "text"
+        },
+        {
+          "name": "Comments",
+          "type": "textarea"
+        }
+      ]
+    }
+  ]
+}
