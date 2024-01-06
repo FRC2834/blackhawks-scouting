@@ -45,8 +45,20 @@ export const useWidgetsStore = defineStore("widgets", () => {
     return (data === undefined) ? null : makeDownloadLink(data);
   });
 
-  // Creates a download link for a given data object.
-  function makeDownloadLink(data: SavedData): string {
+  // Returns the current form's widget data.
+  function getWidgetsAsCSV(): SavedData {
+    // Turns a value into a string. Arrays are space-delimited to minimize collision with the CSV format.
+    const stringify = (value: unknown) => Array.isArray(value) ? value.join(" ") : String(value);
+
+    // Get header and record from the data (`name` is already a string so it does not need stringification)
+    // Then add the current timestamp as the last field in the record
+    const header = values.map(i => i.name).concat("ScoutedTime");
+    const record = values.map(i => stringify(i.value)).concat(new Date().toString());
+    return { header, values: [record] };
+  }
+
+  // Turns to given data object into a CSV string.
+  function toCSVString(data: SavedData): string {
     // Transforms an array of strings into valid CSV by escaping quotes, then joining each value.
     // https://en.wikipedia.org/wiki/Comma-separated_values
     const escape = (s: string[]) => s.map(i => `"${i.replaceAll('"', '""')}"`).join();
@@ -54,7 +66,12 @@ export const useWidgetsStore = defineStore("widgets", () => {
     // Escape the header and list of records, then put them together into a blob for downloading
     const header = escape(data.header);
     const records = data.values.map(escape);
-    return URL.createObjectURL(new Blob([[header, ...records].join("\n")], { type: "text/csv" }));
+    return [header, ...records].join("\n");
+  }
+
+  // Creates a download link for a given data object.
+  function makeDownloadLink(data: SavedData): string {
+    return URL.createObjectURL(new Blob([toCSVString(data)], { type: "text/csv" }));
   }
 
   // Adds a widget and its reactive value to a temporary array.
@@ -77,27 +94,23 @@ export const useWidgetsStore = defineStore("widgets", () => {
 
   // Saves the temporary array of widget data to a record in local storage.
   function save() {
-    // Turns a value into a string. Arrays are space-delimited to minimize collision with the CSV format.
-    const stringify = (value: unknown) => Array.isArray(value) ? value.join(" ") : String(value);
-
-    // Get header and record from the data (`name` is already a string so it does not need stringification)
-    // Then add the current timestamp as the last field in the record
-    const header = values.map(i => i.name).concat("ScoutedTime");
-    const record = values.map(i => stringify(i.value)).concat(new Date().toString());
+    const csv = getWidgetsAsCSV();
 
     // Add to saved local storage
     const entry = savedData.get(config.name);
     if (entry === undefined) {
       // The entry for the current configuration name does not exist, create it
-      savedData.set(config.name, { header, values: [record] });
+      savedData.set(config.name, csv);
     } else {
       // The entry exists, overwrite the header and append the record
-      entry.header = header;
-      entry.values.push(record);
+      entry.header = csv.header;
+      entry.values.push(csv.values[0]);
     }
   }
 
-  return $$({ values, savedData, lastWidgetRowEnd, downloadLink, makeDownloadLink, addWidgetValue, save });
+  return $$({
+    values, savedData, lastWidgetRowEnd, downloadLink, getWidgetsAsCSV, toCSVString, makeDownloadLink, addWidgetValue, save
+  });
 });
 
 // Store to contain widget validation status flags

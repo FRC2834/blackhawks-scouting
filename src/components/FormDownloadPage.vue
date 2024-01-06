@@ -1,6 +1,9 @@
 <template>
   <FormPage title="Download Data" ref="page">
     <FormGroup :label-type="LabelType.None" :colspan="2" align="center">
+      <button @click="generateQRCode">Generate QR Code</button>
+    </FormGroup>
+    <FormGroup :label-type="LabelType.None" :colspan="2" align="center">
       <button @click="clearForm">Save and Clear Form</button>
     </FormGroup>
     <FormGroup :label-type="LabelType.None">
@@ -17,6 +20,12 @@
       <RouterLink :to="{ name: 'home' }">Home</RouterLink>
     </FormGroup>
   </FormPage>
+  <dialog ref="qrContainer">
+    <div id="qr-dialog-contents">
+      <button id="qr-dialog-close" @click="qrContainer?.close">Close</button>
+      <qrcode-vue :value="qrData" level="M" render-as="svg" :size="350" />
+    </div>
+  </dialog>
 </template>
 
 <script setup lang="ts">
@@ -24,6 +33,7 @@ import FormPage from "./FormPage.vue";
 import FormGroup from "./FormGroup.vue";
 import { LabelType } from "@/common/shared";
 import { computed } from "vue";
+import QrcodeVue from "qrcode.vue";
 import { useConfigStore, useWidgetsStore } from "@/common/stores";
 import { useRouter } from "vue-router";
 
@@ -33,10 +43,27 @@ const widgets = useWidgetsStore();
 const router = useRouter();
 
 const page = $ref<InstanceType<typeof FormPage>>();
-defineExpose({ title: computed(() => page?.title), setShown: computed(() => page?.setShown) });
+const qrContainer = $ref<HTMLDialogElement>();
+let qrData = $ref("");
 
 function clearForm() {
   widgets.save();
   router.go(0); // Reload the page
 }
+
+function generateQRCode() {
+  qrData = widgets.toCSVString(widgets.getWidgetsAsCSV());
+  qrContainer?.showModal();
+}
+
+defineExpose({ title: computed(() => page?.title), setShown: computed(() => page?.setShown) });
 </script>
+
+<style>
+#qr-dialog-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+}
+</style>
