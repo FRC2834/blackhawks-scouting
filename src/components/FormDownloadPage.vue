@@ -1,7 +1,7 @@
 <template>
   <FormPage title="Download Data" ref="page">
     <FormGroup :label-type="LabelType.None" :colspan="2" align="center">
-      <button @click="generateQRCode">Generate QR Code</button>
+      <button @click="qrContainer?.showModal()">Generate QR Code</button>
     </FormGroup>
     <FormGroup :label-type="LabelType.None" :colspan="2" align="center">
       <button @click="clearForm">Save and Clear Form</button>
@@ -23,6 +23,10 @@
   <dialog ref="qrContainer">
     <div id="qr-dialog-contents">
       <button id="qr-dialog-close" @click="qrContainer?.close">Close</button>
+      <div>
+        <input type="checkbox" v-model="excludeHeaders" id="exclude-headers" />
+        <label for="exclude-headers">Exclude headers in code</label>
+      </div>
       <qrcode-vue :value="qrData" level="M" render-as="svg" :size="350" />
     </div>
   </dialog>
@@ -44,26 +48,30 @@ const router = useRouter();
 
 const page = $ref<InstanceType<typeof FormPage>>();
 const qrContainer = $ref<HTMLDialogElement>();
-let qrData = $ref("");
+const qrData = $computed(() => widgets.toCSVString(widgets.getWidgetsAsCSV(), excludeHeaders));
+const excludeHeaders = $ref(false);
 
 function clearForm() {
   widgets.save();
   router.go(0); // Reload the page
 }
 
-function generateQRCode() {
-  qrData = widgets.toCSVString(widgets.getWidgetsAsCSV());
-  qrContainer?.showModal();
-}
-
 defineExpose({ title: computed(() => page?.title), setShown: computed(() => page?.setShown) });
 </script>
 
-<style>
+<style lang="postcss">
 #qr-dialog-contents {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  align-items: flex-end;
+  align-items: flex-start;
+
+  button {
+    align-self: flex-end;
+  }
+
+  label {
+    color: black;
+  }
 }
 </style>
