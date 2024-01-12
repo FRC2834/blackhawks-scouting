@@ -102,7 +102,7 @@ These are widgets that do not fall into any of the other categories.
 
 ### Positions
 
-A location selector widget. The user can select points on an image (the circles displayed in the widget above) to export.
+A location selector widget. The user can select points on an image (which are displayed as circles) to export.
 
 **Type String:** `positions`
 

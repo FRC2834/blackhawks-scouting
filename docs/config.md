@@ -166,7 +166,7 @@ By default `false`.
 
 If `true`, the "Match Level" selector on the team selection page will be locked to "Qualifications". This option may be used when the team is only interested in scouting qualifier matches. By default `false`.
 
-This option is only valid when `skipTeamSelection` is not `true`.
+This option is only valid when `skipTeamSelection` is `false`.
 
 `pages`: array[object], required
 
