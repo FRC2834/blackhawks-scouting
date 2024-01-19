@@ -171,6 +171,18 @@
         {
           "name": "Comments",
           "type": "textarea"
+        },
+        {
+          "name": "Stage Positions",
+          "type": "heading",
+          "colspan": 2,
+          "align": "center"
+        },
+        {
+          "type": "picture",
+          "file": "stage.png",
+          "colspan": 2,
+          "height": 250
         }
       ]
     }
