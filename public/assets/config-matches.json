@@ -40,6 +40,12 @@
           "name": "Speaker Notes",
           "type": "spinbox",
           "prefix": "Auto"
+        },
+        {
+          "name": "Trap Notes",
+          "type": "spinbox",
+          "max": 3,
+          "prefix": "Auto"
         }
       ]
     },
@@ -81,6 +87,13 @@
         {
           "name": "Amp Notes",
           "type": "spinbox"
+        },
+        {
+          "name": "Trap Notes",
+          "type": "spinbox",
+          "max": 3,
+          "row": 5,
+          "col": 3
         },
         {
           "name": "Co-op Bonus",
@@ -131,12 +144,25 @@
         },
         {
           "name": "Robots Onstage",
-          "type": "spinbox",
-          "max": 3
+          "type": "multicheckbox",
+          "options": [
+            "Stage Left",
+            "Stage Right",
+            "Center Stage"
+          ]
         },
         {
-          "name": "Note Scored in Trap",
+          "name": "Harmony",
           "type": "checkbox"
+        },
+        {
+          "name": "Trap Note Positions",
+          "type": "multicheckbox",
+          "options": [
+            "Stage Left",
+            "Stage Right",
+            "Center Stage"
+          ]
         },
         {
           "name": "Mechanical Failures",
