@@ -1,8 +1,11 @@
 <template>
+  <RouterLink :to="{ name: 'home' }">Home</RouterLink>
   <p>This is an exporter for data in The Purple Standard (TPS).</p>
-  <label for="team-number-input">Team Number</label>
-  <input type="number" v-model.number="teamNumber" id="team-number-input">
-  <button v-if="tpsData" @click="downloadTPSData">Download TPS Data</button>
+  <template v-if="tpsData">
+    <label for="team-number-input">Team Number</label>
+    <input type="number" v-model.number="teamNumber" id="team-number-input">
+    <button @click="downloadTPSData">Download TPS Data</button>
+  </template>
   <p v-else>No TPS Data</p>
   <p v-show="error">Schema fetch failed: {{ error }}</p>
   <a ref="downloadLink" style="visibility: hidden"></a>
