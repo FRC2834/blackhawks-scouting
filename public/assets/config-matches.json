@@ -16,7 +16,8 @@
         {
           "name": "Starting Position",
           "type": "positions",
-          "file": "field.png"
+          "file": "field.png",
+          "selectRadius": 10
         }
       ]
     },
@@ -121,6 +122,10 @@
           "name": "Tipped",
           "type": "checkbox",
           "col": 2
+        },
+        {
+          "name": "Assists",
+          "type": "spinbox"
         }
       ]
     },
