@@ -1,0 +1,114 @@
+{
+  "heading": "Crescendo - 2024 (Qualitative Scouting)",
+  "logo": "logo.png",
+  "pages": [
+    {
+      "name": "Qualitative Scouting",
+      "widgets": [
+        {
+          "name": "Speed While Moving",
+          "type": "dropdown",
+          "options": [
+            "1 (Slowest)",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6 (Fastest)"
+          ]
+        },
+        {
+          "name": "Expansion Limits",
+          "type": "spinbox",
+          "row": 1,
+          "col": 3
+        },
+        {
+          "name": "Handling",
+          "type": "dropdown",
+          "options": [
+            "1 (Worst)",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6 (Best)"
+          ]
+        },
+        {
+          "name": "Pinning",
+          "type": "spinbox",
+          "row": 2,
+          "col": 3
+        },
+        {
+          "name": "Balance",
+          "type": "dropdown",
+          "options": [
+            "-1 (Fell over)",
+            "0 (Tipping)",
+            "1 (Stable)"
+          ]
+        },
+        {
+          "name": "Illegal Contact",
+          "type": "spinbox",
+          "row": 3,
+          "col": 3
+        },
+        {
+          "name": "Force",
+          "type": "dropdown",
+          "options": [
+            "1 (Lowest)",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6 (Highest)"
+          ]
+        },
+        {
+          "name": "Safe Zone Contact",
+          "type": "spinbox",
+          "row": 4,
+          "col": 3
+        },
+        {
+          "name": "Broken Down",
+          "type": "dropdown",
+          "options": [
+            "-1 (Dead)",
+            "0 (Component break)",
+            "1 (Did not break)"
+          ]
+        },
+        {
+          "type": "spacer",
+          "height": 20
+        },
+        {
+          "name": "Pin Time",
+          "type": "stopwatch"
+        },
+        {
+          "name": "Scoring Patterns",
+          "type": "positions",
+          "file": "field.png",
+          "allowMultiple": true,
+          "colspan": 3
+        },
+        {
+          "name": "Common Scoring Locations",
+          "type": "multicheckbox",
+          "options": [
+            "Podium",
+            "Amp Wall",
+            "Subwoofer",
+            "Other"
+          ]
+        }
+      ]
+    }
+  ]
+}
