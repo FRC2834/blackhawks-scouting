@@ -10,6 +10,8 @@ Each configuration contains the pages, widgets, and layout of the scouting form.
 
 Each configuration has a file name in the format `config-`, followed by the name of the configuration and then the file extension (`.json`). (Examples: `config-matches.json` or `config-pits-2022.json`)
 
+**Note:** `config-tps` is a reserved name for the scouting form used for The Purple Standard (TPS). See the documentation for [TPS in Black Hawks Scouting](tps.md) for details.
+
 ## Configuration List
 
 To make a configuration appear in Black Hawks Scouting's home page, it must be included in the configuration list at `/public/assets/configurations.txt`.
