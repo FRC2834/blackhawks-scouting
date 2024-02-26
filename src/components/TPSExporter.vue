@@ -24,7 +24,7 @@ let error: string | undefined = undefined;
 function valueToTPS(value: string, type: string) {
   switch (type) {
     case "boolean":
-      return value === "1";
+      return value === "true";
     case "number":
       return parseInt(value);
     case "timer":
@@ -45,54 +45,44 @@ async function downloadTPSData() {
     tpsSchema = await fetchResult.json();
   }
 
-  const dataOut: Record<string, Record<string, unknown>>[] = Array(tpsData.values.length).fill({
-    metadata: {
-      match: {}
-    }
-  });
+  const dataOut: Record<string, Record<string, unknown>>[] = [];
 
-  for (const [i, entry] of tpsData.values.entries()) {
+  for (const entry of tpsData.values) {
+    const newData: Record<string, Record<string, unknown>> = { metadata: { match: {} } }
+
     for (const [widgetName, widgetValue] of zip(tpsData.header, entry)) {
       if (widgetName === undefined || widgetValue === undefined) continue;
 
       // Process metadata
       if (widgetName === "EventKey") {
-        dataOut[i]["metadata"]["event"] = widgetValue;
+        newData["metadata"]["event"] = widgetValue;
       } else if (widgetName === "MatchLevel") {
-        (dataOut[i]["metadata"]["match"] as Record<string, unknown>)["level"] = ["qm", "sf", "f"][parseInt(widgetValue)];
+        (newData["metadata"]["match"] as Record<string, unknown>)["level"] = ["qm", "sf", "f"][parseInt(widgetValue)];
       } else if (widgetName === "MatchNumber") {
         // Match level is guaranteed to be processed before match number
-        const isPlayoffs = (dataOut[i]["metadata"]["match"] as Record<string, unknown>)["level"] === "sf";
+        const isPlayoffs = (newData["metadata"]["match"] as Record<string, unknown>)["level"] === "sf";
         const matchNumber = parseInt(widgetValue);
 
         // For playoff matches: [TBA match number] = 1, [TBA set number] = [app match number]
         // For other matches: [TBA match number] = [app match number], [TBA set number] = 1
-        (dataOut[i]["metadata"]["match"] as Record<string, unknown>)["number"] = isPlayoffs ? 1 : matchNumber;
-        (dataOut[i]["metadata"]["match"] as Record<string, unknown>)["set"] = isPlayoffs ? matchNumber : 1;
+        (newData["metadata"]["match"] as Record<string, unknown>)["number"] = isPlayoffs ? 1 : matchNumber;
+        (newData["metadata"]["match"] as Record<string, unknown>)["set"] = isPlayoffs ? matchNumber : 1;
       } else if (widgetName === "Team") {
-        dataOut[i]["metadata"]["bot"] = parseInt(widgetValue.split(",")[2]);
+        newData["metadata"]["bot"] = parseInt(widgetValue.split(",")[2]);
       } else if (widgetName === "ScoutedTime") {
-        dataOut[i]["metadata"]["timestamp"] = Date.parse(widgetValue)
+        newData["metadata"]["timestamp"] = Date.parse(widgetValue)
       } else if (widgetName === "ScouterName") {
-        dataOut[i]["metadata"]["scouter"] = {
-          name: widgetValue,
-          team: teamNumber,
-          app: "bhs"
-        }
+        newData["metadata"]["scouter"] = { name: widgetValue, team: teamNumber, app: "bhs" }
       }
 
       const schemaData = tpsSchema[widgetName];
       if (schemaData === undefined) continue;
 
-      // Each value in the schema has the format: "[iface] [prop] [type]"
-      // [iface]: TPS interface that the data goes in
-      // [prop]: TPS property name for the data
-      // [type]: How the value should be interpreted
       const [iface, prop, type] = schemaData.split(" ");
-
-      if (dataOut[i][iface] === undefined) dataOut[i][iface] = {};
-      dataOut[i][iface][prop] = valueToTPS(widgetValue, type);
+      if (newData[iface] === undefined) newData[iface] = {};
+      newData[iface][prop] = valueToTPS(widgetValue, type);
     }
+    dataOut.push(newData);
   }
 
   if (downloadLink !== undefined) {
