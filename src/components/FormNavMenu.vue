@@ -28,7 +28,7 @@ let target = $ref(0);
 
 // If the index of the shown page changes, iterate through each page object and update their states
 watchEffect(() => {
-  for (const [i, page] of props.pages.entries()) unref(page).setShown(i === shown);
+  for (const [i, page] of props.pages.entries()) unref(page).setShown?.(i === shown);
 });
 
 // If validation is successful, go to the target page
