@@ -7,6 +7,10 @@
       "name": "Team",
       "widgets": [
         {
+          "name": "Team Name",
+          "type": "text"
+        },
+        {
           "name": "Team Number",
           "type": "number"
         },
@@ -60,7 +64,8 @@
           "options": [
             "Neo",
             "Falcon",
-            "Cim"
+            "Cim",
+            "Kraken"
           ]
         },
         {
@@ -72,8 +77,7 @@
             "L2",
             "L3",
             "L4",
-            "Neo",
-            "Falcon",
+            "Invert",
             "Custom"
           ]
         }
@@ -110,6 +114,15 @@
             "Manual",
             "Auto"
           ]
+        },
+        {
+          "name": "Preferred Pickup Location",
+          "type": "dropdown",
+          "options": [
+            "Ground",
+            "Source"
+          ],
+          "defaultOption": true
         },
         {
           "name": "Preferred Pickup Location",
