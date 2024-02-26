@@ -1,0 +1,29 @@
+{
+  "CenterLinePickup": "abilities auto-center-line-pick-up boolean",
+  "LeftStartingZone": "abilities auto-leave-starting-zone boolean",
+  "Bricked": "abilities bricked boolean",
+  "Coopertition": "abilities coopertition boolean",
+  "PlayedDefense": "abilities defense boolean",
+  "GroundPickup": "abilities ground-pick-up boolean",
+  "Spotlit": "abilities teleop-spotlight-2024 boolean",
+  "StageClimb": "abilities teleop-stage-level-2024 number",
+
+  "Auto-AmpNotes": "counters auto-scoring-amp-2024 number",
+  "Auto-SpeakerNotes": "counters auto-scoring-speaker-2024 number",
+  "AmpNotes": "counters teleop-scoring-amp-2024 number",
+  "AmplifiedSpeakerNotes": "counters teleop-scoring-amplified-speaker-2024 number",
+  "SpeakerNotes": "counters teleop-scoring-speaker-2024 number",
+  "TrapNotes": "counters teleop-scoring-trap-2024 number",
+
+  "Comments": "data notes string",
+
+  "DefenseSkill": "ratings defense-skill number",
+  "DriverSkill": "ratings driver-skill number",
+  "IntakeConsistency": "ratings intake-consistency number",
+  "Speed": "ratings speed number",
+  "Stability": "ratings stability number",
+
+  "BrickTime": "timers brick-time timer",
+  "DefenseTime": "timers defense-time timer",
+  "StageTime": "timers stage-time timer"
+}

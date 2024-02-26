@@ -12,6 +12,9 @@
     <li>
       <RouterLink :to="{ name: 'inspector' }">Data Inspector</RouterLink>
     </li>
+    <li>
+      <RouterLink :to="{ name: 'tps-exporter' }">TPS Exporter</RouterLink>
+    </li>
   </ul>
   <p style="margin-top: 50px">Version: {{ version }}</p>
 </template>

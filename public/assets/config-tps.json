@@ -1,0 +1,208 @@
+{
+  "heading": "Crescendo - 2024",
+  "logo": "logo.png",
+  "pages": [
+    {
+      "name": "Setup+Autonomous",
+      "widgets": [
+        {
+          "name": "Scouter Name",
+          "type": "text",
+          "validation": {
+            "comparison": "greater",
+            "value": 0
+          }
+        },
+        {
+          "type": "spacer",
+          "height": 40
+        },
+        {
+          "name": "Center Line Pickup",
+          "type": "checkbox"
+        },
+        {
+          "name": "Left Starting Zone",
+          "type": "checkbox"
+        },
+        {
+          "name": "Amp Notes",
+          "type": "spinbox",
+          "prefix": "Auto"
+        },
+        {
+          "name": "Speaker Notes",
+          "type": "spinbox",
+          "prefix": "Auto"
+        }
+      ]
+    },
+    {
+      "name": "Teleop",
+      "widgets": [
+        {
+          "name": "Abilities",
+          "type": "heading",
+          "colspan": 5,
+          "align": "center"
+        },
+        {
+          "name": "Ground Pickup",
+          "type": "checkbox"
+        },
+        {
+          "name": "Bricked",
+          "type": "checkbox",
+          "row": 2,
+          "col": 3
+        },
+        {
+          "name": "Coopertition",
+          "type": "checkbox"
+        },
+        {
+          "name": "Played Defense",
+          "type": "checkbox",
+          "row": 3,
+          "col": 3
+        },
+        {
+          "name": "Scoring",
+          "type": "heading",
+          "colspan": 5,
+          "align": "center"
+        },
+        {
+          "name": "Speaker Notes",
+          "type": "spinbox"
+        },
+        {
+          "name": "Amplified Speaker Notes",
+          "type": "spinbox",
+          "row": 5,
+          "col": 3,
+          "labelColspan": 2
+        },
+        {
+          "name": "Amp Notes",
+          "type": "spinbox"
+        },
+        {
+          "name": "Trap Notes",
+          "type": "spinbox",
+          "max": 3,
+          "row": 6,
+          "col": 3,
+          "labelColspan": 2
+        },
+        {
+          "type": "spacer",
+          "height": 20
+        },
+        {
+          "name": "Brick Time",
+          "type": "stopwatch",
+          "maxLaps": 0,
+          "col": 2,
+          "colspan": 2
+        },
+        {
+          "name": "Defense Time",
+          "type": "stopwatch",
+          "maxLaps": 0,
+          "col": 2,
+          "colspan": 2
+        }
+      ]
+    },
+    {
+      "name": "Endgame",
+      "widgets": [
+        {
+          "name": "Stage Time",
+          "type": "stopwatch",
+          "maxLaps": 0
+        },
+        {
+          "name": "Stage Climb",
+          "type": "radio",
+          "options": [
+            "None",
+            "Parked",
+            "Onstage",
+            "Onstage, harmony +1 robot",
+            "Onstage, harmony +2 robots"
+          ]
+        },
+        {
+          "name": "Spotlit",
+          "type": "checkbox"
+        },
+        {
+          "name": "Comments",
+          "type": "textarea"
+        }
+      ]
+    },
+    {
+      "name": "Ratings",
+      "widgets": [
+        {
+          "name": "Defense Skill",
+          "type": "dropdown",
+          "options": [
+            "0 (poor/did not play)",
+            "1",
+            "2",
+            "3",
+            "4 (exceptional)"
+          ]
+        },
+        {
+          "name": "Driver Skill",
+          "type": "dropdown",
+          "options": [
+            "0 (poor)",
+            "1",
+            "2",
+            "3",
+            "4 (exceptional)"
+          ]
+        },
+        {
+          "name": "Intake Consistency",
+          "type": "dropdown",
+          "options": [
+            "0 (poor)",
+            "1",
+            "2",
+            "3",
+            "4 (exceptional)"
+          ]
+        },
+        {
+          "name": "Speed",
+          "type": "dropdown",
+          "options": [
+            "0 (very slow)",
+            "1",
+            "2",
+            "3",
+            "4 (very fast)"
+          ]
+        },
+        {
+          "name": "Stability",
+          "type": "dropdown",
+          "options": [
+            "0 (poor)",
+            "1",
+            "2",
+            "3",
+            "4 (exceptional)"
+          ]
+        }
+      ]
+    }
+  ]
+}
