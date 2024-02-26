@@ -19,6 +19,7 @@ This document tracks the changes between Black Hawks Scouting versions. Dates ar
 ### Bug Fixes
 
 - Fixed rendering of the error list dialog.
+- Fixed the occasional "... is not a function" error message that would appear when switching between forms.
 
 ## 2023.2 (04/24/2023)
 
