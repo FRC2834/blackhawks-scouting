@@ -65,3 +65,7 @@ This document tracks the changes between Black Hawks Scouting versions. Dates ar
 ### Bug Fixes
 
 - Fixed a bug where spaces from widget names would not be removed in the exported CSV if `prefix` was set in the configuration.
+
+## Initial Public Release (09/12/2022)
+
+- Initial release.
