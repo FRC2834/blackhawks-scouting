@@ -8,6 +8,7 @@ This document tracks the changes between Black Hawks Scouting versions. Dates ar
 
 - Added an "exclude headers" option for QR code generation (#8).
 - Added The Purple Standard (TPS) support. [Documentation](tps.md)
+- Added a qualitative scouting configuration.
 
 ### Bug Fixes
 
