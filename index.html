@@ -1,18 +1,64 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Black Hawks Scouting</title>
-    <meta name="description" content="A scouting app by FRC Team 2834">
-    <link rel="icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" sizes="180x180">
-    <link rel="mask-icon" href="icons/mask-icon.svg" color="#292929">
-    <meta name="theme-color" content="#292929">
-  </head>
-  <body>
-    <noscript>This app uses JavaScript. Please enable it to continue.</noscript>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TC Titans Scouting</title>
+  <meta name="description" content="A scouting app by FRC Team 2834">
+  <link rel="icon" href="programming.ico">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" sizes="180x180">
+  <link rel="mask-icon" href="icons/mask-icon.svg" color="#292929">
+  <meta name="theme-color" content="#292929">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Background</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('image.png');
+      background-size: contain;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      animation: slide-right infinite 20s linear;
+      flex-direction: column; /* Align items vertically */
+    }
+
+    .content {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .logo {
+      width: 534px;
+      height: 176px;
+      background-image: url('logo.png');
+      background-size: contain;
+      background-position: center;
+      margin-bottom: 20px; /* Added margin to separate logo from app */
+    }
+
+    @keyframes slide-right {
+      0% {
+        background-position: 0% 0%;
+      }
+
+      100% {
+        background-position: -100% 0%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo"></div>
+  <noscript>This app uses JavaScript. Please enable it to continue.</noscript>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
 </html>

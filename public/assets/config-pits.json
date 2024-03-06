@@ -1,6 +1,6 @@
 {
   "heading": "Crescendo - 2024 (Pit Scouting)",
-  "logo": "final4.png",
+  "logo": "pagelogo.png",
   "skipTeamSelection": true,
   "pages": [
     {
@@ -68,15 +68,6 @@
             "Manual",
             "Auto"
           ]
-        },
-        {
-          "name": "Preferred Pickup Location",
-          "type": "dropdown",
-          "options": [
-            "Ground",
-            "Source"
-          ],
-          "defaultOption": true
         },
         {
           "name": "Preferred Pickup Location",

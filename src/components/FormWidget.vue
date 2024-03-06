@@ -1,7 +1,7 @@
 <template>
   <FormGroup v-if="info" :id="id" :label-type="data.noLabel ? LabelType.None : info.label" v-bind="mappedProps">
     <div :style="{ width: 'max-content', border: border }">
-      <component :is="info.class" :data="data" :current-id="id" ref="desc" />
+      <component :is="info.class" :data="data" :current-id="id" ref="desc"/>
     </div>
   </FormGroup>
 </template>
