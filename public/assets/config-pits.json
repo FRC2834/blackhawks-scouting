@@ -1,6 +1,6 @@
 {
   "heading": "Crescendo - 2024 (Pit Scouting)",
-  "logo": "logo.png",
+  "logo": "final4.png",
   "skipTeamSelection": true,
   "pages": [
     {
@@ -13,40 +13,12 @@
         {
           "name": "Team Number",
           "type": "number"
-        },
-        {
-          "name": "Drive Coach",
-          "type": "text"
-        },
-        {
-          "name": "Driver Names",
-          "type": "text"
         }
       ]
     },
     {
       "name": "Robot",
       "widgets": [
-        {
-          "name": "Height",
-          "type": "number"
-        },
-        {
-          "name": "Length",
-          "type": "number"
-        },
-        {
-          "name": "Width",
-          "type": "number"
-        },
-        {
-          "name": "Number of Batteries",
-          "type": "number"
-        },
-        {
-          "name": "Weight",
-          "type": "number"
-        },
         {
           "name": "Drivetrain",
           "type": "dropdown",
@@ -55,31 +27,13 @@
             "Swerve",
             "Butterfly",
             "Mecanum",
+            "Tank Drive",
             "Other"
           ]
         },
         {
-          "name": "Swerve Motor Type",
-          "type": "dropdown",
-          "options": [
-            "Neo",
-            "Falcon",
-            "Cim",
-            "Kraken"
-          ]
-        },
-        {
-          "name": "Swerve Type",
-          "type": "dropdown",
-          "options": [
-            "No swerve",
-            "L1",
-            "L2",
-            "L3",
-            "L4",
-            "Invert",
-            "Custom"
-          ]
+          "name": "can climb?",
+          "type": "checkbox"
         }
       ]
     },

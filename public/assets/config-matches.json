@@ -1,9 +1,9 @@
 {
   "heading": "Crescendo - 2024",
-  "logo": "logo.png",
+  "logo": "final4.png",
   "pages": [
     {
-      "name": "Setup",
+      "name": "Scouter/Autonomous",
       "widgets": [
         {
           "name": "Scouter Name",
@@ -14,18 +14,7 @@
           }
         },
         {
-          "name": "Starting Position",
-          "type": "positions",
-          "file": "field.png",
-          "selectRadius": 10
-        }
-      ]
-    },
-    {
-      "name": "Autonomous",
-      "widgets": [
-        {
-          "name": "Left Starting Zone",
+          "name": "did robot leave the Starting Zone?",
           "type": "checkbox"
         },
         {
@@ -122,10 +111,6 @@
           "name": "Tipped",
           "type": "checkbox",
           "col": 2
-        },
-        {
-          "name": "Assists",
-          "type": "spinbox"
         }
       ]
     },
@@ -168,10 +153,6 @@
             "Stage Right",
             "Center Stage"
           ]
-        },
-        {
-          "name": "Mechanical Failures",
-          "type": "text"
         },
         {
           "name": "Comments",
