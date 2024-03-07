@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>TC Titans Scouting</title>
-  <meta name="description" content="A scouting app by FRC Team 2834">
-  <link rel="icon" href="programming.ico">
+  <meta name="description" content="A scouting app by FRC Team 2834 Forked on github by FRC Team 3767">
+  <link rel="icon" href="pageicon.ico">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" sizes="180x180">
   <link rel="mask-icon" href="icons/mask-icon.svg" color="#292929">
   <meta name="theme-color" content="#292929">
@@ -26,7 +26,7 @@
       text-align: center;
       font-family: Arial, sans-serif;
       animation: slide-right infinite 20s linear;
-      flex-direction: column; /* Align items vertically */
+      flex-direction: column;
     }
 
     .content {
@@ -41,7 +41,7 @@
       background-image: url('logo.png');
       background-size: contain;
       background-position: center;
-      margin-bottom: 20px; /* Added margin to separate logo from app */
+      margin-bottom: 20px;
     }
 
     @keyframes slide-right {
@@ -60,5 +60,75 @@
   <noscript>This app uses JavaScript. Please enable it to continue.</noscript>
   <div id="app"></div>
   <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TC Titans Scouting</title>
+  <meta name="description" content="A scouting app by FRC Team 2834">
+  <link rel="icon" href="programming.ico">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" sizes="180x180">
+  <link rel="mask-icon" href="icons/mask-icon.svg" color="#292929">
+  <meta name="theme-color" content="#292929">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Background</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-size: contain;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      flex-direction: column;
+    }
+    .content {
+      background-color: rgba(39, 181, 89, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .logo {
+      width: 534px;
+      height: 176px;
+      background-image: url('logo.png');
+      background-size: contain;
+      background-position: center;
+      margin-bottom: 20px;
+    }
+    body.hide-background {
+      background-image: none;
+    }
+  </style>
+</head>
+<body>
+  <noscript>This app uses JavaScript. Please enable it to continue.</noscript>
+  <div class="content">
+    <label for="toggleBackground">Toggle Background:</label>
+    <input type="checkbox" id="toggleBackground">
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+
+  </div>
+  <script>
+    const toggleBackgroundSwitch = document.getElementById('toggleBackground');
+    toggleBackgroundSwitch.addEventListener('change', function() {
+      const body = document.querySelector('body');
+      if (this.checked) {
+        body.classList.add('hide-background');
+      } else {
+        body.classList.remove('hide-background');
+      }
+    });
+  </script>
 </body>
 </html>
