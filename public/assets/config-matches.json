@@ -148,8 +148,8 @@
           "type": "checkbox"
         },
         {
-          "name": "Robots Onstage",
-          "type": "multicheckbox",
+          "name": "Robot Position",
+          "type": "radio",
           "options": [
             "Stage Left",
             "Stage Right",
