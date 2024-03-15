@@ -45,9 +45,9 @@
           "name": "Balance",
           "type": "dropdown",
           "options": [
-            "-1 (Fell over)",
+            "1 (Stable)",
             "0 (Tipping)",
-            "1 (Stable)"
+            "-1 (Fell over)"
           ]
         },
         {
@@ -78,9 +78,9 @@
           "name": "Broken Down",
           "type": "dropdown",
           "options": [
-            "-1 (Dead)",
+            "1 (Did not break)",
             "0 (Component break)",
-            "1 (Did not break)"
+            "-1 (Dead)"
           ]
         },
         {
@@ -107,6 +107,10 @@
             "Subwoofer",
             "Other"
           ]
+        },
+        {
+          "name": "Comments",
+          "type": "textarea"
         }
       ]
     }

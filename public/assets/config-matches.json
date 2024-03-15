@@ -106,24 +106,6 @@
           "height": 20
         },
         {
-          "name": "Defense Rating",
-          "type": "dropdown",
-          "options": [
-            "0 (Not Played)",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5 (Very Effective)"
-          ],
-          "col": 2
-        },
-        {
-          "name": "Tipped",
-          "type": "checkbox",
-          "col": 2
-        },
-        {
           "name": "Assists",
           "type": "spinbox"
         }
@@ -153,8 +135,10 @@
           "options": [
             "Stage Left",
             "Stage Right",
-            "Center Stage"
-          ]
+            "Center Stage",
+            "None"
+          ],
+          "default": 3
         },
         {
           "name": "Harmony",
@@ -172,10 +156,6 @@
         {
           "name": "Mechanical Failures",
           "type": "text"
-        },
-        {
-          "name": "Comments",
-          "type": "textarea"
         },
         {
           "name": "Stage Positions",
