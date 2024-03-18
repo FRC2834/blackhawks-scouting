@@ -1,5 +1,5 @@
 <template>
-  <canvas ref="canvas" @click="click">No canvas support</canvas>
+  <canvas ref="canvas" @mousedown="click">No canvas support</canvas>
   <button style="margin-left: 6px;" @click="selections.pop">Undo Last</button>
 </template>
 
@@ -79,7 +79,8 @@ function setDimensions(a: DimensionName, b: DimensionName) {
 function click(event: MouseEvent) {
   const point = { x: event.offsetX, y: event.offsetY };
 
-  if (!props.data.allowMultiple) selections.pop(); // Only allow one value in the array if specified
+  const maxNumberOfSelections = 32;
+  if (!props.data.allowMultiple || selections.length > maxNumberOfSelections) selections.pop(); // Only allow one value in the array if specified
   selections.push(point);
 }
 </script>
