@@ -1,5 +1,5 @@
 {
-  "heading": "Reefscape - 2025",
+  "heading": "Crescendo - 2024",
   "logo": "logo.png",
   "pages": [
     {
@@ -33,28 +33,19 @@
           "height": 20
         },
         {
-          "name": "Remove Algae",
+          "name": "Amp Notes",
           "type": "spinbox",
           "prefix": "Auto"
         },
         {
-          "name": "Trough Corals",
+          "name": "Speaker Notes",
           "type": "spinbox",
           "prefix": "Auto"
         },
         {
-          "name": "L2 Corals",
+          "name": "Trap Notes",
           "type": "spinbox",
-          "prefix": "Auto"
-        },
-        {
-          "name": "L3 Corals",
-          "type": "spinbox",
-          "prefix": "Auto"
-        },
-        {
-          "name": "L4 Corals",
-          "type": "spinbox",
+          "max": 3,
           "prefix": "Auto"
         }
       ]
@@ -65,78 +56,44 @@
         {
           "name": "Picked Up From",
           "type": "heading",
-          "colspan": 20,
+          "colspan": 5,
           "align": "center"
         },
         {
-          "name": "Algae",
-          "type": "heading",
-          "col": 2
-        },
-        {
           "name": "Ground",
-          "type": "spinbox",
-          "col": 3,
-          "row": 2
-        },
-        {
-          "name": "Reef",
-          "type": "spinbox",
-          "row": 2,
-          "col": 8
-        },
-        {
-          "name": "Coral",
-          "type": "heading",
-          "row": 3,
-          "col": 2
-        },
-        {
-          "name": "Ground",
-          "type": "spinbox",
-          "col": 3,
-          "row": 3
+          "type": "spinbox"
         },
         {
           "name": "Source",
           "type": "spinbox",
-          "row": 3,
-          "col": 8
+          "row": 2,
+          "col": 3
         },
         {
           "name": "Scoring",
           "type": "heading",
-          "colspan": 20,
+          "colspan": 5,
           "align": "center"
         },
         {
-          "name": "Net",
+          "name": "Speaker Notes",
           "type": "spinbox"
         },
         {
-          "name": "Proccesor",
+          "name": "Amplified Speaker Notes",
           "type": "spinbox",
+          "row": 4,
+          "col": 3
+        },
+        {
+          "name": "Amp Notes",
+          "type": "spinbox"
+        },
+        {
+          "name": "Trap Notes",
+          "type": "spinbox",
+          "max": 3,
           "row": 5,
-          "col": 3
-        },
-        {
-          "name": "Coral Trough",
-          "type": "spinbox"
-        },
-        {
-          "name": "Coral L2",
-          "type": "spinbox",
-          "row": 6,
-          "col": 3
-        },
-        {
-          "name": "Coral L3",
-          "type": "spinbox"
-        },
-        {
-          "name": "Coral L4",
-          "type": "spinbox",
-          "row": 7,
           "col": 3
         },
         {
