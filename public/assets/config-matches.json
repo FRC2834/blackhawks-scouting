@@ -15,9 +15,12 @@
         },
         {
           "name": "Starting Position",
-          "type": "positions",
-          "file": "field.png",
-          "selectRadius": 10
+          "type": "dropdown",
+          "options": [
+            "Center",
+            "Proccesor Side",
+            "Barge Side"
+          ]
         }
       ]
     },
@@ -34,29 +37,127 @@
         },
         {
           "name": "Remove Algae",
+          "type": "heading",
+          "prefix": "Auto",
+          "col": 2
+        },
+        {
+          "name": "L2.5",
           "type": "spinbox",
-          "prefix": "Auto"
+          "prefix": "Auto",
+          "row": 3,
+          "col": 3
+        },
+        {
+          "name": "L3.5",
+          "type": "spinbox",
+          "prefix": "Auto",
+          "row": 3,
+          "col": 8
+        },
+        {
+          "name": "Scoring Algae",
+          "type": "heading",
+          "col":2 
+        },
+        {
+          "name": "Net",
+          "type": "spinbox",
+          "prefix": "Auto",
+          "col": 3,
+          "row": 4
+        },
+        {
+          "name": "Proccesor",
+          "type": "spinbox",
+          "prefix": "Auto",
+          "col": 8,
+          "row" :4
+        },
+        {
+          "name": "Scoring Coral",
+          "type": "heading",
+          "col": 2
         },
         {
           "name": "Trough Corals",
           "type": "spinbox",
-          "prefix": "Auto"
+          "prefix": "Auto",
+          "row": 5,
+          "col": 3
         },
         {
           "name": "L2 Corals",
           "type": "spinbox",
-          "prefix": "Auto"
+          "prefix": "Auto",
+          "row": 5,
+          "col": 8
         },
         {
           "name": "L3 Corals",
           "type": "spinbox",
-          "prefix": "Auto"
+          "prefix": "Auto",
+          "col": 3
         },
         {
           "name": "L4 Corals",
           "type": "spinbox",
-          "prefix": "Auto"
+          "prefix": "Auto",
+          "col": 8,
+          "row": 6
+        },
+        {
+          "name": "Pick-up Locations",
+          "type": "heading",
+          "col": 4
+        },
+        {
+          "name": "Algae",
+          "type": "heading",
+          "col": 2
+        },
+        {
+          "name": "A1",
+          "type": "checkbox",
+          "col": 3,
+          "row": 8
+        },
+        {
+          "name": "A2",
+          "type": "checkbox",
+          "col": 4,
+          "row": 8
+        },
+        {
+          "name": "A3",
+          "type": "checkbox",
+          "col": 8,
+          "row": 8
+        },
+        {
+          "name": "Coral",
+          "type": "heading",
+          "col": 2
+        },
+        {
+          "name": "C1",
+          "type": "checkbox",
+          "col": 3,
+          "row": 9
+        },
+        {
+          "name": "C2",
+          "type": "checkbox",
+          "col": 4,
+          "row": 9
+        },
+        {
+          "name": "C3",
+          "type": "checkbox",
+          "col": 8,
+          "row": 9
         }
+
       ]
     },
     {
@@ -111,46 +212,52 @@
         },
         {
           "name": "Net",
-          "type": "spinbox"
+          "type": "spinbox",
+          "col": 3
         },
         {
           "name": "Proccesor",
           "type": "spinbox",
           "row": 5,
-          "col": 3
+          "col": 8
+          
         },
         {
           "name": "Coral Trough",
-          "type": "spinbox"
+          "type": "spinbox",
+          "col": 3
         },
         {
           "name": "Coral L2",
           "type": "spinbox",
           "row": 6,
-          "col": 3
+          "col": 8
         },
         {
           "name": "Coral L3",
-          "type": "spinbox"
+          "type": "spinbox",
+          "col": 3
+
         },
         {
           "name": "Coral L4",
           "type": "spinbox",
           "row": 7,
-          "col": 3
+          "col": 8
         },
         {
-          "name": "Co-op Bonus",
+          "name": "Assists",
           "type": "checkbox",
-          "col": 2
+          "col": 3
         },
         {
           "type": "spacer",
           "height": 20
         },
         {
-          "name": "Assists",
-          "type": "spinbox"
+          "name": "Rescore",
+          "type": "spinbox",
+          "col":3
         }
       ]
     },
@@ -161,8 +268,8 @@
           "name": "End Location",
           "type": "radio",
           "options": [
-            "Onstage and Spotlit",
-            "Onstage",
+            "Deep",
+            "Shallow",
             "Parked",
             "None"
           ],
@@ -176,41 +283,21 @@
           "name": "Robot Position",
           "type": "radio",
           "options": [
-            "Stage Left",
-            "Stage Right",
-            "Center Stage",
+            "1",
+            "2",
+            "3",
             "None"
           ],
           "default": 3
         },
         {
-          "name": "Harmony",
+          "name": "Barge RP",
           "type": "checkbox"
         },
-        {
-          "name": "Trap Note Positions",
-          "type": "multicheckbox",
-          "options": [
-            "Stage Left",
-            "Stage Right",
-            "Center Stage"
-          ]
-        },
+
         {
           "name": "Mechanical Failures",
           "type": "text"
-        },
-        {
-          "name": "Stage Positions",
-          "type": "heading",
-          "colspan": 2,
-          "align": "center"
-        },
-        {
-          "type": "picture",
-          "file": "stage.png",
-          "colspan": 2,
-          "height": 250
         }
       ]
     }
