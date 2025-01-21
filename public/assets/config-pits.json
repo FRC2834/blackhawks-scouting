@@ -1,5 +1,5 @@
 {
-  "heading": "Crescendo - 2024 (Pit Scouting)",
+  "heading": "Reefscape - 2025 (Pit Scouting)",
   "logo": "logo.png",
   "skipTeamSelection": true,
   "pages": [
@@ -79,17 +79,22 @@
           "name": "Can Pick Up",
           "type": "multicheckbox",
           "options": [
-            "Ground",
-            "Source"
+            "Ground Coral",
+            "Ground Algae",
+            "Reef 2.5",
+            "Reef 3.5"
           ]
         },
         {
           "name": "Can Score In",
           "type": "multicheckbox",
           "options": [
-            "Speaker",
-            "Amp",
-            "Trap"
+            "Trough",
+            "L2",
+            "L3",
+            "L4",
+            "Proccesor",
+            "Net"
           ]
         },
         {
@@ -104,8 +109,10 @@
           "name": "Preferred Pickup Location",
           "type": "dropdown",
           "options": [
-            "Ground",
-            "Source"
+            "Ground Coral",
+            "Ground Algae",
+            "Reef 2.5",
+            "Reef 3.5"
           ],
           "defaultOption": true
         },
@@ -113,22 +120,29 @@
           "name": "Preferred Scoring Location",
           "type": "dropdown",
           "options": [
-            "Speaker",
-            "Amp",
-            "Trap"
+            "Trough",
+            "L2",
+            "L3",
+            "L4",
+            "Proccesor",
+            "Net"
           ],
           "defaultOption": true
         },
         {
-          "name": "Cycle Time Speaker",
+          "name": "Cycle Time Coral -> Reef",
           "type": "number"
         },
         {
-          "name": "Cycle Time Amp",
+          "name": "Cycle Time Algae -> Proccesor",
           "type": "number"
         },
         {
-          "name": "Cycle Time Trap",
+          "name": "Cycle Time Algae -> Net",
+          "type": "number"
+        },
+        {
+          "name": "Climb Time",
           "type": "number"
         },
         {
