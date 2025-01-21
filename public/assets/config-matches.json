@@ -14,7 +14,7 @@
           }
         },
         {
-          "name": "Starting Position",
+         "name": "Starting Position",
           "type": "dropdown",
           "options": [
             "Center",
@@ -181,10 +181,16 @@
           "row": 2
         },
         {
-          "name": "Reef",
+          "name": "Reef L2.5",
           "type": "spinbox",
           "row": 2,
           "col": 8
+        },
+        {
+          "name": "Reef L3.5",
+          "type": "spinbox",
+          "row": 2,
+          "col": 13
         },
         {
           "name": "Coral",
@@ -199,10 +205,16 @@
           "row": 3
         },
         {
-          "name": "Source",
+          "name": "Coral Station",
           "type": "spinbox",
           "row": 3,
           "col": 8
+        },
+        {
+          "name": "Trough",
+          "type": "spinbox",
+          "row": 3,
+          "col":13
         },
         {
           "name": "Scoring",
@@ -213,51 +225,70 @@
         {
           "name": "Net",
           "type": "spinbox",
-          "col": 3
+          "col": 8
         },
         {
           "name": "Proccesor",
           "type": "spinbox",
           "row": 5,
-          "col": 8
+          "col": 13
+          
+        },
+        {
+          "name": "Algae",
+          "type": "heading",
+          "row": 5,
+          "col": 2
           
         },
         {
           "name": "Coral Trough",
           "type": "spinbox",
-          "col": 3
+          "col": 8
         },
         {
           "name": "Coral L2",
           "type": "spinbox",
           "row": 6,
-          "col": 8
+          "col": 13
         },
         {
           "name": "Coral L3",
           "type": "spinbox",
-          "col": 3
+          "col": 8
 
+        },
+        {
+          "name": "Coral",
+          "type": "heading",
+          "col": 2,
+          "row": 6
         },
         {
           "name": "Coral L4",
           "type": "spinbox",
           "row": 7,
-          "col": 8
+          "col": 13
         },
         {
-          "name": "Assists",
-          "type": "checkbox",
-          "col": 3
-        },
-        {
+          "name":"fuvk off",
           "type": "spacer",
           "height": 20
         },
         {
+          "name": "Assists",
+          "type": "checkbox",
+          "col": 8
+        },
+        {
           "name": "Rescore",
           "type": "spinbox",
-          "col":3
+          "col":8
+        },
+        {
+          "name": "Dropped Carbon Dioxide",
+          "type": "spinbox",
+          "col": 3
         }
       ]
     },
