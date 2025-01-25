@@ -48,4 +48,8 @@ const setValue = (newValue: number) => value = inRange(newValue, min, max) ? new
   height: 8ch;
   padding: 0;
 }
+
+.checkbox{
+transform: scale(4);
+}
 </style>
