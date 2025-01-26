@@ -169,7 +169,7 @@
         {
           "name": "Picked Up From",
           "type": "heading",
-          "colspan": 10,
+          "colspan": 15,
           "align": "center"
         },
         {
@@ -222,6 +222,7 @@
         {
           "name": "Scoring",
           "type": "heading",
+          "colspan": 15,
           "align": "center"
         },
         {
@@ -273,7 +274,7 @@
           "col": 9
         },
         {
-          "name":"fuvk off",
+          "name":"My nono square",
           "type": "spacer",
           "height": 20
         },
@@ -286,12 +287,14 @@
         {
           "name": "Rescore",
           "type": "spinbox",
-          "col":4
+          "col":4,
+          "align": "center"
         },
         {
           "name": "Dropped Corals",
           "type": "spinbox",
-          "col": 4
+          "col": 4,
+          "align": "center"
         }
       ]
     },
