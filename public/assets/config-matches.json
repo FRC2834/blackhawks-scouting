@@ -6,14 +6,6 @@
       "name": "Setup",
       "widgets": [
         {
-          "name": "Scouter Name",
-          "type": "text",
-          "validation": {
-            "comparison": "greater",
-            "value": 0
-          }
-        },
-        {
          "name": "Starting Position",
           "type": "dropdown",
           "options": [
@@ -286,7 +278,7 @@
         },
         {
           "name": "Rescore",
-          "type": "spinbox",
+          "type": "spinbox",  
           "col":5,
           "align": "center"
         },
@@ -335,7 +327,15 @@
         {
           "name": "Mechanical Failures",
           "type": "text"
+        },
+        {
+        "name": "Scouter Name",
+          "type": "text",
+          "validation": {
+            "comparison": "greater",
+            "value": 0
         }
+      }
       ]
     }
   ]
