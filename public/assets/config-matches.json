@@ -169,7 +169,7 @@
         {
           "name": "Picked Up From",
           "type": "heading",
-          "colspan": 20,
+          "colspan": 10,
           "align": "center"
         },
         {
@@ -187,13 +187,13 @@
           "name": "Reef L2.5",
           "type": "spinbox",
           "row": 2,
-          "col": 8
+          "col": 6
         },
         {
           "name": "Reef L3.5",
           "type": "spinbox",
           "row": 2,
-          "col": 13
+          "col": 10
         },
         {
           "name": "Coral",
@@ -211,17 +211,18 @@
           "name": "Coral Station",
           "type": "spinbox",
           "row": 3,
-          "col": 8
+          "col": 6
         },
         {
           "name": "Trough",
           "type": "spinbox",
           "row": 3,
-          "col":13
+          "col":10
         },
         {
           "name": "Scoring",
-          "type": "heading"
+          "type": "heading",
+          "align": "center"
         },
         {
           "name": "Net",
@@ -279,7 +280,8 @@
         {
           "name": "Assists",
           "type": "checkbox",
-          "col": 5
+          "col": 5,
+          "align": "center"
         },
         {
           "name": "Rescore",
