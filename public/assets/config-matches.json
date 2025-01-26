@@ -169,109 +169,109 @@
         {
           "name": "Picked Up From",
           "type": "heading",
-          "colspan": 15,
+          "colspan": 8,
           "col": 6
         },
         {
           "name": "Algae",
           "type": "heading",
-          "col": 3
+          "col": 2
         },
         {
           "name": "Ground",
           "type": "spinbox",
-          "col": 4,
+          "col": 3,
           "row": 2
         },
         {
           "name": "Reef L2.5",
           "type": "spinbox",
           "row": 2,
-          "col": 6
+          "col": 5
         },
         {
           "name": "Reef L3.5",
           "type": "spinbox",
           "row": 2,
-          "col": 8
+          "col": 7
         },
         {
           "name": "Coral",
           "type": "heading",
           "row": 3,
-          "col": 3
+          "col": 2
         },
         {
           "name": "Ground",
           "type": "spinbox",
-          "col": 4,
+          "col": 3,
           "row": 3
         },
         {
           "name": "Coral Station",
           "type": "spinbox",
           "row": 3,
-          "col": 6
+          "col": 5
         },
         {
           "name": "Trough",
           "type": "spinbox",
           "row": 3,
-          "col":8
+          "col":7
         },
         {
           "name": "Scoring",
           "type": "heading",
-          "colspan": 15,
+          "colspan": 8,
           "align": "center"
         },
         {
           "name": "Net",
           "type": "spinbox",
-          "col": 5
+          "col": 4
         },
         {
           "name": "Proccesor",
           "type": "spinbox",
           "row": 5,
-          "col": 7
+          "col": 6
           
         },
         {
           "name": "Algae",
           "type": "heading",
           "row": 5,
-          "col": 4
+          "col": 3
           
         },
         {
           "name": "Coral Trough",
           "type": "spinbox",
-          "col": 5
+          "col": 4
         },
         {
           "name": "Coral L2",
           "type": "spinbox",
           "row": 6,
-          "col": 7
+          "col": 6
         },
         {
           "name": "Coral L3",
           "type": "spinbox",
-          "col": 5
+          "col": 4
 
         },
         {
           "name": "Coral",
           "type": "heading",
-          "col": 4,
+          "col": 3,
           "row": 6
         },
         {
           "name": "Coral L4",
           "type": "spinbox",
           "row": 7,
-          "col": 7
+          "col": 6
         },
         {
           "name":"My nono square",
