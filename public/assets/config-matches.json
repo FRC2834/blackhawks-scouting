@@ -170,7 +170,7 @@
           "name": "Picked Up From",
           "type": "heading",
           "colspan": 15,
-          "align": "center"
+          "col": 6
         },
         {
           "name": "Algae",
@@ -180,7 +180,7 @@
         {
           "name": "Ground",
           "type": "spinbox",
-          "col": 3,
+          "col": 4,
           "row": 2
         },
         {
@@ -204,7 +204,7 @@
         {
           "name": "Ground",
           "type": "spinbox",
-          "col": 3,
+          "col": 4,
           "row": 3
         },
         {
@@ -234,14 +234,14 @@
           "name": "Proccesor",
           "type": "spinbox",
           "row": 5,
-          "col": 9
+          "col": 7
           
         },
         {
           "name": "Algae",
           "type": "heading",
           "row": 5,
-          "col": 2
+          "col": 3
           
         },
         {
@@ -253,7 +253,7 @@
           "name": "Coral L2",
           "type": "spinbox",
           "row": 6,
-          "col": 9
+          "col": 7
         },
         {
           "name": "Coral L3",
@@ -264,14 +264,14 @@
         {
           "name": "Coral",
           "type": "heading",
-          "col": 2,
+          "col": 3,
           "row": 6
         },
         {
           "name": "Coral L4",
           "type": "spinbox",
           "row": 7,
-          "col": 9
+          "col": 7
         },
         {
           "name":"My nono square",
@@ -281,19 +281,19 @@
         {
           "name": "Assists",
           "type": "checkbox",
-          "col": 5,
+          "col": 6,
           "align": "center"
         },
         {
           "name": "Rescore",
           "type": "spinbox",
-          "col":4,
+          "col":6,
           "align": "center"
         },
         {
           "name": "Dropped Corals",
           "type": "spinbox",
-          "col": 4,
+          "col": 6,
           "align": "center"
         }
       ]
