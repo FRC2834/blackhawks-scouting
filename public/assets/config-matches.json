@@ -175,7 +175,7 @@
         {
           "name": "Algae",
           "type": "heading",
-          "col": 2
+          "col": 3
         },
         {
           "name": "Ground",
@@ -193,13 +193,13 @@
           "name": "Reef L3.5",
           "type": "spinbox",
           "row": 2,
-          "col": 10
+          "col": 8
         },
         {
           "name": "Coral",
           "type": "heading",
           "row": 3,
-          "col": 2
+          "col": 3
         },
         {
           "name": "Ground",
@@ -217,7 +217,7 @@
           "name": "Trough",
           "type": "spinbox",
           "row": 3,
-          "col":10
+          "col":8
         },
         {
           "name": "Scoring",
@@ -228,7 +228,7 @@
         {
           "name": "Net",
           "type": "spinbox",
-          "col": 4
+          "col": 5
         },
         {
           "name": "Proccesor",
@@ -241,13 +241,13 @@
           "name": "Algae",
           "type": "heading",
           "row": 5,
-          "col": 3
+          "col": 4
           
         },
         {
           "name": "Coral Trough",
           "type": "spinbox",
-          "col": 4
+          "col": 5
         },
         {
           "name": "Coral L2",
@@ -258,13 +258,13 @@
         {
           "name": "Coral L3",
           "type": "spinbox",
-          "col": 4
+          "col": 5
 
         },
         {
           "name": "Coral",
           "type": "heading",
-          "col": 3,
+          "col": 4,
           "row": 6
         },
         {
@@ -276,24 +276,24 @@
         {
           "name":"My nono square",
           "type": "spacer",
-          "height": 20
+          "height": 15
         },
         {
           "name": "Assists",
           "type": "checkbox",
-          "col": 6,
+          "col": 5,
           "align": "center"
         },
         {
           "name": "Rescore",
           "type": "spinbox",
-          "col":6,
+          "col":5,
           "align": "center"
         },
         {
           "name": "Dropped Corals",
           "type": "spinbox",
-          "col": 6,
+          "col": 5,
           "align": "center"
         }
       ]
