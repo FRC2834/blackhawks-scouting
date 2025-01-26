@@ -29,7 +29,8 @@
       "widgets": [
         {
           "name": "Left Starting Zone",
-          "type": "checkbox"
+          "type": "checkbox",
+          "col":4
         },
         {
           "type": "spacer",
@@ -160,6 +161,8 @@
 
       ]
     },
+
+
     {
       "name": "Teleop",
       "widgets": [
@@ -218,20 +221,18 @@
         },
         {
           "name": "Scoring",
-          "type": "heading",
-          "colspan": 20,
-          "align": "center"
+          "type": "heading"
         },
         {
           "name": "Net",
           "type": "spinbox",
-          "col": 8
+          "col": 4
         },
         {
           "name": "Proccesor",
           "type": "spinbox",
           "row": 5,
-          "col": 13
+          "col": 9
           
         },
         {
@@ -244,18 +245,18 @@
         {
           "name": "Coral Trough",
           "type": "spinbox",
-          "col": 8
+          "col": 4
         },
         {
           "name": "Coral L2",
           "type": "spinbox",
           "row": 6,
-          "col": 13
+          "col": 9
         },
         {
           "name": "Coral L3",
           "type": "spinbox",
-          "col": 8
+          "col": 4
 
         },
         {
@@ -268,7 +269,7 @@
           "name": "Coral L4",
           "type": "spinbox",
           "row": 7,
-          "col": 13
+          "col": 9
         },
         {
           "name":"fuvk off",
@@ -278,17 +279,17 @@
         {
           "name": "Assists",
           "type": "checkbox",
-          "col": 8
+          "col": 5
         },
         {
           "name": "Rescore",
           "type": "spinbox",
-          "col":8
+          "col":4
         },
         {
-          "name": "Dropped Carbon Dioxide",
+          "name": "Dropped Corals",
           "type": "spinbox",
-          "col": 3
+          "col": 4
         }
       ]
     },
