@@ -46,7 +46,7 @@
           "type": "spinbox",
           "prefix": "Auto",
           "row": 3,
-          "col": 8
+          "col": 5
         },
         {
           "name": "Scoring Algae",
@@ -64,7 +64,7 @@
           "name": "Proccesor",
           "type": "spinbox",
           "prefix": "Auto",
-          "col": 8,
+          "col": 5,
           "row" :4
         },
         {
@@ -84,7 +84,7 @@
           "type": "spinbox",
           "prefix": "Auto",
           "row": 5,
-          "col": 8
+          "col": 5
         },
         {
           "name": "L3 Corals",
@@ -96,7 +96,7 @@
           "name": "L4 Corals",
           "type": "spinbox",
           "prefix": "Auto",
-          "col": 8,
+          "col": 5,
           "row": 6
         },
         {
@@ -124,7 +124,7 @@
         {
           "name": "A3",
           "type": "checkbox",
-          "col": 8,
+          "col": 6,
           "row": 8
         },
         {
@@ -147,7 +147,7 @@
         {
           "name": "C3",
           "type": "checkbox",
-          "col": 8,
+          "col": 6,
           "row": 9
         }
 
@@ -162,36 +162,14 @@
           "name": "Picked Up From",
           "type": "heading",
           "colspan": 8,
-          "col": 6
+          "col": 6,
+          "align": "center"
         },
         {
           "name": "Algae",
           "type": "heading",
-          "col": 2
-        },
-        {
-          "name": "Ground",
-          "type": "spinbox",
-          "col": 3,
-          "row": 2
-        },
-        {
-          "name": "Reef L2.5",
-          "type": "spinbox",
-          "row": 2,
-          "col": 5
-        },
-        {
-          "name": "Reef L3.5",
-          "type": "spinbox",
-          "row": 2,
-          "col": 7
-        },
-        {
-          "name": "Coral",
-          "type": "heading",
-          "row": 3,
-          "col": 2
+          "col": 2,
+          "row":2
         },
         {
           "name": "Ground",
@@ -200,21 +178,47 @@
           "row": 3
         },
         {
-          "name": "Coral Station",
+          "name": "Reef L2.5",
           "type": "spinbox",
           "row": 3,
           "col": 5
         },
         {
+          "name": "Reef L3.5",
+          "type": "spinbox",
+          "row": 4,
+          "col": 5
+        },
+        {
+          "name": "Coral",
+          "type": "heading",
+          "row": 5,
+          "col": 6,
+          "align": "center"
+        },
+        {
+          "name": "Ground",
+          "type": "spinbox",
+          "col": 3,
+          "row": 6
+        },
+        {
+          "name": "Coral Station",
+          "type": "spinbox",
+          "row": 6,
+          "col": 5
+        },
+        {
           "name": "Trough",
           "type": "spinbox",
-          "row": 3,
-          "col":7
+          "row": 7,
+          "col":6
         },
         {
           "name": "Scoring",
           "type": "heading",
           "colspan": 8,
+          "col": 6,
           "align": "center"
         },
         {
