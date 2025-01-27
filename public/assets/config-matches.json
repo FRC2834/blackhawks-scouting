@@ -51,7 +51,7 @@
         {
           "name": "Scoring Algae",
           "type": "heading",
-          "col":2 
+          "col":2
         },
         {
           "name": "Net",
@@ -161,113 +161,117 @@
         {
           "name": "Picked Up From",
           "type": "heading",
-          "colspan": 8,
-          "col": 6,
-          "align": "center"
+          "align": "center",
+          "col": 3
         },
         {
           "name": "Algae",
           "type": "heading",
-          "col": 2,
+          "align": "center",
+          "col": 3,
           "row":2
         },
         {
           "name": "Ground",
           "type": "spinbox",
-          "col": 3,
+          "col": 1,
           "row": 3
         },
         {
           "name": "Reef L2.5",
           "type": "spinbox",
           "row": 3,
-          "col": 5
+          "col": 3
         },
         {
           "name": "Reef L3.5",
           "type": "spinbox",
           "row": 4,
-          "col": 5
+          "col": 2
         },
         {
           "name": "Coral",
           "type": "heading",
           "row": 5,
-          "col": 6,
+          "col": 3,
           "align": "center"
         },
         {
           "name": "Ground",
           "type": "spinbox",
-          "col": 3,
+          "col": 1,
           "row": 6
         },
         {
           "name": "Coral Station",
           "type": "spinbox",
           "row": 6,
-          "col": 5
+          "col": 3
         },
         {
           "name": "Trough",
           "type": "spinbox",
           "row": 7,
-          "col":6
+          "col":2
         },
         {
           "name": "Scoring",
           "type": "heading",
-          "colspan": 8,
-          "col": 6,
+          "col": 3,
           "align": "center"
+        },
+
+        {
+          "name": "Algae",
+          "type": "heading",
+          "row": 8,
+          "col": 1
+
         },
         {
           "name": "Net",
           "type": "spinbox",
-          "col": 4
+          "col": 2,
+          "row": 8
         },
         {
           "name": "Proccesor",
           "type": "spinbox",
-          "row": 5,
-          "col": 6
-          
+          "row": 8,
+          "col": 4
+
         },
+
         {
-          "name": "Algae",
+          "name": "Coral",
           "type": "heading",
-          "row": 5,
-          "col": 3
-          
+          "col": 1,
+          "row": 9
         },
         {
           "name": "Coral Trough",
           "type": "spinbox",
-          "col": 4
+          "col": 2,
+          "row": 9
         },
         {
           "name": "Coral L2",
           "type": "spinbox",
-          "row": 6,
-          "col": 6
+          "row": 9,
+          "col": 4
         },
         {
           "name": "Coral L3",
           "type": "spinbox",
-          "col": 4
+          "col": 2,
+          "row": 10
 
-        },
-        {
-          "name": "Coral",
-          "type": "heading",
-          "col": 3,
-          "row": 6
         },
         {
           "name": "Coral L4",
           "type": "spinbox",
-          "row": 7,
-          "col": 6
+          "row": 10,
+          "col": 4
         },
         {
           "name":"My nono square",
@@ -277,19 +281,19 @@
         {
           "name": "Assists",
           "type": "checkbox",
-          "col": 5,
+          "col": 2,
           "align": "center"
         },
         {
           "name": "Rescore",
-          "type": "spinbox",  
-          "col":5,
+          "type": "spinbox",
+          "col":2,
           "align": "center"
         },
         {
           "name": "Dropped Corals",
           "type": "spinbox",
-          "col": 5,
+          "col": 2,
           "align": "center"
         }
       ]
