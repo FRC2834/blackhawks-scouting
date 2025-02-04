@@ -38,7 +38,7 @@ jobs:
     - run: npm ci
     - run: npm run build -- --base=/${{ github.event.repository.name }}/
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v1
+      uses: actions/upload-pages-artifact@v4
       with:
         path: ./dist
 
