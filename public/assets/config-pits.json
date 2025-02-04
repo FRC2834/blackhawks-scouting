@@ -1,156 +1,159 @@
-{
-  "heading": "Reefscape - 2025 (Pit Scouting)",
-  "logo": "logo.png",
-  "skipTeamSelection": true,
-  "pages": [
-    {
-      "name": "Team",
-      "widgets": [
-        {
-          "name": "Team Name",
-          "type": "text"
-        },
-        {
-          "name": "Team Number",
-          "type": "number"
-        }
-      ]
-    },
-    {
-      "name": "Robot",
-      "widgets": [
-        {
-          "name": "Height",
-          "type": "number"
-        },
-        {
-          "name": "Length",
-          "type": "number"
-        },
-        {
-          "name": "Width",
-          "type": "number"
-        },
-        {
-          "name": "Number of Batteries",
-          "type": "number"
-        },
-        {
-          "name": "Weight",
-          "type": "number"
-        },
-        {
-          "name": "Drivetrain",
-          "type": "dropdown",
-          "options": [
-            "West Coast",
-            "Swerve",
-            "Butterfly",
-            "Mecanum",
-            "Other"
-          ]
-        },
-        {
-          "name": "Swerve Motor Type",
-          "type": "dropdown",
-          "options": [
-            "Neo",
-            "Falcon",
-            "Cim",
-            "Kraken"
-          ]
-        },
-        {
-          "name": "Swerve Type",
-          "type": "dropdown",
-          "options": [
-            "No swerve",
-            "Mk 4",
-            "Mk 4i",
-            "Custom"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Match Play",
-      "widgets": [
-        {
-          "name": "Can Pick Up",
-          "type": "multicheckbox",
-          "options": [
-            "Ground Coral",
-            "Ground Algae",
-            "Reef 2.5",
-            "Reef 3.5"
-          ]
-        },
-        {
-          "name": "Can Score In",
-          "type": "multicheckbox",
-          "options": [
-            "Trough",
-            "L2",
-            "L3",
-            "L4",
-            "Proccesor",
-            "Net"
-          ]
-        },
-        {
-          "name": "Scoring Methods",
-          "type": "multicheckbox",
-          "options": [
-            "Manual",
-            "Auto"
-          ]
-        },
-        {
-          "name": "Preferred Pickup Location",
-          "type": "dropdown",
-          "options": [
-            "Ground Coral",
-            "Ground Algae",
-            "Reef 2.5",
-            "Reef 3.5"
-          ],
-          "defaultOption": true
-        },
-        {
-          "name": "Preferred Scoring Location",
-          "type": "dropdown",
-          "options": [
-            "Trough",
-            "L2",
-            "L3",
-            "L4",
-            "Proccesor",
-            "Net"
-          ],
-          "defaultOption": true
-        },
-        {
-          "name": "Cycle Time Coral -> Reef",
-          "type": "number"
-        },
-        {
-          "name": "Cycle Time Algae -> Proccesor",
-          "type": "number"
-        },
-        {
-          "name": "Cycle Time Algae -> Net",
-          "type": "number"
-        },
-        {
-          "name": "Climb Time",
-          "type": "number"
-        },
-        {
-          "name": "Comments",
-          "type": "textarea",
-          "colspan": 3
-        }
-      ]
-    }
-  ]
-}
+
+  {
+    "heading": "Reefscape - 2025 (Pit Scouting)",
+    "logo": "logo.png",
+    "skipTeamSelection": true,
+    "pages": [
+      {
+        "name": "Team",
+        "widgets": [
+          {
+            "name": "Team Name",
+            "type": "text"
+          },
+          {
+            "name": "Team Number",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "name": "Robot",
+        "widgets": [
+          {
+            "name": "Height",
+            "type": "number"
+          },
+          {
+            "name": "Length",
+            "type": "number"
+          },
+          {
+            "name": "Width",
+            "type": "number"
+          },
+          {
+            "name": "Number of Batteries",
+            "type": "number"
+          },
+          {
+            "name": "Weight",
+            "type": "number"
+          },
+          {
+            "name": "Drivetrain",
+            "type": "dropdown",
+            "options": [
+              "West Coast",
+              "Swerve",
+              "Butterfly",
+              "Mecanum",
+              "Other"
+            ]
+          },
+          {
+            "name": "Swerve Motor Type",
+            "type": "dropdown",
+            "options": [
+              "Neo",
+              "Falcon",
+              "Cim",
+              "Kraken"
+            ]
+          },
+          {
+            "name": "Swerve Type",
+            "type": "dropdown",
+            "options": [
+              "No swerve",
+              "Mk 4",
+              "Mk 4i",
+              "Custom"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Match Play",
+        "widgets": [
+          {
+            "name": "Can Pick Up",
+            "type": "multicheckbox",
+            "options": [
+              "Ground Coral",
+              "Ground Algae",
+              "Reef 2.5",
+              "Reef 3.5"
+            ]
+          },
+          {
+            "name": "Can Score In",
+            "type": "multicheckbox",
+            "options": [
+              "Trough",
+              "L2",
+              "L3",
+              "L4",
+              "Proccesor",
+              "Net"
+            ]
+          },
+          {
+            "name": "Scoring Methods",
+            "type": "multicheckbox",
+            "options": [
+              "Manual",
+              "Auto"
+            ]
+          },
+          {
+            "name": "Preferred Pickup Location",
+            "type": "dropdown",
+            "options": [
+              "Ground Coral",
+              "Ground Algae",
+              "Reef 2.5",
+              "Reef 3.5"
+            ],
+            "defaultOption": true
+          },
+          {
+            "name": "Preferred Scoring Location",
+            "type": "dropdown",
+            "options": [
+              "Trough",
+              "L2",
+              "L3",
+              "L4",
+              "Proccesor",
+              "Net"
+            ],
+            "defaultOption": true
+          },
+          {
+            "name": "Cycle Time Coral -> Reef",
+            "type": "number"
+          },
+          {
+            "name": "Cycle Time Algae -> Proccesor",
+            "type": "number"
+          },
+          {
+            "name": "Cycle Time Algae -> Net",
+            "type": "number"
+          },
+          {
+            "name": "Climb Time",
+            "type": "number"
+          },
+          {
+            "name": "Comments",
+            "type": "textarea",
+            "colspan": 3
+          }
+        ]
+      }
+    ]
+  }
+  
+  
