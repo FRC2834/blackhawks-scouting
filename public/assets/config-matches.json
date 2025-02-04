@@ -149,8 +149,13 @@
           "type": "checkbox",
           "col": 6,
           "row": 9
+        },
+        {
+          "name": "C Station",
+          "type": "checkbox",
+          "col": 5,
+          "row": 11
         }
-
       ]
     },
 
