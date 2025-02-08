@@ -1,5 +1,15 @@
 <template>
-  <canvas ref="canvas" @mousedown="startDrawing" @mouseup="stopDrawing" @mouseleave="stopDrawing" @mousemove="draw">No canvas support</canvas>
+  <canvas 
+    ref="canvas" 
+    @mousedown="startDrawing" 
+    @mouseup="stopDrawing" 
+    @mouseleave="stopDrawing" 
+    @mousemove="draw"
+    @touchstart="startDrawingTouch"
+    @touchmove="drawTouch"
+    @touchend="stopDrawing"
+    @touchcancel="stopDrawing"
+  >No canvas support</canvas>
   <button style="margin-left: 6px;" @click="clearCanvas">Clear</button>
 </template>
 
@@ -42,10 +52,43 @@ function clearCanvas() {
   if (!ctx.value || !canvas.value) return;
   ctx.value.clearRect(0, 0, canvas.value.width, canvas.value.height);
 }
+
+// Touch event handlers
+function getTouchPos(event: TouchEvent) {
+  if (!canvas.value) return null;
+  const rect = canvas.value.getBoundingClientRect();
+  const touch = event.touches[0]; // Get first touch point
+  return {
+    x: touch.clientX - rect.left,
+    y: touch.clientY - rect.top,
+  };
+}
+
+function startDrawingTouch(event: TouchEvent) {
+  if (!ctx.value || !canvas.value) return;
+  const pos = getTouchPos(event);
+  if (!pos) return;
+
+  isDrawing.value = true;
+  ctx.value.beginPath();
+  ctx.value.moveTo(pos.x, pos.y);
+  event.preventDefault(); // Prevent scrolling while drawing
+}
+
+function drawTouch(event: TouchEvent) {
+  if (!isDrawing.value || !ctx.value) return;
+  const pos = getTouchPos(event);
+  if (!pos) return;
+
+  ctx.value.lineTo(pos.x, pos.y);
+  ctx.value.stroke();
+  event.preventDefault(); // Prevent scrolling while drawing
+}
 </script>
 
 <style>
 canvas {
-  border: 1px solid #ccc;  
+  border: 1px solid #ccc;
+  touch-action: none; /* Prevent scrolling when drawing on touch screens */
 }
 </style>
