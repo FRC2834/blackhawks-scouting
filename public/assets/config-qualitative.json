@@ -120,7 +120,7 @@
       "name": "Human Player Judgement",
       "widgets": [
         {
-          "name": "How many thown in the net",
+          "name": "How many thrown in the net",
           "type": "spinbox"
         },
         {
@@ -132,11 +132,11 @@
           "type": "spinbox"
         },
         {
-          "name": "Get the human players autograph here ;)",
+          "name": "Get the human player's autograph here",
           "type": "heading"
         },
         {
-          "name": "Get their autograph here ;-)",
+          "name": "Get their autograph here",
           "type": "label",
           "file": "demo.png"
         }
