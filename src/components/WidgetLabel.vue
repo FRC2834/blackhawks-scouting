@@ -46,7 +46,6 @@ function clearCanvas() {
 
 <style>
 canvas {
-  border: 1px solid #ccc;
-  cursor: crosshair;
+  border: 1px solid #ccc;  
 }
 </style>
