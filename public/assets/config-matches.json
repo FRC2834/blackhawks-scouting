@@ -1,23 +1,18 @@
 {
-  "heading": "Crescendo - 2024",
+  "heading": "Reefscape - 2025 v1",
   "logo": "logo.png",
   "pages": [
     {
       "name": "Setup",
       "widgets": [
         {
-          "name": "Scouter Name",
-          "type": "text",
-          "validation": {
-            "comparison": "greater",
-            "value": 0
-          }
-        },
-        {
-          "name": "Starting Position",
-          "type": "positions",
-          "file": "field.png",
-          "selectRadius": 10
+         "name": "Starting Position",
+          "type": "dropdown",
+          "options": [
+            "Center",
+            "Proccesor Side",
+            "Barge Side"
+          ]
         }
       ]
     },
@@ -26,88 +21,287 @@
       "widgets": [
         {
           "name": "Left Starting Zone",
-          "type": "checkbox"
+          "type": "checkbox",
+          "col":4
         },
         {
           "type": "spacer",
           "height": 20
         },
         {
-          "name": "Amp Notes",
-          "type": "spinbox",
-          "prefix": "Auto"
+          "name": "Remove Algae",
+          "type": "heading",
+          "prefix": "Auto",
+          "col": 2
         },
         {
-          "name": "Speaker Notes",
+          "name": "L2.5",
           "type": "spinbox",
-          "prefix": "Auto"
+          "prefix": "Auto",
+          "row": 3,
+          "col": 3
         },
         {
-          "name": "Trap Notes",
+          "name": "L3.5",
           "type": "spinbox",
-          "max": 3,
-          "prefix": "Auto"
+          "prefix": "Auto",
+          "row": 3,
+          "col": 5
+        },
+        {
+          "name": "Scoring Algae",
+          "type": "heading",
+          "col":2
+        },
+        {
+          "name": "Net",
+          "type": "spinbox",
+          "prefix": "Auto",
+          "col": 3,
+          "row": 4
+        },
+        {
+          "name": "Proccesor",
+          "type": "spinbox",
+          "prefix": "Auto",
+          "col": 5,
+          "row" :4
+        },
+        {
+          "name": "Scoring Coral",
+          "type": "heading",
+          "col": 2
+        },
+        {
+          "name": "Trough Corals",
+          "type": "spinbox",
+          "prefix": "Auto",
+          "row": 5,
+          "col": 3
+        },
+        {
+          "name": "L2 Corals",
+          "type": "spinbox",
+          "prefix": "Auto",
+          "row": 5,
+          "col": 5
+        },
+        {
+          "name": "L3 Corals",
+          "type": "spinbox",
+          "prefix": "Auto",
+          "col": 3
+        },
+        {
+          "name": "L4 Corals",
+          "type": "spinbox",
+          "prefix": "Auto",
+          "col": 5,
+          "row": 6
+        },
+        {
+          "name": "Pick-up Locations",
+          "type": "heading",
+          "col": 4
+        },
+        {
+          "name": "Algae",
+          "type": "heading",
+          "col": 2
+        },
+        {
+          "name": "A1",
+          "type": "checkbox",
+          "col": 3,
+          "row": 8
+        },
+        {
+          "name": "A2",
+          "type": "checkbox",
+          "col": 4,
+          "row": 8
+        },
+        {
+          "name": "A3",
+          "type": "checkbox",
+          "col": 6,
+          "row": 8
+        },
+        {
+          "name": "Coral",
+          "type": "heading",
+          "col": 2
+        },
+        {
+          "name": "C1",
+          "type": "checkbox",
+          "col": 3,
+          "row": 9
+        },
+        {
+          "name": "C2",
+          "type": "checkbox",
+          "col": 4,
+          "row": 9
+        },
+        {
+          "name": "C3",
+          "type": "checkbox",
+          "col": 6,
+          "row": 9
+        },
+        {
+          "name": "C Station",
+          "type": "checkbox",
+          "col": 5,
+          "row": 11
         }
       ]
     },
+
+
     {
       "name": "Teleop",
       "widgets": [
         {
           "name": "Picked Up From",
           "type": "heading",
-          "colspan": 5,
+          "align": "center",
+          "col": 3
+        },
+        {
+          "name": "Algae",
+          "type": "heading",
+          "align": "center",
+          "col": 3,
+          "row":2
+        },
+        {
+          "name": "Ground",
+          "type": "spinbox",
+          "col": 1,
+          "row": 3
+        },
+        {
+          "name": "Reef L2.5",
+          "type": "spinbox",
+          "row": 3,
+          "col": 3
+        },
+        {
+          "name": "Reef L3.5",
+          "type": "spinbox",
+          "row": 4,
+          "col": 2
+        },
+        {
+          "name": "Coral",
+          "type": "heading",
+          "row": 5,
+          "col": 3,
           "align": "center"
         },
         {
           "name": "Ground",
-          "type": "spinbox"
+          "type": "spinbox",
+          "col": 1,
+          "row": 6
         },
         {
-          "name": "Source",
+          "name": "Coral Station",
           "type": "spinbox",
-          "row": 2,
+          "row": 6,
           "col": 3
         },
+        {
+          "name": "Trough",
+          "type": "spinbox",
+          "row": 7,
+          "col":2
+        },
+    
         {
           "name": "Scoring",
           "type": "heading",
-          "colspan": 5,
-          "align": "center"
-        },
-        {
-          "name": "Speaker Notes",
-          "type": "spinbox"
-        },
-        {
-          "name": "Amplified Speaker Notes",
-          "type": "spinbox",
-          "row": 4,
+          "align": "center",
           "col": 3
+    
+        },
+
+        {
+          "name": "Algae",
+          "type": "heading",
+          "row": 9,
+          "col": 1
+
         },
         {
-          "name": "Amp Notes",
-          "type": "spinbox"
-        },
-        {
-          "name": "Trap Notes",
+          "name": "Net",
           "type": "spinbox",
-          "max": 3,
-          "row": 5,
-          "col": 3
+          "col": 2,
+          "row": 9
         },
         {
-          "name": "Co-op Bonus",
-          "type": "checkbox",
-          "col": 2
+          "name": "Proccesor",
+          "type": "spinbox",
+          "row": 9,
+          "col": 4
+
+        },
+
+        {
+          "name": "Coral",
+          "type": "heading",
+          "col": 1,
+          "row": 10
         },
         {
+          "name": "Coral Trough",
+          "type": "spinbox",
+          "col": 2,
+          "row": 10
+        },
+        {
+          "name": "Coral L2",
+          "type": "spinbox",
+          "row": 10,
+          "col": 4
+        },
+        {
+          "name": "Coral L3",
+          "type": "spinbox",
+          "col": 2,
+          "row": 11
+
+        },
+        {
+          "name": "Coral L4",
+          "type": "spinbox",
+          "row": 11,
+          "col": 4
+        },
+        {
+          "name":"My nono square",
           "type": "spacer",
-          "height": 20
+          "height": 15
         },
         {
           "name": "Assists",
-          "type": "spinbox"
+          "type": "checkbox",
+          "col": 2,
+          "align": "center"
+        },
+        {
+          "name": "Rescore",
+          "type": "spinbox",
+          "col":2,
+          "align": "center"
+        },
+        {
+          "name": "Dropped Corals",
+          "type": "spinbox",
+          "col": 2,
+          "align": "center"
         }
       ]
     },
@@ -118,8 +312,8 @@
           "name": "End Location",
           "type": "radio",
           "options": [
-            "Onstage and Spotlit",
-            "Onstage",
+            "Deep",
+            "Shallow",
             "Parked",
             "None"
           ],
@@ -133,42 +327,30 @@
           "name": "Robot Position",
           "type": "radio",
           "options": [
-            "Stage Left",
-            "Stage Right",
-            "Center Stage",
+            "1",
+            "2",
+            "3",
             "None"
           ],
           "default": 3
         },
         {
-          "name": "Harmony",
+          "name": "Barge RP",
           "type": "checkbox"
         },
-        {
-          "name": "Trap Note Positions",
-          "type": "multicheckbox",
-          "options": [
-            "Stage Left",
-            "Stage Right",
-            "Center Stage"
-          ]
-        },
+
         {
           "name": "Mechanical Failures",
           "type": "text"
         },
         {
-          "name": "Stage Positions",
-          "type": "heading",
-          "colspan": 2,
-          "align": "center"
-        },
-        {
-          "type": "picture",
-          "file": "stage.png",
-          "colspan": 2,
-          "height": 250
+        "name": "Scouter Name",
+          "type": "text",
+          "validation": {
+            "comparison": "greater",
+            "value": 0
         }
+      }
       ]
     }
   ]

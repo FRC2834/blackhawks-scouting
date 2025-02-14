@@ -37,9 +37,12 @@ jobs:
         cache: "npm"
     - run: npm ci
     - run: npm run build -- --base=/${{ github.event.repository.name }}/
+    - name: Remove symlinks (if any)
+      run: find ./dist -type l -exec rm -f {} +
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
+        name: github-pages
         path: ./dist
 
   # Deployment job
@@ -52,4 +55,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4

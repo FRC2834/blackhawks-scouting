@@ -40,6 +40,28 @@ import { computed } from "vue";
 import QrcodeVue from "qrcode.vue";
 import { useConfigStore, useWidgetsStore } from "@/common/stores";
 import { useRouter } from "vue-router";
+import confetti from "canvas-confetti";
+
+function launchConfetti() {
+  confetti({
+    particleCount: 100,
+    spread: 160,
+    gravity: 4,
+    
+  });
+  confetti({
+    particleCount: 100,
+    spread: 80,
+    gravity: 4,
+    angle: 45,
+  });
+  confetti({
+    particleCount: 100,
+    spread: 80,
+    gravity: 4,
+    angle: 135,
+  });
+}
 
 const config = useConfigStore();
 const widgets = useWidgetsStore();
@@ -53,7 +75,12 @@ const excludeHeaders = $ref(false);
 
 function clearForm() {
   widgets.save();
-  router.go(0); // Reload the page
+  
+  launchConfetti();
+  setTimeout(() => {
+    router.go(0); // Reload the page
+  }, 1000);
+  
 }
 
 defineExpose({ title: computed(() => page?.title), setShown: computed(() => page?.setShown) });

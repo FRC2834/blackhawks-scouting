@@ -1,5 +1,5 @@
 {
-  "heading": "Crescendo - 2024 (Qualitative Scouting)",
+  "heading": "Reefscape - 2025 (Qualitative Scouting)",
   "logo": "logo.png",
   "pages": [
     {
@@ -102,15 +102,43 @@
           "name": "Common Scoring Locations",
           "type": "multicheckbox",
           "options": [
-            "Podium",
-            "Amp Wall",
-            "Subwoofer",
-            "Other"
+            "trough",
+            "L2",
+            "L3",
+            "L4",
+            "Proccesor",
+            "Barge"
           ]
         },
         {
           "name": "Comments",
           "type": "textarea"
+        }
+      ]
+    },
+    {
+      "name": "Human Player Judgement",
+      "widgets": [
+        {
+          "name": "How many thrown in the net",
+          "type": "spinbox"
+        },
+        {
+          "name": "How Many thrown to ground",
+          "type": "spinbox"
+        },
+        {
+          "name": "How many throws missed",
+          "type": "spinbox"
+        },
+        {
+          "name": "Get the human player's autograph here!",
+          "type": "heading"
+        },
+        {
+          "name": "Get their autograph here",
+          "type": "label",
+          "file": "demo.png"
         }
       ]
     }
