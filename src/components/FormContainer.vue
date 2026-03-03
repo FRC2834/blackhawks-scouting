@@ -19,14 +19,13 @@ import { watchEffect } from "vue";
 const config = useConfigStore();
 const widgets = useWidgetsStore();
 const validation = useValidationStore();
-
 const pageList = $ref(new Array<InstanceType<typeof FormPage>>());
 const widgetList = $ref(new Array<InstanceType<typeof FormWidget>>());
 
 // Fetch the configuration file
 const fetchResult = await fetch(`${import.meta.env.BASE_URL}assets/config-${config.name}.json`);
 
-if (!fetchResult.ok)
+if (!fetchResult.ok) 
   throw new Error(`JSON configuration fetch failed: HTTP ${fetchResult.status} (${fetchResult.statusText})`);
 
 config.data = await fetchResult.json();

@@ -26,12 +26,21 @@
         {
           "name": "Fuel Scored",
           "type": "spinbox",
+          "size" : 8,
           "col": 3,
           "batch": true
         },
         {
-          "name" : "Assists",
+          "name" : "Passes",
           "type": "spinbox",
+          "size" : 8,
+          "col": 3,
+          "batch": true
+        },
+        {
+          "name" : "Pushes",
+          "type": "spinbox",
+          "size" : 8,
           "col": 3,
           "batch": true
         },
@@ -111,14 +120,23 @@
         {
           "name": "Fuel Scored",
           "type": "spinbox",
+          "size" : 16,
           "col": 3,
           "batch": true
         },
 
    
         {
-          "name" : "Assists",
+          "name" : "Passes",
           "type": "spinbox",
+          "size" : 16,
+          "col": 3,
+          "batch": true
+        },
+        {
+          "name" : "Pushes",
+          "type": "spinbox",
+          "size" : 16,
           "col": 3,
           "batch": true
         }
@@ -190,7 +208,19 @@
             "Ground",
             "Human Player Station",
             "Depot",
-            "Team Side During Activation"
+            "Team Side During Activation",
+            "Opposite Side"
+          ]
+        },
+        {
+          "name": "Touch and Own",
+          "type": "dropdown",
+          "options":[
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
           ]
         },
         {
@@ -215,7 +245,18 @@
           ]
         },
         {
-          "name": "Penatlties",
+          "name": "Driving/Handling",
+          "type": "dropdown",
+          "options":[
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        },
+        {
+          "name": "Penalties",
           "type": "checkbox"
         },
         {

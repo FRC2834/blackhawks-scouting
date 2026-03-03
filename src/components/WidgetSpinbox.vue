@@ -3,7 +3,7 @@
   <input type="number" class="spinbox" v-model="value" :id="currentId" :min="min" :max="max" step="1" :batch="batch"
     :readonly="!data.allowKeyboardInput" @change="setValue(value)" />
   <button @click="setValue(value + 1)" :style="buttonColorStyle" class="spinbox-btn">+</button>
-  <button @click="setValue(value + 3)" :hidden="!batch" :disabled="!batch" :style="buttonColorStyle" class="spinbox-btn">+</button>
+  <button @click="setValue(value + 2)"  :hidden="!batch" :disabled="!batch" :style="buttonColorStyle" class="spinbox-btn">+</button>
   <button @click="setValue(value + 5)" :hidden="!batch" :disabled="!batch" :style="buttonColorStyle" class="spinbox-btn">+</button>
 </template>
 
@@ -20,7 +20,7 @@ const props = defineProps<{
 const min = props.data.min ?? 0;
 const max = props.data.max ?? Number.MAX_SAFE_INTEGER;
 const batch = props.data.batch ?? false;
-
+const size = $ref(props.data.size ?? 2);
 // Style object to set button background color
 const buttonColorStyle = $computed(() => ({ backgroundColor: props.data.buttonColor }));
 
@@ -34,10 +34,10 @@ const setValue = (newValue: number) => value = inRange(newValue, min, max) ? new
 <style lang="postcss">
 .spinbox {
   text-align: center;
-  width: 9ch;
-  height: 8ch;
-  appearance: textfield;
-
+  width: v-bind('size + "ch"'); 
+  height: v-bind('size + "ch"');
+  appearance: textfield; 
+  
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -47,8 +47,8 @@ const setValue = (newValue: number) => value = inRange(newValue, min, max) ? new
 
 .spinbox-btn {
   border-radius: 7.5%;
-  width: 8ch;
-  height: 8ch;
+  width: v-bind('size + "ch"'); 
+  height: v-bind('size + "ch"');
   padding: 0;
 }
 </style>
