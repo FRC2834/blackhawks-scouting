@@ -3,8 +3,8 @@
   <input type="number" class="spinbox" v-model="value" :id="currentId" :min="min" :max="max" step="1" :batch="batch"
     :readonly="!data.allowKeyboardInput" @change="setValue(value)" />
   <button @click="setValue(value + 1)" :style="buttonColorStyle" class="spinbox-btn">+</button>
-  <button @click="setValue(value + 2)"  :hidden="!batch" :disabled="!batch" :style="buttonColorStyle" class="spinbox-btn">+</button>
-  <button @click="setValue(value + 5)" :hidden="!batch" :disabled="!batch" :style="buttonColorStyle" class="spinbox-btn">+</button>
+  <button @click="setValue(value + 2)"  :hidden="!batch" :disabled="!batch" :style="buttonColorStyle" class="spinbox-btn">+2</button>
+  <button @click="setValue(value + 5)" :hidden="!batch" :disabled="!batch" :style="buttonColorStyle" class="spinbox-btn">+5</button>
 </template>
 
 <script setup lang="ts">

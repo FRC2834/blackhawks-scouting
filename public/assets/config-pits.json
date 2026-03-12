@@ -77,7 +77,7 @@
         "name": "Match Play",
         "widgets": [
           {
-            "name": " Can go Through",
+            "name": "Crossing",
             "type": "multicheckbox",
             "options": [
               "Trench",

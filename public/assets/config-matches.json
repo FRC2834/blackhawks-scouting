@@ -1,5 +1,5 @@
 {
-  "heading": "Rebuilt - 2026 v1",
+  "heading": "Rebuilt - 2026 v1.1",
   "logo": "logo.png",
   "pages": [
     {
@@ -14,8 +14,8 @@
           "name": "surf",
           "type": "picture",
           "file": "https://drive.google.com/file/d/145idST6FORcsL40eWDsClB2ZIA8DzdX5/preview",
-          "files": ["https://drive.google.com/file/d/145idST6FORcsL40eWDsClB2ZIA8DzdX5/preview","https://drive.google.com/file/d/1hceLKC-ppZSNWcEXg0GwMDYCe5CgiXWR/preview", "https://drive.google.com/file/d/1kI2tcyWOBP9137K8olPih6rMVRKCAezS/preview"],
-          "col": 4
+          "files": ["https://drive.google.com/file/d/145idST6FORcsL40eWDsClB2ZIA8DzdX5/preview","https://drive.google.com/file/d/1hceLKC-ppZSNWcEXg0GwMDYCe5CgiXWR/preview", "https://drive.google.com/file/d/1kI2tcyWOBP9137K8olPih6rMVRKCAezS/preview"]
+          
         }
       ]
     },
@@ -31,40 +31,15 @@
           "batch": true
         },
         {
-          "name" : "Passes",
+          "name" : "Assists",
           "type": "spinbox",
           "size" : 8,
           "col": 3,
           "batch": true
         },
-        {
-          "name" : "Pushes",
-          "type": "spinbox",
-          "size" : 8,
-          "col": 3,
-          "batch": true
-        },
+       
 
-        {
-          "name": "Pick-up Locations",
-          "type": "heading",
-          "col": 3
-        },
-        {
-          "name": "Went to Middle",
-          "type": "checkbox",
-          "col":3
-        },
-        {
-          "name": "Human Player Station",
-          "type": "checkbox",
-          "col": 3
-        },
-        {
-          "name": "Depot",
-          "type": "checkbox",
-          "col": 3
-        },
+        
         {
           "name": "Climb",
           "type": "heading",
@@ -127,14 +102,7 @@
 
    
         {
-          "name" : "Passes",
-          "type": "spinbox",
-          "size" : 16,
-          "col": 3,
-          "batch": true
-        },
-        {
-          "name" : "Pushes",
+          "name" : "Assists",
           "type": "spinbox",
           "size" : 16,
           "col": 3,
@@ -201,17 +169,6 @@
       "name": "Match Review",
       "widgets": [
         
-        {
-          "name": "Pickup Locations (Teleop)",
-          "type": "multicheckbox",
-          "options": [
-            "Ground",
-            "Human Player Station",
-            "Depot",
-            "Team Side During Activation",
-            "Opposite Side"
-          ]
-        },
         {
           "name": "Touch and Own",
           "type": "dropdown",
